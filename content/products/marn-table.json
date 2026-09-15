@@ -1,0 +1,22 @@
+{
+  "id": "marn-table",
+  "isPublished": true,
+  "categoryId": "tables",
+  "materialIds": [
+    "lacquer"
+  ],
+  "collectionIds": [],
+  "galleryAssetIds": [
+    "marn-table-1",
+    "marn-table-2"
+  ],
+  "dimensions": {
+    "width": 100.0,
+    "depth": 100.0,
+    "height": 40.0
+  },
+  "source": "https://normod.com/products/marn-lake-orta-sehpa",
+  "verifiedAt": "2026-09-15",
+  "sortOrder": 11,
+  "relatedIds": []
+}

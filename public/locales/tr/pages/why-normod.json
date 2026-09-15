@@ -1,0 +1,24 @@
+{
+  "slug": "neden-normod",
+  "name": "Neden Normod?",
+  "title": "Tasarım, yaşamla başlar.",
+  "description": "Evler ve ihtiyaçlar zamanla değişir. Modüler bir tasarım anlayışı, oturma alanını farklı biçimlerde düşünmene olanak verir. Hangi parçaların birlikte kullanılabildiğini mağazamızda keşfet.",
+  "sections": {
+    "section-1": {
+      "title": "Sana uyum sağlayan bir ev.",
+      "body": "Evler ve ihtiyaçlar zamanla değişir. Modüler bir tasarım anlayışı, oturma alanını farklı biçimlerde düşünmene olanak verir. Hangi parçaların birlikte kullanılabildiğini mağazamızda keşfet."
+    },
+    "section-2": {
+      "title": "Detaylarda ortak bir dil.",
+      "body": "Bir ayağın formu, ahşabın tonu ya da kumaşın dokusu. Koleksiyonlarımızda bu detayları bir bütün olarak düşünür, farklı odalar arasında sakin bir bağ kurarız."
+    },
+    "section-3": {
+      "title": "Karar vermeden önce deneyimle.",
+      "body": "Bir koltuğu tanımanın yolu oturmaktan geçer. Lefkoşa’da ölçüleri, malzemeleri ve yerleşim seçeneklerini birlikte değerlendirelim."
+    }
+  },
+  "seo": {
+    "title": "Neden Normod? | Normod Kıbrıs",
+    "description": "Evler ve ihtiyaçlar zamanla değişir. Modüler bir tasarım anlayışı, oturma alanını farklı biçimlerde düşünmene olanak verir. Hangi parçaların birlikte kullanılabildiğini mağazamızda keşfet."
+  }
+}

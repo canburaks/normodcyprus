@@ -1,0 +1,20 @@
+{
+  "id": "why-normod",
+  "isPublished": true,
+  "heroAssetId": "comfort",
+  "source": "https://normod.com/pages/neden-normod",
+  "sections": [
+    {
+      "id": "section-1",
+      "type": "text"
+    },
+    {
+      "id": "section-2",
+      "type": "text"
+    },
+    {
+      "id": "section-3",
+      "type": "text"
+    }
+  ]
+}

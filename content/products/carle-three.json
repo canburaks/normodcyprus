@@ -1,0 +1,27 @@
+{
+  "id": "carle-three",
+  "isPublished": true,
+  "categoryId": "seating",
+  "materialIds": [
+    "velvet"
+  ],
+  "collectionIds": [
+    "carle"
+  ],
+  "galleryAssetIds": [
+    "carle-three-1",
+    "carle-three-2"
+  ],
+  "dimensions": {
+    "width": 257.0,
+    "depth": 106.5,
+    "height": 80.0
+  },
+  "source": "https://normod.com/products/carle-uclu-koltuk-cift-kollu-kadife",
+  "verifiedAt": "2026-09-15",
+  "sortOrder": 5,
+  "relatedIds": [
+    "carle-set",
+    "carle-chaise"
+  ]
+}

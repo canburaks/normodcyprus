@@ -1,0 +1,24 @@
+{
+  "slug": "kalite",
+  "name": "Kalite",
+  "title": "Görünenden daha fazlası.",
+  "description": "Ahşabın damarları, bir birleşimin bitişi ve kumaşın dokusu tasarımın karakterini oluşturur. Bu ayrıntıları yakından incelemek, mobilyanı tanımanın bir parçasıdır.",
+  "sections": {
+    "section-1": {
+      "title": "Malzemeyi yakından tanı.",
+      "body": "Ahşabın damarları, bir birleşimin bitişi ve kumaşın dokusu tasarımın karakterini oluşturur. Bu ayrıntıları yakından incelemek, mobilyanı tanımanın bir parçasıdır."
+    },
+    "section-2": {
+      "title": "Her tasarımın kendi yapısı.",
+      "body": "İskelet, dolgu ve yüzey malzemeleri ürüne göre değişir. İlgilendiğin modelin malzeme bilgilerini birlikte inceleyerek evine uygun bir seçim yapabilirsin."
+    },
+    "section-3": {
+      "title": "Bakım da yaşamın bir parçası.",
+      "body": "Doğru bakım, kullandığın yüzeye ve kumaşa bağlıdır. Temizliğe başlamadan önce modeline özel önerileri öğren; mağaza ekibimiz sana yardımcı olsun."
+    }
+  },
+  "seo": {
+    "title": "Kalite | Normod Kıbrıs",
+    "description": "Ahşabın damarları, bir birleşimin bitişi ve kumaşın dokusu tasarımın karakterini oluşturur. Bu ayrıntıları yakından incelemek, mobilyanı tanımanın bir parçasıdır."
+  }
+}

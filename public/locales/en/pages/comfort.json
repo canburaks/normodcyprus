@@ -1,0 +1,24 @@
+{
+  "slug": "comfort",
+  "name": "Normod comfort",
+  "title": "A place to feel at ease.",
+  "description": "How your back is supported, where your feet rest and which way you like to stretch out all matter when choosing a sofa. Look for your own comfort.",
+  "sections": {
+    "section-1": {
+      "title": "Comfort is personal.",
+      "body": "How your back is supported, where your feet rest and which way you like to stretch out all matter when choosing a sofa. Look for your own comfort."
+    },
+    "section-2": {
+      "title": "Take your time.",
+      "body": "Sit for a few minutes. Try different positions and adjust the cushions. Experience seat depth and height beyond the measurements on a screen."
+    },
+    "section-3": {
+      "title": "Explore the details together.",
+      "body": "Seat construction and proportions can vary between models. Compare your favourite designs in store and bring your questions to our team."
+    }
+  },
+  "seo": {
+    "title": "Normod comfort | Normod Cyprus",
+    "description": "How your back is supported, where your feet rest and which way you like to stretch out all matter when choosing a sofa. Look for your own comfort."
+  }
+}

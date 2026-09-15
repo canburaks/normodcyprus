@@ -2,7 +2,7 @@
 
 ## Status and authority
 
-- The current task is research and planning only. Do not implement the website until the user approves the completed plan.
+- The user approved implementation with “go” on 2026-09-15. The website is implemented for local review. Read PLAN.md and reports/verification.md for completed work and remaining release checks.
 - The user's project brief is the source of truth and overrides conflicting skill guidance.
 - Read [PLAN.md](PLAN.md) for scope, decisions, implementation steps, and approval status.
 - Read [DESIGN.md](DESIGN.md) before design or styling work; keep it synchronized with approved design changes.
@@ -30,18 +30,18 @@
 | State | Zustand `5.0.15` |
 | UI | shadcn `4.21.0`, `base-nova`, `@base-ui/react`, Lucide, CVA, `cn` |
 | Styling | Tailwind CSS v4, CSS variables enabled, `tw-animate-css` |
-| Router | Root `pages/` starter with `_app.tsx`, `_document.tsx`, `index.tsx`, and demo `api/hello.ts` |
-| Existing assets | Next.js starter icons only; no local Normod photography or licensed brand fonts supplied |
+| Router | `src/pages/` with all showroom routes; starter and demo API removed |
+| Assets | JSON-registered Normod photography/logo and public SVG fallback; no licensed brand fonts supplied |
 | Configuration | React Compiler and Strict Mode already enabled; shadcn `rsc: false` |
 
-These are the inspected versions, not instructions to upgrade. Recheck the manifest and local docs when implementation begins. The intended `src/` migration is described in PLAN.md and has not happened yet.
+These are the inspected versions, not instructions to upgrade. Recheck the manifest and local docs when implementation begins. Application folders were moved to `src/` during approved implementation.
 
 ## Required working order
 
 1. Read this guide, PLAN.md, DESIGN.md, and the most recent CHANGELOGS.md entry.
 2. Check Git status and preserve changes made by the user or another task.
 3. Read installed Next.js guides relevant to the change before writing code. Some Pages Router files contain only a `source:` pointer: read the corresponding `01-app/` document and apply shared/`PagesOnly` sections, not App Router-only examples.
-4. Confirm plan approval exists in the conversation before starting implementation. The user's request to continue research is not approval to build.
+4. Plan approval was given on 2026-09-15. Continue authorized implementation/fixes without asking for it again. Deployment/publication is a separate user request.
 5. Implement the next approved unchecked phase, keeping data, presentation, and state separate.
 6. Verify the behavior appropriate to that phase. Mark only verified tasks `[x]`; record failures or deferred work beside the task.
 7. Add a dated CHANGELOGS.md entry for every modification batch, including documentation/configuration changes. Keep DESIGN.md synchronized whenever style decisions change.
@@ -123,7 +123,7 @@ Source: [Lefkoşa showroom detail](https://normod.com/pages/showroom-detail?hand
 | Parking | Source shows a dash; treat as unknown, not as available/unavailable |
 | Photo | [Cyprus showroom image](https://normod.com/cdn/shop/files/kibris.png?v=1769436522&width=1200), loaded dimensions 1020 × 573 |
 
-The page fills these values with JavaScript; the text-only fetch initially contained empty headings. The rendered browser page supplied the values above. Its generic review count/rating conflicts with the listing; omit ratings. An email domain does not establish the final website deployment domain. Cyprus WhatsApp, coordinates, final domain, local service policies, and actual displayed product availability remain unconfirmed.
+The page fills these values with JavaScript; the text-only fetch initially contained empty headings. The rendered browser page supplied the values above. Its generic review count/rating conflicts with the listing; omit ratings. The user subsequently confirmed the website domain, and the official source supplied coordinates (see implemented handoff below). Cyprus WhatsApp, international dialing target, local service policies and actual displayed product availability remain unconfirmed.
 
 ### Content references read
 
@@ -177,3 +177,13 @@ This version has breaking changes — APIs, conventions, and file structure may 
 This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
 
 <!-- END:nextjs-agent-rules -->
+
+## Implemented handoff — 2026-09-15
+
+- See README.md for commands and JSON editing workflows. Build preparation validates content and generates design/SEO output. Zod schemas are in src/lib/content/schemas.ts; editor schemas are generated into content/schemas/.
+- Run pnpm lint, pnpm typecheck, pnpm test and pnpm build after functional changes; use pnpm assets:check after registry edits. With a production server running, pnpm audit:production crawls all sitemap routes and writes reports/production-audit.json.
+- Site origin was explicitly confirmed by the user: https://www.normodcyprus.com. Keep content/config/site.json isIndexable false for preview. Do not claim deployment or enable public indexing without a publication request.
+- The two JSON MDX articles remain unpublished because no verified author credit was supplied. Publishing requires neutral author type, both localized author records, an actual date and isPublished true. Do not invent author/date values.
+- The official showroom source now also verifies latitude 35.183864, longitude 33.357587. The local-format phone is displayed; an international tel target and Cyprus WhatsApp remain unconfirmed. Email and official directions are available.
+- Browser verification used the in-app surface. Reports explicitly do not claim Lighthouse, axe, field Core Web Vitals, multi-engine, OS reduced-motion emulation or 200% zoom results. Do not convert those pending plan boxes to done without performing the corresponding checks.
+- Keep new mutable UI data in JSON. Do not put source URLs or prose in components, fetch product content at runtime, add commerce schema, or switch to App Router/static export.

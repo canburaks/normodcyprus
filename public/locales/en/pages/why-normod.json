@@ -1,0 +1,24 @@
+{
+  "slug": "why-normod",
+  "name": "Why Normod?",
+  "title": "Design begins with living.",
+  "description": "Homes and needs change over time. A modular approach opens up new ways of arranging a living space. Explore which pieces work together with our team.",
+  "sections": {
+    "section-1": {
+      "title": "A home that adapts to you.",
+      "body": "Homes and needs change over time. A modular approach opens up new ways of arranging a living space. Explore which pieces work together with our team."
+    },
+    "section-2": {
+      "title": "A shared language in the details.",
+      "body": "The shape of a leg, the tone of wood or the texture of a fabric. Our collections consider these details together, creating a quiet connection between rooms."
+    },
+    "section-3": {
+      "title": "Experience before deciding.",
+      "body": "The best way to understand a sofa is to sit on it. Visit us in Nicosia to explore proportions, materials and arrangements together."
+    }
+  },
+  "seo": {
+    "title": "Why Normod? | Normod Cyprus",
+    "description": "Homes and needs change over time. A modular approach opens up new ways of arranging a living space. Explore which pieces work together with our team."
+  }
+}

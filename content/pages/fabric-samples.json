@@ -1,0 +1,20 @@
+{
+  "id": "fabric-samples",
+  "isPublished": true,
+  "heroAssetId": "carle-three-1",
+  "source": "https://normod.com/pages/kumas-numunesi-iste",
+  "sections": [
+    {
+      "id": "section-1",
+      "type": "text"
+    },
+    {
+      "id": "section-2",
+      "type": "text"
+    },
+    {
+      "id": "section-3",
+      "type": "text"
+    }
+  ]
+}

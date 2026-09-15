@@ -1,0 +1,27 @@
+{
+  "id": "klem-three",
+  "isPublished": true,
+  "categoryId": "seating",
+  "materialIds": [
+    "velvet"
+  ],
+  "collectionIds": [
+    "klem"
+  ],
+  "galleryAssetIds": [
+    "klem-three-1",
+    "klem-three-2"
+  ],
+  "dimensions": {
+    "width": 224.0,
+    "depth": 91.0,
+    "height": 84.0
+  },
+  "source": "https://normod.com/products/klem-uclu-koltuk-ahsap-ayak-kadife",
+  "verifiedAt": "2026-09-15",
+  "sortOrder": 0,
+  "relatedIds": [
+    "klem-two",
+    "klem-armchair"
+  ]
+}

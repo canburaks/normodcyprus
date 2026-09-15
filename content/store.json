@@ -1,0 +1,56 @@
+{
+  "id": "nicosia",
+  "email": "info@normodcyprus.com",
+  "phoneDisplay": "0533 889 28 23",
+  "phoneHref": null,
+  "directionsUrl": "https://maps.app.goo.gl/VTDUrEpQ4ukm2BwH9",
+  "photoAssetId": "showroom",
+  "openingHours": [
+    {
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "10:00",
+      "closes": "18:00"
+    }
+  ],
+  "sources": {
+    "address": {
+      "url": "https://normod.com/pages/showroom-detail?handle=lefkosa-deneyim-merkezi",
+      "verifiedAt": "2026-09-15"
+    },
+    "email": {
+      "url": "https://normod.com/pages/showroom-detail?handle=lefkosa-deneyim-merkezi",
+      "verifiedAt": "2026-09-15"
+    },
+    "phoneDisplay": {
+      "url": "https://normod.com/pages/showroom-detail?handle=lefkosa-deneyim-merkezi",
+      "verifiedAt": "2026-09-15"
+    },
+    "directionsUrl": {
+      "url": "https://normod.com/pages/showroom-detail?handle=lefkosa-deneyim-merkezi",
+      "verifiedAt": "2026-09-15"
+    },
+    "openingHours": {
+      "url": "https://normod.com/pages/showroom-detail?handle=lefkosa-deneyim-merkezi",
+      "verifiedAt": "2026-09-15"
+    },
+    "photoAssetId": {
+      "url": "https://normod.com/pages/showroom-detail?handle=lefkosa-deneyim-merkezi",
+      "verifiedAt": "2026-09-15"
+    },
+    "geo": {
+      "url": "https://normod.com/pages/showroom-detail?handle=lefkosa-deneyim-merkezi",
+      "verifiedAt": "2026-09-15"
+    }
+  },
+  "geo": {
+    "latitude": 35.183864,
+    "longitude": 33.357587
+  }
+}

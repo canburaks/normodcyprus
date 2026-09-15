@@ -1,0 +1,28 @@
+{
+  "id": "norac-dresser",
+  "isPublished": true,
+  "categoryId": "storage",
+  "materialIds": [
+    "oak"
+  ],
+  "collectionIds": [
+    "norac"
+  ],
+  "galleryAssetIds": [
+    "norac-dresser-1",
+    "norac-dresser-2"
+  ],
+  "dimensions": {
+    "width": 92.8,
+    "depth": 97.0,
+    "height": 76.0
+  },
+  "source": "https://normod.com/products/norac-sifonyer",
+  "verifiedAt": "2026-09-15",
+  "sortOrder": 8,
+  "relatedIds": [
+    "norac-bed",
+    "norac-bedside",
+    "norac-tv"
+  ]
+}

@@ -34,3 +34,35 @@ All repository modification batches must receive a dated entry here. State what 
 - Checked local Markdown links, balanced code fences, final newlines, valid DESIGN.md YAML frontmatter and the single preserved Next.js managed instruction block.
 - `git diff --check` passed. Only AGENTS.md, PLAN.md, DESIGN.md and CHANGELOGS.md are changed/new; application files and the lockfile are unchanged.
 - Completed the planning-review checkbox. User approval and all implementation/website-verification tasks remain pending. No application tests or build were run for these documentation-only changes.
+
+### Approved implementation — foundation
+
+- Recorded user approval and began the twelve implementation phases.
+- Moved application folders into `src/` and updated TypeScript/shadcn paths together.
+- Rechecked installed framework and Pages Router guides. Application validation follows after the foundation is connected.
+
+### Content, shared UI and page implementation
+
+- Added structured bilingual JSON, 12 sourced products, three collections, the Cyprus contact record, five editorial topics and two unpublished article drafts. Recorded the user-confirmed production origin.
+- Added build-time content loaders, localized-slug resolution, provider-owned Zustand state and explicit next-i18next Pages configuration.
+- Generated design tokens from DESIGN.md, installed shadcn input/native-select/breadcrumb/separator, and composed native overlays, gallery and filters.
+- Implemented landing, contact, catalog, collection/product details, editorial pages, errors, blog templates, build-only MDX and page-specific SEO.
+- Verification in progress: initial typecheck/build and content tests follow. Blog publication credits and international telephone target remain unconfirmed.
+
+### Verification and refinements
+
+- Production build generates 50 published Turkish/English routes; 17 content, route, filter, serialization and MDX tests pass.
+- HTTP audit passed all routes: unique titles, canonical/reciprocal alternates, language, initial-head schema, internal links, no commerce payload, real 404/500 statuses.
+- Scoped build filesystem reads to content/locales directories to eliminate a whole-project tracing warning; ESLint and TypeScript are clean.
+- Verified native mobile filters, locale switching, gallery arrows/Escape/focus return. Checked 78 responsive route/width combinations without document overflow or broken visible images.
+- Corrected Marn image dimensions and showroom alt text. Replaced a Turkish promotional product image with a text-free fabric detail. Added newly verified showroom coordinates from the official source record.
+- Measured representative initial JavaScript at 170–186 KB gzip; optimized hero responses are 11 KB at 640px and 65 KB at 1920px (AVIF). These are transfer measurements, not Lighthouse or field Core Web Vitals.
+
+### Final implementation handoff
+
+- Added strict site/contact validation, generated 12 editor schemas, checked literal UI translation keys in both languages and made product descriptions unique for SEO.
+- Verified Turkish search/reset, browser back/forward, translated product routes and gallery reset. Retained the confirmed production domain, preview noindex and two unpublished MDX articles awaiting author/date details.
+- Formatted application code and documented run commands, JSON editing, publishing, design adaptations and verification limits in README.md, AGENTS.md, DESIGN.md, PLAN.md and reports/verification.md.
+- Final verification: production build, TypeScript, clean ESLint, 18 focused tests and formatting pass. A fresh production-server crawl passed all 50 routes, including unique titles/descriptions, localized links and head schema. All 30 assets passed response/dimension checks.
+- Remaining release QA is explicitly unchecked in PLAN.md. No deployment or indexing change was made.
+- Opened the verified local production preview for review and linked the handoff evidence.

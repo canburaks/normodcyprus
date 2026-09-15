@@ -1,0 +1,28 @@
+{
+  "id": "norac-bedside",
+  "isPublished": true,
+  "categoryId": "bedroom",
+  "materialIds": [
+    "oak"
+  ],
+  "collectionIds": [
+    "norac"
+  ],
+  "galleryAssetIds": [
+    "norac-bedside-1",
+    "norac-bedside-2"
+  ],
+  "dimensions": {
+    "width": 53.1,
+    "depth": 97.0,
+    "height": 76.0
+  },
+  "source": "https://normod.com/products/norac-komodin",
+  "verifiedAt": "2026-09-15",
+  "sortOrder": 7,
+  "relatedIds": [
+    "norac-bed",
+    "norac-dresser",
+    "norac-tv"
+  ]
+}

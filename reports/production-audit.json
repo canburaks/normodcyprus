@@ -1,0 +1,41 @@
+{
+  "routes": 50,
+  "errors": [],
+  "errorStatuses": {
+    "/does-not-exist": 404,
+    "/en/does-not-exist": 404,
+    "/products/missing": 404,
+    "/500": 500,
+    "/en/500": 500
+  },
+  "bundles": {
+    "/": {
+      "gzipJsKB": 171.7,
+      "initialHtmlKB": 56.5
+    },
+    "/us/contact": {
+      "gzipJsKB": 174.8,
+      "initialHtmlKB": 27.0
+    },
+    "/products": {
+      "gzipJsKB": 186.3,
+      "initialHtmlKB": 102.2
+    },
+    "/products/klem-uclu-koltuk": {
+      "gzipJsKB": 179.9,
+      "initialHtmlKB": 58.0
+    },
+    "/collections": {
+      "gzipJsKB": 170.0,
+      "initialHtmlKB": 31.4
+    },
+    "/us/neden-normod": {
+      "gzipJsKB": 173.0,
+      "initialHtmlKB": 27.9
+    },
+    "/blog": {
+      "gzipJsKB": 169.8,
+      "initialHtmlKB": 21.1
+    }
+  }
+}

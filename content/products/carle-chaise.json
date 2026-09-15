@@ -1,0 +1,23 @@
+{
+  "id": "carle-chaise",
+  "isPublished": true,
+  "categoryId": "seating",
+  "materialIds": [
+    "texture"
+  ],
+  "collectionIds": [
+    "carle"
+  ],
+  "galleryAssetIds": [
+    "carle-chaise-1",
+    "carle-chaise-2"
+  ],
+  "dimensions": {},
+  "source": "https://normod.com/products/carle-uclu-koltuk-cift-kollu-ve-puf-dogal-doku",
+  "verifiedAt": "2026-09-15",
+  "sortOrder": 4,
+  "relatedIds": [
+    "carle-set",
+    "carle-three"
+  ]
+}

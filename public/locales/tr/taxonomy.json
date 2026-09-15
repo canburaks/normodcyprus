@@ -1,0 +1,15 @@
+{
+  "categories": {
+    "seating": "Koltuklar",
+    "bedroom": "Yatak odası",
+    "tables": "Sehpalar",
+    "storage": "Depolama"
+  },
+  "materials": {
+    "velvet": "Kadife",
+    "boucle": "Bukle",
+    "texture": "Doğal doku",
+    "oak": "Meşe",
+    "lacquer": "Lake"
+  }
+}

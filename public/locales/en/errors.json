@@ -1,0 +1,12 @@
+{
+  "404": {
+    "eyebrow": "404",
+    "title": "This page has moved on.",
+    "description": "The page you are looking for may have moved. Start again from our home page."
+  },
+  "500": {
+    "eyebrow": "500",
+    "title": "A little pause.",
+    "description": "We cannot display this page right now. Please try again in a moment."
+  }
+}

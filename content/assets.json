@@ -1,0 +1,272 @@
+{
+  "logo": {
+    "id": "logo",
+    "kind": "remote",
+    "src": "https://normod.com/cdn/shop/files/normod-logo.png?v=1762847820&width=800",
+    "width": 432,
+    "height": 90,
+    "isPlaceholder": false,
+    "source": "https://normod.com"
+  },
+  "showroom": {
+    "id": "showroom",
+    "kind": "remote",
+    "src": "https://normod.com/cdn/shop/files/kibris.png?v=1769436522&width=1200",
+    "width": 1020,
+    "height": 573,
+    "isPlaceholder": false,
+    "source": "https://normod.com/pages/showroom-detail?handle=lefkosa-deneyim-merkezi"
+  },
+  "living-room": {
+    "id": "living-room",
+    "kind": "remote",
+    "src": "https://normod.com/cdn/shop/files/hp_banner_9e3aea42-1938-4474-b0ef-38fc35eb1d5f.png?v=1782482878&width=2400",
+    "width": 1968,
+    "height": 821,
+    "isPlaceholder": true,
+    "source": "https://normod.com"
+  },
+  "comfort": {
+    "id": "comfort",
+    "kind": "remote",
+    "src": "https://normod.com/cdn/shop/files/preview_images/70412e117e4c465a9339da3a8eea024d.thumbnail.0000000000.jpg?v=1764679287&width=1920",
+    "width": 1920,
+    "height": 1080,
+    "isPlaceholder": true,
+    "source": "https://normod.com"
+  },
+  "bedroom": {
+    "id": "bedroom",
+    "kind": "remote",
+    "src": "https://normod.com/cdn/shop/files/Lifestyle_banner-ytk.png?v=1785762160&width=2400",
+    "width": 1968,
+    "height": 821,
+    "isPlaceholder": true,
+    "source": "https://normod.com"
+  },
+  "fallback": {
+    "id": "fallback",
+    "kind": "local",
+    "src": "/images/image-fallback.svg",
+    "width": 1200,
+    "height": 900,
+    "isPlaceholder": false,
+    "source": "https://normod.com"
+  },
+  "klem-three-1": {
+    "id": "klem-three-1",
+    "kind": "remote",
+    "src": "https://normod.com/cdn/shop/files/1_f30f106d-68aa-48d3-9635-4aa8c6e03db5.jpg?v=1784582192",
+    "width": 2000,
+    "height": 1800,
+    "isPlaceholder": true,
+    "source": "https://normod.com/products/klem-uclu-koltuk-ahsap-ayak-kadife"
+  },
+  "klem-three-2": {
+    "id": "klem-three-2",
+    "kind": "remote",
+    "src": "https://normod.com/cdn/shop/files/klem_uclu_cagla_rahat_konik_acik_2.jpg?v=1760042789",
+    "width": 3000,
+    "height": 2700,
+    "isPlaceholder": true,
+    "source": "https://normod.com/products/klem-uclu-koltuk-ahsap-ayak-kadife"
+  },
+  "klem-two-1": {
+    "id": "klem-two-1",
+    "kind": "remote",
+    "src": "https://normod.com/cdn/shop/products/geceMavisi_ceviz_1540_klor2_result-883503.jpg?v=1699258385",
+    "width": 1800,
+    "height": 932,
+    "isPlaceholder": true,
+    "source": "https://normod.com/products/klem-ikili-koltuk-ahsap-ayak-kadife"
+  },
+  "klem-two-2": {
+    "id": "klem-two-2",
+    "kind": "remote",
+    "src": "https://normod.com/cdn/shop/products/klemikiligecemavisiceviz-486759.jpg?v=1699258385",
+    "width": 1800,
+    "height": 932,
+    "isPlaceholder": true,
+    "source": "https://normod.com/products/klem-ikili-koltuk-ahsap-ayak-kadife"
+  },
+  "klem-armchair-1": {
+    "id": "klem-armchair-1",
+    "kind": "remote",
+    "src": "https://normod.com/cdn/shop/products/640_klor2_klem_ahsap_mese_ekru_sonuc-225556.png?v=1788163825",
+    "width": 1210,
+    "height": 933,
+    "isPlaceholder": true,
+    "source": "https://normod.com/products/klem-tekli-koltuk-ahsap-ayak-kadife"
+  },
+  "klem-armchair-2": {
+    "id": "klem-armchair-2",
+    "kind": "remote",
+    "src": "https://normod.com/cdn/shop/products/klemtekli2-147860.jpg?v=1678794413",
+    "width": 1800,
+    "height": 932,
+    "isPlaceholder": true,
+    "source": "https://normod.com/products/klem-tekli-koltuk-ahsap-ayak-kadife"
+  },
+  "carle-set-1": {
+    "id": "carle-set-1",
+    "kind": "remote",
+    "src": "https://normod.com/cdn/shop/files/001f_sonuc.png?v=1725275229",
+    "width": 1800,
+    "height": 932,
+    "isPlaceholder": true,
+    "source": "https://normod.com/products/carle-deniz-kopugu-uclu-sol-kollu-ve-puf-koltuk-takimi"
+  },
+  "carle-set-2": {
+    "id": "carle-set-2",
+    "kind": "remote",
+    "src": "https://normod.com/cdn/shop/files/005_sonuc.png?v=1725275229",
+    "width": 1800,
+    "height": 932,
+    "isPlaceholder": true,
+    "source": "https://normod.com/products/carle-deniz-kopugu-uclu-sol-kollu-ve-puf-koltuk-takimi"
+  },
+  "carle-chaise-1": {
+    "id": "carle-chaise-1",
+    "kind": "remote",
+    "src": "https://normod.com/cdn/shop/files/53_f73056d0-4f34-4275-b79e-0330b264c4e3.jpg?v=1743162698",
+    "width": 2500,
+    "height": 1295,
+    "isPlaceholder": true,
+    "source": "https://normod.com/products/carle-uclu-koltuk-cift-kollu-ve-puf-dogal-doku"
+  },
+  "carle-chaise-2": {
+    "id": "carle-chaise-2",
+    "kind": "remote",
+    "src": "https://normod.com/cdn/shop/files/54_80baa854-9d39-4aed-a404-c2f3d45c4c2b.jpg?v=1743162698",
+    "width": 2500,
+    "height": 1295,
+    "isPlaceholder": true,
+    "source": "https://normod.com/products/carle-uclu-koltuk-cift-kollu-ve-puf-dogal-doku"
+  },
+  "carle-three-1": {
+    "id": "carle-three-1",
+    "kind": "remote",
+    "src": "https://normod.com/cdn/shop/files/1_a75ecdbf-1116-4eeb-935f-ac08551722a6.jpg?v=1742975682",
+    "width": 2500,
+    "height": 1295,
+    "isPlaceholder": true,
+    "source": "https://normod.com/products/carle-uclu-koltuk-cift-kollu-kadife"
+  },
+  "carle-three-2": {
+    "id": "carle-three-2",
+    "kind": "remote",
+    "src": "https://normod.com/cdn/shop/files/2_51111647-2f9a-4b54-8da7-84cd572bf4b3.jpg?v=1742975682",
+    "width": 2500,
+    "height": 1295,
+    "isPlaceholder": true,
+    "source": "https://normod.com/products/carle-uclu-koltuk-cift-kollu-kadife"
+  },
+  "norac-bed-1": {
+    "id": "norac-bed-1",
+    "kind": "remote",
+    "src": "https://normod.com/cdn/shop/files/52343917183343_10_4091b1ea-cabb-4452-840c-c9de8bc1d777.webp?v=1780650468",
+    "width": 1800,
+    "height": 1565,
+    "isPlaceholder": true,
+    "source": "https://normod.com/products/norac-ahsap-karyola"
+  },
+  "norac-bed-2": {
+    "id": "norac-bed-2",
+    "kind": "remote",
+    "src": "https://normod.com/cdn/shop/files/12_41e37e13-6922-483c-bc8a-c522ffc4a963.jpg?v=1781172524",
+    "width": 1195,
+    "height": 751,
+    "isPlaceholder": true,
+    "source": "https://normod.com/products/norac-ahsap-karyola"
+  },
+  "norac-bedside-1": {
+    "id": "norac-bedside-1",
+    "kind": "remote",
+    "src": "https://normod.com/cdn/shop/files/1_68776d19-9178-4ba4-8e84-8d612958b935.jpg?v=1763044944",
+    "width": 1800,
+    "height": 932,
+    "isPlaceholder": true,
+    "source": "https://normod.com/products/norac-komodin"
+  },
+  "norac-bedside-2": {
+    "id": "norac-bedside-2",
+    "kind": "remote",
+    "src": "https://normod.com/cdn/shop/files/1_7735b96b-15de-4bc8-bbf0-4a9d44d06577.jpg?v=1763045299",
+    "width": 1800,
+    "height": 932,
+    "isPlaceholder": true,
+    "source": "https://normod.com/products/norac-komodin"
+  },
+  "norac-dresser-1": {
+    "id": "norac-dresser-1",
+    "kind": "remote",
+    "src": "https://normod.com/cdn/shop/files/1_fe84b290-78e6-4fc2-8fa7-d37529ab0179.jpg?v=1763041465",
+    "width": 1800,
+    "height": 932,
+    "isPlaceholder": true,
+    "source": "https://normod.com/products/norac-sifonyer"
+  },
+  "norac-dresser-2": {
+    "id": "norac-dresser-2",
+    "kind": "remote",
+    "src": "https://normod.com/cdn/shop/files/5_4b67ac79-6c27-41c2-a6cc-530565221d36.jpg?v=1763041516",
+    "width": 1800,
+    "height": 932,
+    "isPlaceholder": true,
+    "source": "https://normod.com/products/norac-sifonyer"
+  },
+  "norac-tv-1": {
+    "id": "norac-tv-1",
+    "kind": "remote",
+    "src": "https://normod.com/cdn/shop/files/5_6d9a2664-af71-4ed9-82b4-1a1912e4a275.jpg?v=1763033576",
+    "width": 1800,
+    "height": 932,
+    "isPlaceholder": true,
+    "source": "https://normod.com/products/norac-tv-unitesi"
+  },
+  "norac-tv-2": {
+    "id": "norac-tv-2",
+    "kind": "remote",
+    "src": "https://normod.com/cdn/shop/files/5_38561c60-75e7-4a4d-815a-64d776a23f29.jpg?v=1763033588",
+    "width": 1800,
+    "height": 932,
+    "isPlaceholder": true,
+    "source": "https://normod.com/products/norac-tv-unitesi"
+  },
+  "norac-tables-1": {
+    "id": "norac-tables-1",
+    "kind": "remote",
+    "src": "https://normod.com/cdn/shop/files/2_b1bf1e9a-5771-4c11-af5a-66713c76f5dc.jpg?v=1754298296",
+    "width": 3000,
+    "height": 1555,
+    "isPlaceholder": true,
+    "source": "https://normod.com/products/norac-masif-mese-uclu-sehpa-takimi"
+  },
+  "norac-tables-2": {
+    "id": "norac-tables-2",
+    "kind": "remote",
+    "src": "https://normod.com/cdn/shop/files/1_93cd7df9-aaa5-4ba2-9c35-ec84bdec2491.jpg?v=1754298296",
+    "width": 3000,
+    "height": 1555,
+    "isPlaceholder": true,
+    "source": "https://normod.com/products/norac-masif-mese-uclu-sehpa-takimi"
+  },
+  "marn-table-1": {
+    "id": "marn-table-1",
+    "kind": "remote",
+    "src": "https://normod.com/cdn/shop/files/marn_lake_koyu.jpg?v=1782467098",
+    "width": 3450,
+    "height": 3000,
+    "isPlaceholder": true,
+    "source": "https://normod.com/products/marn-lake-orta-sehpa"
+  },
+  "marn-table-2": {
+    "id": "marn-table-2",
+    "kind": "remote",
+    "src": "https://normod.com/cdn/shop/files/marn_lake_acik.jpg?v=1782467081",
+    "width": 3450,
+    "height": 3000,
+    "isPlaceholder": true,
+    "source": "https://normod.com/products/marn-lake-orta-sehpa"
+  }
+}

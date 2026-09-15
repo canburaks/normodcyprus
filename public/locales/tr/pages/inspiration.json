@@ -1,0 +1,24 @@
+{
+  "slug": "ilham-al-ve-kesfet",
+  "name": "İlham al ve keşfet",
+  "title": "Evin, senin bakış açın.",
+  "description": "Bir odanın nasıl görünmesini istediğinden önce, orada nasıl yaşadığını düşün. Birlikte film izlemek, okumak ya da misafir ağırlamak… Yerleşimin bu anlara alan açsın.",
+  "sections": {
+    "section-1": {
+      "title": "Büyük resimden başla.",
+      "body": "Bir odanın nasıl görünmesini istediğinden önce, orada nasıl yaşadığını düşün. Birlikte film izlemek, okumak ya da misafir ağırlamak… Yerleşimin bu anlara alan açsın."
+    },
+    "section-2": {
+      "title": "Renkleri birlikte düşün.",
+      "body": "Bir ana ton seç, farklı dokularla derinlik kat. Ahşabın sıcaklığı, kumaşın yüzeyi ve gün ışığı aynı rengi farklı gösterebilir. Sevdiğin parçaları bir araya getirirken bu değişime yer bırak."
+    },
+    "section-3": {
+      "title": "Küçük bir boşluk, büyük bir fark.",
+      "body": "Her köşeyi doldurmak zorunda değilsin. Koltukların arasında rahatça yürüyebilmek ve pencere önünü açık tutmak, yaşam alanının nefes almasını sağlar."
+    }
+  },
+  "seo": {
+    "title": "İlham al ve keşfet | Normod Kıbrıs",
+    "description": "Bir odanın nasıl görünmesini istediğinden önce, orada nasıl yaşadığını düşün. Birlikte film izlemek, okumak ya da misafir ağırlamak… Yerleşimin bu anlara alan açsın."
+  }
+}

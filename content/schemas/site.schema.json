@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "type": "number",
+      "const": 1
+    },
+    "locales": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "type": "string",
+          "const": "tr"
+        },
+        {
+          "type": "string",
+          "const": "en"
+        }
+      ],
+      "items": false,
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "defaultLocale": {
+      "type": "string",
+      "const": "tr"
+    },
+    "localeDetection": {
+      "type": "boolean",
+      "const": false
+    },
+    "origin": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uri"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "previewOrigin": {
+      "type": "string",
+      "format": "uri"
+    },
+    "isIndexable": {
+      "type": "boolean"
+    },
+    "brandId": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "logoAssetId": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "fallbackAssetId": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "socialAssetId": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "faviconAssetId": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "sourceOrigin": {
+      "type": "string",
+      "format": "uri"
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "locales",
+    "defaultLocale",
+    "localeDetection",
+    "origin",
+    "previewOrigin",
+    "isIndexable",
+    "brandId",
+    "logoAssetId",
+    "fallbackAssetId",
+    "socialAssetId",
+    "faviconAssetId",
+    "sourceOrigin"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,28 @@
+{
+  "id": "norac-tv",
+  "isPublished": true,
+  "categoryId": "storage",
+  "materialIds": [
+    "oak"
+  ],
+  "collectionIds": [
+    "norac"
+  ],
+  "galleryAssetIds": [
+    "norac-tv-1",
+    "norac-tv-2"
+  ],
+  "dimensions": {
+    "width": 150.0,
+    "depth": 46.6,
+    "height": 59.0
+  },
+  "source": "https://normod.com/products/norac-tv-unitesi",
+  "verifiedAt": "2026-09-15",
+  "sortOrder": 9,
+  "relatedIds": [
+    "norac-bed",
+    "norac-bedside",
+    "norac-dresser"
+  ]
+}

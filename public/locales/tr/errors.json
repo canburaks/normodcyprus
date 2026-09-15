@@ -1,0 +1,12 @@
+{
+  "404": {
+    "eyebrow": "404",
+    "title": "Bu sayfa yerinde değil.",
+    "description": "Aradığın sayfa taşınmış olabilir. Yeni bir başlangıç için ana sayfaya dön."
+  },
+  "500": {
+    "eyebrow": "500",
+    "title": "Kısa bir mola.",
+    "description": "Sayfayı şu anda görüntüleyemiyoruz. Lütfen biraz sonra tekrar dene."
+  }
+}

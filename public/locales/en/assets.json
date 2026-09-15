@@ -1,0 +1,92 @@
+{
+  "logo": {
+    "alt": "Normod"
+  },
+  "showroom": {
+    "alt": "The entrance to the Normod Cyprus experience centre"
+  },
+  "living-room": {
+    "alt": "A light sofa and dark coffee table in a warm-toned living room"
+  },
+  "comfort": {
+    "alt": "A living space with a light modular sofa and wooden tables"
+  },
+  "bedroom": {
+    "alt": "A bedroom in natural tones with wooden bedside tables"
+  },
+  "fallback": {
+    "alt": "Image coming soon"
+  },
+  "klem-three-1": {
+    "alt": "Klem three-seat sofa — front view"
+  },
+  "klem-three-2": {
+    "alt": "Pale green velvet upholstery and seam detail on the Klem three-seat sofa"
+  },
+  "klem-two-1": {
+    "alt": "Klem two-seat sofa — front view"
+  },
+  "klem-two-2": {
+    "alt": "Klem two-seat sofa — alternate view"
+  },
+  "klem-armchair-1": {
+    "alt": "Klem armchair — front view"
+  },
+  "klem-armchair-2": {
+    "alt": "Klem armchair — alternate view"
+  },
+  "carle-set-1": {
+    "alt": "Carle sofa & pouffe — front view"
+  },
+  "carle-set-2": {
+    "alt": "Carle sofa & pouffe — alternate view"
+  },
+  "carle-chaise-1": {
+    "alt": "Carle sofa with chaise — front view"
+  },
+  "carle-chaise-2": {
+    "alt": "Carle sofa with chaise — alternate view"
+  },
+  "carle-three-1": {
+    "alt": "Carle three-seat sofa — front view"
+  },
+  "carle-three-2": {
+    "alt": "Carle three-seat sofa — alternate view"
+  },
+  "norac-bed-1": {
+    "alt": "Norac wooden bed — front view"
+  },
+  "norac-bed-2": {
+    "alt": "Norac wooden bed — alternate view"
+  },
+  "norac-bedside-1": {
+    "alt": "Norac oak bedside table — front view"
+  },
+  "norac-bedside-2": {
+    "alt": "Norac oak bedside table — alternate view"
+  },
+  "norac-dresser-1": {
+    "alt": "Norac oak chest of drawers — front view"
+  },
+  "norac-dresser-2": {
+    "alt": "Norac oak chest of drawers — alternate view"
+  },
+  "norac-tv-1": {
+    "alt": "Norac oak TV unit — front view"
+  },
+  "norac-tv-2": {
+    "alt": "Norac oak TV unit — alternate view"
+  },
+  "norac-tables-1": {
+    "alt": "Norac oak nesting tables — front view"
+  },
+  "norac-tables-2": {
+    "alt": "Norac oak nesting tables — alternate view"
+  },
+  "marn-table-1": {
+    "alt": "Marn lacquer coffee table — front view"
+  },
+  "marn-table-2": {
+    "alt": "Marn lacquer coffee table — alternate view"
+  }
+}

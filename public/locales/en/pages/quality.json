@@ -1,0 +1,24 @@
+{
+  "slug": "quality",
+  "name": "Quality",
+  "title": "More than meets the eye.",
+  "description": "The grain of wood, the finish of a joint and the texture of fabric give a design its character. Looking at these details up close is part of getting to know your furniture.",
+  "sections": {
+    "section-1": {
+      "title": "Get to know the material.",
+      "body": "The grain of wood, the finish of a joint and the texture of fabric give a design its character. Looking at these details up close is part of getting to know your furniture."
+    },
+    "section-2": {
+      "title": "Each design has its own construction.",
+      "body": "Frames, fillings and surface materials vary between products. Explore the specifications of your chosen model with our team to find what suits your home."
+    },
+    "section-3": {
+      "title": "Care is part of everyday life.",
+      "body": "The right care depends on the finish and fabric you choose. Ask for model-specific guidance before cleaning; our store team can help."
+    }
+  },
+  "seo": {
+    "title": "Quality | Normod Cyprus",
+    "description": "The grain of wood, the finish of a joint and the texture of fabric give a design its character. Looking at these details up close is part of getting to know your furniture."
+  }
+}

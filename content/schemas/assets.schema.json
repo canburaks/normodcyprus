@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "propertyNames": {
+    "type": "string"
+  },
+  "additionalProperties": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      },
+      "kind": {
+        "type": "string",
+        "enum": [
+          "remote",
+          "local"
+        ]
+      },
+      "src": {
+        "type": "string",
+        "minLength": 1
+      },
+      "width": {
+        "type": "number",
+        "exclusiveMinimum": 0
+      },
+      "height": {
+        "type": "number",
+        "exclusiveMinimum": 0
+      },
+      "isPlaceholder": {
+        "type": "boolean"
+      },
+      "source": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    "required": [
+      "id",
+      "kind",
+      "src",
+      "width",
+      "height",
+      "isPlaceholder",
+      "source"
+    ],
+    "additionalProperties": false
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "home",
+  "heroAssetId": "living-room",
+  "collectionIds": [
+    "klem",
+    "carle",
+    "norac"
+  ],
+  "featuredProductIds": [
+    "klem-three",
+    "carle-three",
+    "norac-bedside",
+    "marn-table"
+  ],
+  "editorialPageId": "fabric-samples",
+  "editorialAssetId": "comfort",
+  "postIds": [
+    "room-to-live",
+    "texture-and-light"
+  ]
+}

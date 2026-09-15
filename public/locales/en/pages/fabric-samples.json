@@ -1,0 +1,24 @@
+{
+  "slug": "fabric-samples",
+  "name": "Meet the fabrics",
+  "title": "It starts with a touch.",
+  "description": "Screens can show colours differently. Looking at a shade in daylight and beside the other materials in your home makes choosing easier.",
+  "sections": {
+    "section-1": {
+      "title": "See colour in your own light.",
+      "body": "Screens can show colours differently. Looking at a shade in daylight and beside the other materials in your home makes choosing easier."
+    },
+    "section-2": {
+      "title": "Every texture has a character.",
+      "body": "Velvet changes with the light, while bouclé has a distinctive textured surface. Explore natural-texture and linen options with our team too."
+    },
+    "section-3": {
+      "title": "Ask us about samples.",
+      "body": "Email us the models and colours you are considering. We will help you discover the fabric and sample options at our Cyprus store."
+    }
+  },
+  "seo": {
+    "title": "Meet the fabrics | Normod Cyprus",
+    "description": "Screens can show colours differently. Looking at a shade in daylight and beside the other materials in your home makes choosing easier."
+  }
+}

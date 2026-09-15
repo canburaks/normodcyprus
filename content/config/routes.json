@@ -1,0 +1,10 @@
+{
+  "home": "/",
+  "products": "/products",
+  "collections": "/collections",
+  "blog": "/blog",
+  "contact": "/us/contact",
+  "editorial": "/us",
+  "notFound": "/404",
+  "serverError": "/500"
+}

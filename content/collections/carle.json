@@ -1,0 +1,11 @@
+{
+  "id": "carle",
+  "isPublished": true,
+  "heroAssetId": "comfort",
+  "featuredProductIds": [
+    "carle-set",
+    "carle-chaise",
+    "carle-three"
+  ],
+  "source": "https://normod.com/collections/carle-koleksiyonu"
+}

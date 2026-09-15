@@ -1,0 +1,18 @@
+{
+  "locales": [
+    "tr",
+    "en"
+  ],
+  "defaultLocale": "tr",
+  "localeDetection": false,
+  "origin": "https://www.normodcyprus.com",
+  "previewOrigin": "http://localhost:3000",
+  "isIndexable": false,
+  "brandId": "normod",
+  "logoAssetId": "logo",
+  "fallbackAssetId": "fallback",
+  "socialAssetId": "living-room",
+  "sourceOrigin": "https://normod.com",
+  "faviconAssetId": "logo",
+  "schemaVersion": 1
+}

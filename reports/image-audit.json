@@ -1,0 +1,32 @@
+[
+  {
+    "case": "mobile-hero",
+    "width": 640,
+    "type": "image/avif",
+    "bytes": 11170
+  },
+  {
+    "case": "desktop-hero",
+    "width": 1920,
+    "type": "image/avif",
+    "bytes": 64537
+  },
+  {
+    "case": "mobile-contact",
+    "width": 640,
+    "type": "image/avif",
+    "bytes": 13153
+  },
+  {
+    "case": "product-card",
+    "width": 384,
+    "type": "image/avif",
+    "bytes": 2130
+  },
+  {
+    "case": "product-gallery",
+    "width": 1080,
+    "type": "image/avif",
+    "bytes": 7133
+  }
+]

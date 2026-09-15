@@ -1,0 +1,92 @@
+{
+  "logo": {
+    "alt": "Normod"
+  },
+  "showroom": {
+    "alt": "Normod Kıbrıs deneyim merkezinin girişi"
+  },
+  "living-room": {
+    "alt": "Sıcak tonlarda bir oturma odasında açık renk koltuk ve koyu sehpa"
+  },
+  "comfort": {
+    "alt": "Açık renk modüler koltuk ve ahşap sehpalı bir yaşam alanı"
+  },
+  "bedroom": {
+    "alt": "Doğal tonlarda yatak odası ve ahşap komodinler"
+  },
+  "fallback": {
+    "alt": "Görsel hazırlanıyor"
+  },
+  "klem-three-1": {
+    "alt": "Klem üçlü koltuk — önden görünüm"
+  },
+  "klem-three-2": {
+    "alt": "Klem üçlü koltuğun açık yeşil kadife döşeme ve dikiş detayı"
+  },
+  "klem-two-1": {
+    "alt": "Klem ikili koltuk — önden görünüm"
+  },
+  "klem-two-2": {
+    "alt": "Klem ikili koltuk — farklı açı"
+  },
+  "klem-armchair-1": {
+    "alt": "Klem tekli koltuk — önden görünüm"
+  },
+  "klem-armchair-2": {
+    "alt": "Klem tekli koltuk — farklı açı"
+  },
+  "carle-set-1": {
+    "alt": "Carle koltuk ve puf — önden görünüm"
+  },
+  "carle-set-2": {
+    "alt": "Carle koltuk ve puf — farklı açı"
+  },
+  "carle-chaise-1": {
+    "alt": "Carle uzanmalı koltuk — önden görünüm"
+  },
+  "carle-chaise-2": {
+    "alt": "Carle uzanmalı koltuk — farklı açı"
+  },
+  "carle-three-1": {
+    "alt": "Carle üçlü koltuk — önden görünüm"
+  },
+  "carle-three-2": {
+    "alt": "Carle üçlü koltuk — farklı açı"
+  },
+  "norac-bed-1": {
+    "alt": "Norac ahşap karyola — önden görünüm"
+  },
+  "norac-bed-2": {
+    "alt": "Norac ahşap karyola — farklı açı"
+  },
+  "norac-bedside-1": {
+    "alt": "Norac meşe komodin — önden görünüm"
+  },
+  "norac-bedside-2": {
+    "alt": "Norac meşe komodin — farklı açı"
+  },
+  "norac-dresser-1": {
+    "alt": "Norac meşe şifonyer — önden görünüm"
+  },
+  "norac-dresser-2": {
+    "alt": "Norac meşe şifonyer — farklı açı"
+  },
+  "norac-tv-1": {
+    "alt": "Norac meşe TV ünitesi — önden görünüm"
+  },
+  "norac-tv-2": {
+    "alt": "Norac meşe TV ünitesi — farklı açı"
+  },
+  "norac-tables-1": {
+    "alt": "Norac üçlü sehpa — önden görünüm"
+  },
+  "norac-tables-2": {
+    "alt": "Norac üçlü sehpa — farklı açı"
+  },
+  "marn-table-1": {
+    "alt": "Marn lake orta sehpa — önden görünüm"
+  },
+  "marn-table-2": {
+    "alt": "Marn lake orta sehpa — farklı açı"
+  }
+}

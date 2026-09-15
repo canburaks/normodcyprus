@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "isPublished": {
+      "type": "boolean"
+    },
+    "heroAssetId": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "featuredProductIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      }
+    },
+    "source": {
+      "type": "string",
+      "format": "uri"
+    }
+  },
+  "required": [
+    "id",
+    "isPublished",
+    "heroAssetId",
+    "featuredProductIds",
+    "source"
+  ],
+  "additionalProperties": false
+}

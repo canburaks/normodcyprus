@@ -1,0 +1,24 @@
+{
+  "slug": "kumas-numunesi-iste",
+  "name": "Kumaşlarla tanış",
+  "title": "Bir dokunuşla başlar.",
+  "description": "Ekranlar renkleri farklı gösterebilir. Beğendiğin tonları gün ışığında ve evindeki diğer malzemelerle birlikte değerlendirmek, seçimini kolaylaştırır.",
+  "sections": {
+    "section-1": {
+      "title": "Rengi kendi ışığında gör.",
+      "body": "Ekranlar renkleri farklı gösterebilir. Beğendiğin tonları gün ışığında ve evindeki diğer malzemelerle birlikte değerlendirmek, seçimini kolaylaştırır."
+    },
+    "section-2": {
+      "title": "Dokuların karakteri.",
+      "body": "Kadife ışığa göre değişen bir yüzey sunarken, bukle belirgin dokusuyla öne çıkar. Doğal doku ve keten seçeneklerini de mağazada birlikte inceleyebiliriz."
+    },
+    "section-3": {
+      "title": "Numune seçeneklerini bize sor.",
+      "body": "İlgilendiğin model ve renkleri e-posta ile paylaş. Kıbrıs mağazamızdaki kumaş ve numune seçenekleri hakkında sana bilgi verelim."
+    }
+  },
+  "seo": {
+    "title": "Kumaşlarla tanış | Normod Kıbrıs",
+    "description": "Ekranlar renkleri farklı gösterebilir. Beğendiğin tonları gün ışığında ve evindeki diğer malzemelerle birlikte değerlendirmek, seçimini kolaylaştırır."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "room-to-live",
+  "isPublished": false,
+  "coverAssetId": "living-room",
+  "authorId": null,
+  "publishedAt": null,
+  "relatedProductIds": [
+    "klem-three",
+    "carle-three"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "carle-set",
+  "isPublished": true,
+  "categoryId": "seating",
+  "materialIds": [
+    "boucle"
+  ],
+  "collectionIds": [
+    "carle"
+  ],
+  "galleryAssetIds": [
+    "carle-set-1",
+    "carle-set-2"
+  ],
+  "dimensions": {},
+  "source": "https://normod.com/products/carle-deniz-kopugu-uclu-sol-kollu-ve-puf-koltuk-takimi",
+  "verifiedAt": "2026-09-15",
+  "sortOrder": 3,
+  "relatedIds": [
+    "carle-chaise",
+    "carle-three"
+  ]
+}

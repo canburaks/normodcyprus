@@ -1,0 +1,41 @@
+{
+  "title": "Yaşamına yer aç.",
+  "description": "Evinin ritmine eşlik eden koltuklar, doğal dokular ve düşünülmüş detaylar.",
+  "seo": {
+    "title": "Ürünler | Normod Kıbrıs",
+    "description": "Normod koltuk, yatak odası, sehpa ve depolama tasarımlarını keşfet. Kıbrıs mağazamızda kumaş ve modellerle tanış."
+  },
+  "search": "Ürün ara",
+  "searchPlaceholder": "Bir model ya da doku…",
+  "searchAction": "Ara",
+  "category": "Kategori",
+  "collection": "Koleksiyon",
+  "material": "Malzeme",
+  "sort": "Sıralama",
+  "all": "Tümü",
+  "featured": "Seçtiklerimiz",
+  "alphabetical": "Ada göre, A–Z",
+  "count_one": "{{count}} tasarım",
+  "count_other": "{{count}} tasarım",
+  "emptyTitle": "Henüz bir eşleşme yok.",
+  "emptyText": "Farklı bir kelime dene veya filtreleri kaldır.",
+  "reset": "Filtreleri temizle",
+  "filters": "Filtrele",
+  "apply": "Ürünleri göster",
+  "details": "Tasarım detayları",
+  "dimensions": "Ölçüler",
+  "width": "Genişlik",
+  "depth": "Derinlik",
+  "height": "Yükseklik",
+  "unit": "cm",
+  "care": "Bakım",
+  "inquire": "Bu ürünü sor",
+  "availability": "Mağazadaki model ve kumaş seçenekleri için bize ulaş.",
+  "collectionsTitle": "Birlikte düşünülmüş.",
+  "collectionsDescription": "Farklı karakterler, ortak bir tasarım anlayışı. Sana ait bir yaşam alanı için koleksiyonlarımızı keşfet.",
+  "collectionsSeo": {
+    "title": "Koleksiyonlar | Normod Kıbrıs",
+    "description": "Klem, Carle ve Norac koleksiyonları: oturma odasından yatak odasına Normod tasarımları."
+  },
+  "results": "Tasarım seçkisi"
+}

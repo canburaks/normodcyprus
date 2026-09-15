@@ -2,9 +2,9 @@
 
 ## 1. Status, scope, and approval
 
-**Status: research complete; implementation proposal ready for review. Website implementation awaits the user's explicit approval of this plan.**
+**Status: approved implementation completed for local review, 2026-09-15. Release QA and owner-supplied publication details remain tracked below.**
 
-This task changes documentation only. After approval, begin Phase 1 below. A request to continue research is not approval to implement before the completed plan has been reviewed.
+Implement all twelve phases below. Release-specific unknowns remain tracked separately.
 
 **Confirmed clarification, 2026-09-15:** use Next.js Pages Router; **static export is not required**. Content pages will be generated at build time and served by the normal Next.js runtime. Do not add `output: 'export'`, a manual `[locale]` route tree, or App Router.
 
@@ -20,7 +20,7 @@ This task changes documentation only. After approval, begin Phase 1 below. A req
 - [x] Record API changes, source links, content constraints, and handoff rules in AGENTS.md.
 - [x] Define architecture, data contracts, routes, delivery phases and acceptance criteria below.
 - [x] Verify final consistency of all four documents and prepare them for approval review.
-- [ ] Receive explicit approval of the completed plan.
+- [x] Receive explicit approval of the completed plan.
 
 ### Outcome and priorities
 
@@ -59,7 +59,7 @@ These do not block implementation after approval. Use the interim behavior rathe
 
 | Item | Evidence | Interim behavior / release requirement |
 | --- | --- | --- |
-| Final domain | Store email uses normodcyprus.com | Domain is not confirmed by email; keep preview noindex and require production origin before release |
+| Final domain | User confirmed https://www.normodcyprus.com during implementation | Use canonical origin; preview remains noindex until publication |
 | Store contact | Official page supplies address, hours, local phone, email, directions | Seed sourced values; verify current details and international phone target before release |
 | WhatsApp | No Cyprus-specific WhatsApp destination verified | Omit; email, directions and verified phone remain available |
 | Coordinates | Official directions short link exists | Use link; omit `geo` and map embed until coordinates are verified |
@@ -223,21 +223,21 @@ Product membership is owned by `product.collectionIds`. Collection lists are der
 - Shared machine values do not need artificial translation. Their visible labels/presentation do. Code vocabulary such as HTML attributes/schema types, CSS classes, protocols and mandatory framework filenames is implementation syntax.
 - TypeScript constants/enums are for repeated technical IDs, route keys, translation keys and variants; moving prose to constants does not satisfy the JSON requirement.
 - Turkish fallback is resilience; complete English content remains a publication requirement. Build both languages for every published entity.
-- Public locale files are public data. Keep secrets/embargoed drafts out of them; prepublication drafts stay outside `public/` until both languages are ready.
+- Public locale files are public data. Keep secrets/embargoed drafts out of them. The included sample drafts are complete in both languages and safe to read publicly; `isPublished: false` excludes their pages and sitemap entries, not their JSON URLs.
 
 ### 5.5 Validation requirements
 
 Use Zod as the single schema source, infer TypeScript types from it, and generate JSON Schema for editor assistance. Do not hand-maintain three competing schema/type definitions. Keep validation tools out of client bundles.
 
-- [ ] Validate schema versions, shapes, unique IDs and mandatory fields.
-- [ ] Require both languages and all text/SEO/alt keys for published records.
-- [ ] Reject empty required translations, duplicate locale/route slugs and reserved-slug collisions.
-- [ ] Validate all navigation, section, taxonomy, product, collection, post and asset references.
-- [ ] Reject commerce fields and unsupported stock/rating claims in publishable records.
-- [ ] Validate safe HTTPS/public asset paths, allowed URI schemes, dimensions and path traversal prevention.
-- [ ] Validate opening-hour intervals, real dates and article update/publication ordering.
-- [ ] Validate section types and MDX component names/attributes before compilation.
-- [ ] Return filename + JSON path + locale in actionable errors; fail the build on invalid content.
+- [x] Validate the global schema version, record shapes, product/asset ID consistency, route uniqueness and mandatory fields.
+- [x] Require both languages and all text/SEO/alt keys for published records; audit literal UI translation keys in both namespaces.
+- [x] Reject empty required entity translations, duplicate locale/route slugs and reserved-slug collisions.
+- [x] Validate navigation, section, taxonomy, product, collection, post and asset references.
+- [x] Reject commerce fields and unsupported stock/rating fields in publishable records; audit rendered payloads as well.
+- [x] Validate safe HTTPS/public asset paths, allowed URI schemes, dimensions and path traversal prevention.
+- [x] Validate opening-hour intervals, real dates and required article publication details. An article update date is not currently supported; strict schemas reject extra fields.
+- [x] Validate section types and MDX component names/attributes before compilation.
+- [x] Fail builds with actionable content errors: schema errors include filename/JSON path (locale is in the filename); reference errors identify the affected record/ID.
 
 ## 6. Rendering, state and discovery behavior
 
@@ -404,155 +404,156 @@ Targets to measure in production mode, not unverified guarantees:
 
 ## 10. Implementation phases
 
-All tasks below are pending. Complete checkboxes only after output exists and verification passes. Add CHANGELOGS.md entries after each modification batch, including configuration/documentation changes.
+Implementation tasks are tracked below. Complete checkboxes only after output exists and verification passes. Add CHANGELOGS.md entries after each modification batch, including configuration/documentation changes.
 
 ### Phase 1 — Foundation and localization
 
 Dependency: explicit plan approval.
 
-- [ ] Record approval/date at the top of PLAN.md.
-- [ ] Recheck Git status, versions and relevant installed guides.
-- [ ] Move application folders to `src/`; update aliases and shadcn CSS path together.
-- [ ] Replace starter usage and remove demo API route; preserve user assets.
-- [ ] Retain current framework versions, Compiler, Strict Mode and pnpm lock unless a verified compatibility issue requires change.
-- [ ] Add shared JSON site/locale config and next-i18next configuration using v16 Pages imports; pass the `.cjs` config explicitly to appWithTranslation and serverSideTranslations because automatic discovery expects `.js`.
-- [ ] Compose translation and store providers in `_app` without `getInitialProps`.
-- [ ] Configure Turkish default, English prefix, disabled auto-detection and one trailing-slash convention.
-- [ ] Correct document language handling and seed minimal genuine localized UI/page content.
-- [ ] Add static page-data/translation helper and verify both locale HTML outputs and switching with a production build/typecheck.
+- [x] Record approval/date at the top of PLAN.md.
+- [x] Recheck Git status, versions and relevant installed guides.
+- [x] Move application folders to `src/`; update aliases and shadcn CSS path together.
+- [x] Replace starter usage and remove demo API route; preserve user assets.
+- [x] Retain current framework versions, Compiler, Strict Mode and pnpm lock unless a verified compatibility issue requires change.
+- [x] Add shared JSON site/locale config and next-i18next configuration using v16 Pages imports; pass the `.cjs` config explicitly to appWithTranslation and serverSideTranslations because automatic discovery expects `.js`.
+- [x] Compose translation and store providers in `_app` without `getInitialProps`.
+- [x] Configure Turkish default, English prefix, disabled auto-detection and one trailing-slash convention.
+- [x] Correct document language handling and seed minimal genuine localized UI/page content.
+- [x] Add static page-data/translation helper and verify both locale HTML outputs and switching with a production build/typecheck.
 
 ### Phase 2 — Content system and seed data
 
 Dependency: Phase 1.
 
-- [ ] Add Zod schemas/inferred types, generated editor JSON Schema, validation script and actionable error output.
-- [ ] Add route/navigation/taxonomy/asset/store registries and locale-aware loaders.
-- [ ] Implement stable ID/translated-slug resolution and published route enumeration.
-- [ ] Seed official Cyprus details with field-level sources/dates; keep unknowns absent.
-- [ ] Register logo, Cyprus photo, reviewed landing/editorial placeholders and fallback; add bilingual alt text.
-- [ ] Curate target 3 verified collection families and 12 real products across at least 3 categories. Record any supported-data shortfall rather than invent products to hit a count.
-- [ ] Add bilingual names/summaries/descriptions; verify specific source before adding measurements/material claims.
-- [ ] Add membership, featured order and related references; validate joins.
-- [ ] Document adding an entity, replacing an image and updating translations.
-- [ ] Test meaningful schema/locale/slug/reference failures and validate seeded content.
+- [x] Add Zod schemas/inferred types, generated editor JSON Schema, validation script and actionable error output.
+- [x] Add route/navigation/taxonomy/asset/store registries and locale-aware loaders.
+- [x] Implement stable ID/translated-slug resolution and published route enumeration.
+- [x] Seed official Cyprus details with field-level sources/dates; keep unknowns absent.
+- [x] Register logo, Cyprus photo, reviewed landing/editorial placeholders and fallback; add bilingual alt text.
+- [x] Curate target 3 verified collection families and 12 real products across at least 3 categories. Record any supported-data shortfall rather than invent products to hit a count.
+- [x] Add bilingual names/summaries/descriptions; verify specific source before adding measurements/material claims.
+- [x] Add membership, featured order and related references; validate joins.
+- [x] Document adding an entity, replacing an image and updating translations.
+- [x] Test meaningful schema/slug/reference failures and validate seeded content/locale parity. Missing locale files fail the build-time reader; no separate fixture mutation test was added.
 
 ### Phase 3 — Tokens and shared UI
 
 Dependency: Phases 1–2.
 
-- [ ] Finalize approved DESIGN.md token values and generate shared CSS variables.
-- [ ] Map tokens to shadcn/Tailwind; remove duplicate starter theme rules and unintended automatic dark mode.
-- [ ] Retain Base UI preset and install only necessary shadcn components with the installed CLI.
-- [ ] Build reusable container/section/heading/media/link and editorial typography primitives.
-- [ ] Build native dialog/popover/select/disclosure adapters with shared styling and translated labels.
-- [ ] Implement asset resolver, responsive image properties, safe fallback and restricted image configuration.
-- [ ] Build header/mobile navigation/language switch/footer from JSON.
-- [ ] Add shared underline/fade/reduced-motion rules with visible no-JS content.
-- [ ] Verify keyboard, Escape, focus return, dismiss behavior, target widths and both languages.
+- [x] Finalize approved DESIGN.md token values and generate shared CSS variables.
+- [x] Map tokens to shadcn/Tailwind; remove duplicate starter theme rules and unintended automatic dark mode.
+- [x] Retain Base UI preset and install only necessary shadcn components with the installed CLI.
+- [x] Build reusable container/section/heading/media/link and editorial typography primitives.
+- [x] Build native dialog/popover/select/disclosure adapters with shared styling and translated labels.
+- [x] Implement asset resolver, responsive image properties, safe fallback and restricted image configuration.
+- [x] Build header/mobile navigation/language switch/footer from JSON.
+- [x] Add shared underline/fade/reduced-motion rules with visible no-JS content.
+- [x] Verify keyboard, Escape, focus return, dismiss behavior, target widths and both languages.
 
 ### Phase 4 — SEO foundation
 
 Dependency: Phases 1–3.
 
-- [ ] Implement canonical/alternate route helpers and typed metadata models.
-- [ ] Implement PageSeo and safely serialized initial-head JSON-LD.
-- [ ] Build shared brand/site/store/breadcrumb and page-type schemas without commerce fields.
-- [ ] Generate sitemap/robots from deployment data and published routes.
-- [ ] Add localized 404/500 content and verify actual error statuses.
-- [ ] Test alternate links, serialization, duplicate-head prevention and language navigation.
+- [x] Implement canonical/alternate route helpers and typed metadata models.
+- [x] Implement PageSeo and safely serialized initial-head JSON-LD.
+- [x] Build shared brand/site/store/breadcrumb and page-type schemas without commerce fields.
+- [x] Generate sitemap/robots from deployment data and published routes.
+- [x] Add localized 404/500 content and verify actual error statuses.
+- [x] Test alternate links, serialization, duplicate-head prevention and language navigation.
 
 ### Phase 5 — Landing and contact (high)
 
 Dependency: Phases 1–4.
 
-- [ ] Add bilingual landing copy, hero and ordered editorial/featured section descriptors.
-- [ ] Build landing composition with varied media proportions and showroom CTA.
-- [ ] Keep the first hero visible immediately and correctly sized with one loading strategy.
-- [ ] Build contact from sourced Cyprus address/hours/photo/directions/email.
-- [ ] Use verified phone target; omit unverified WhatsApp/parking/ratings.
-- [ ] Add home/contact-specific metadata, schema and accessible actions.
-- [ ] Confirm high-priority links work without placeholder `#` actions.
+- [x] Add bilingual landing copy, hero and ordered editorial/featured section descriptors.
+- [x] Build landing composition with varied media proportions and showroom CTA.
+- [x] Keep the first hero visible immediately and correctly sized with one loading strategy.
+- [x] Build contact from sourced Cyprus address/hours/photo/directions/email.
+- [ ] Use verified international phone target. Official local number is displayed; phoneHref is null. WhatsApp/parking/ratings are omitted.
+- [x] Add home/contact-specific metadata, schema and accessible actions.
+- [x] Confirm high-priority links work without placeholder `#` actions.
 - [ ] Review target widths, keyboard, reduced motion and no-JS reading/contact behavior.
-- [ ] Measure production performance and correct major loading/layout issues.
+- [ ] Complete production Lighthouse/Core Web Vitals measurement. Initial JS and optimized image transfers were measured and meet the stated byte budgets; detailed results are in reports/verification.md.
 
 ### Phase 6 — Collections (medium)
 
-- [ ] Build collection cards/listing and detail story/hero/member grid.
-- [ ] Generate every published collection slug/locale with fallback false.
-- [ ] Add collection-specific SEO, breadcrumbs and ItemList.
-- [ ] Verify membership/order, translated-slug switching, unknown/empty behavior and image sizes.
+- [x] Build collection cards/listing and detail story/hero/member grid.
+- [x] Generate every published collection slug/locale with fallback false.
+- [x] Add collection-specific SEO, breadcrumbs and ItemList.
+- [ ] Finish interactive empty-collection review. Membership/order, translated paths, invalid 404s and image dimensions passed; a localized empty-state renderer is implemented.
 
 ### Phase 7 — Product discovery (medium)
 
-- [ ] Build product cards/grid and native search, sort and filter controls.
-- [ ] Implement typed query parser/serializer, localized matching and alphabetical sort.
-- [ ] Use Zustand for mobile drafts; implement Apply/Reset/count/empty results.
-- [ ] Preserve history, shallow changes and valid filters across languages.
-- [ ] Prevent hydration mismatch when applying query parameters after router readiness.
-- [ ] Add catalog metadata/schema and query canonical behavior.
-- [ ] Verify Turkish characters, combined/invalid filters, reset, back/forward and no price output.
+- [x] Build product cards/grid and native search, sort and filter controls.
+- [x] Implement typed query parser/serializer, localized matching and alphabetical sort.
+- [x] Use Zustand for mobile drafts; implement Apply/Reset/count/empty results.
+- [x] Preserve history, shallow changes and valid filters across languages.
+- [x] Prevent hydration mismatch when applying query parameters after router readiness.
+- [x] Add catalog metadata/schema and query canonical behavior.
+- [x] Verify Turkish characters, combined/invalid filters, reset, back/forward and no price output.
 
 ### Phase 8 — Product detail (medium)
 
-- [ ] Build detail composition with dimensions/materials, care disclosures and collection links.
-- [ ] Build scroll-snap gallery with shared thumbnail/expanded selection.
-- [ ] Implement expanded native dialog and translated previous/next/close/count controls.
-- [ ] Show informational material/color alternatives only when matching records/media exist.
-- [ ] Add store inquiry and deterministic related products.
-- [ ] Generate every published product/locale path with unique metadata/descriptive Product schema.
-- [ ] Verify gallery keyboard/touch/focus, reset on product change, image failures, language slugs and no commerce payload.
+- [x] Build detail composition with dimensions/materials, care disclosures and collection links.
+- [x] Build scroll-snap gallery with shared thumbnail/expanded selection.
+- [x] Implement expanded native dialog and translated previous/next/close/count controls.
+- [x] Show informational material/color alternatives only when matching records/media exist.
+- [x] Add store inquiry and deterministic related products.
+- [x] Generate every published product/locale path with unique metadata/descriptive Product schema.
+- [ ] Complete touch and simulated image-failure gallery QA. Keyboard, focus restoration, translated paths and no-commerce payload checks passed; source media responses were audited.
 
 ### Phase 9 — `/us` editorial (low)
 
-- [ ] Write original bilingual content for all five requested topics using recorded sources.
-- [ ] Add page descriptors and localized section/SEO records.
-- [ ] Implement typed shared editorial renderer and reject unknown sections.
-- [ ] Add supported swatches/media/related blocks and showroom discovery/inquiry CTAs.
-- [ ] Generate five topics in both languages with page-specific metadata/schema.
-- [ ] Review facts, translation, photo/caption fit and every link; omit unconfirmed local commercial claims.
+- [x] Write original bilingual content for all five requested topics using recorded sources.
+- [x] Add page descriptors and localized section/SEO records.
+- [x] Implement typed shared editorial renderer and reject unknown sections.
+- [x] Add supported swatches/media/related blocks and showroom discovery/inquiry CTAs.
+- [x] Generate five topics in both languages with page-specific metadata/schema.
+- [x] Review facts, translation, photo/caption fit and every link; omit unconfirmed local commercial claims.
 
 ### Phase 10 — Blog/MDX (low)
 
-- [ ] Add build-only MDX compiler and JSON article schema.
-- [ ] Implement AST validation, allowed components, media/route resolution and static rendering.
-- [ ] Derive headings, excerpt/reading time and article view model without another editable prose source.
-- [ ] Prepare two original bilingual articles with known authors/dates or keep unpublished until known.
-- [ ] Build blog listing/article with related links, covers and BlogPosting metadata.
-- [ ] Generate published paths; unknown/draft slugs return localized 404.
-- [ ] Test invalid source/forbidden constructs and verify compiler code is excluded from browser bundles.
+- [x] Add build-only MDX compiler and JSON article schema.
+- [x] Implement AST validation, allowed components, media/route resolution and static rendering.
+- [x] Derive headings, excerpt/reading time and article view model without another editable prose source.
+- [x] Prepare two original bilingual articles with known authors/dates or keep unpublished until known.
+- [x] Build blog listing/article with related links, covers and BlogPosting metadata.
+- [x] Generate published paths; unknown/draft slugs return localized 404.
+- [x] Test invalid source/forbidden constructs and verify compiler code is excluded from browser bundles.
 - [ ] Verify article headings/figures/links/dates/translations and no-JS reading.
 
 ### Phase 11 — HAY motion and complete UI review
 
-- [ ] Implement applicable DESIGN.md inventory families with shared CSS/native controls.
-- [ ] Recheck desktop and expanded mobile navigation against HAY; distinguish measured adaptations from source-only patterns.
-- [ ] Add below-fold reveals/header compaction progressively without hiding content or decoration scroll listeners.
-- [ ] Provide hover/focus equivalents and visible mobile captions.
-- [ ] Add native state/view transitions only if behavior/support is reliable.
+- [x] Implement applicable DESIGN.md inventory families with shared CSS/native controls.
+- [x] Recheck desktop and expanded mobile navigation against HAY; distinguish measured adaptations from source-only patterns.
+- [x] Add below-fold reveals/header compaction progressively without hiding content or decoration scroll listeners.
+- [x] Provide hover/focus equivalents and visible mobile captions.
+- [x] Add native state/view transitions only if behavior/support is reliable. Cross-document CSS transition is progressive; Pages Router state changes retain their native React update behavior.
 - [ ] Verify reduced motion, unsupported-feature fallback, no-JS baseline, resize and zoom.
-- [ ] Review all page families in both languages at 320/390/768/1024/1440 px; fix crop/overflow/rhythm centrally.
-- [ ] Synchronize DESIGN.md with final style decisions and reference deviations.
+- [x] Review all page families in both languages at 320/390/768/1024/1440 px; fix crop/overflow/rhythm centrally.
+- [x] Synchronize DESIGN.md with final style decisions and reference deviations.
 
 ### Phase 12 — Production verification and handoff
 
-- [ ] Pass content validation, TypeScript, ESLint and focused tests; resolve introduced failures.
-- [ ] Build production app and confirm every published route/locale is pre-rendered with no accidental SSR/content API.
-- [ ] Run bilingual discovery → product → store browser journeys and native-control/history checks.
-- [ ] Check Chromium/Firefox/WebKit where available and record environment limits.
+- [x] Pass content validation, TypeScript, ESLint and focused tests; resolve introduced failures.
+- [x] Build production app and confirm every published route/locale is pre-rendered with no accidental SSR/content API.
+- [x] Run bilingual discovery → product → store browser journeys and native-control/history checks. Search/reset and back/forward restore the expected query and result count.
+- [x] Check Chromium/Firefox/WebKit where available and record environment limits. One in-app browser surface was available; no multi-engine pass is claimed.
 - [ ] Run accessibility scans and manual keyboard/contrast/zoom checks on representative page families.
-- [ ] Inspect initial HTML for locale content, lang, unique metadata and safe JSON-LD in head.
-- [ ] Check all published links, reciprocal alternates, canonical origin, sitemap/robots and error statuses.
-- [ ] Audit source/rendered payloads for hard-coded UI strings, unregistered URLs and commerce leakage.
-- [ ] Check all media paths/responses/dimensions/crops, distinguishing source blocking from invalid registry data.
-- [ ] Measure performance/bundles on representative routes and record actual results/deviations.
+- [x] Inspect initial HTML for locale content, lang, unique metadata and safe JSON-LD in head.
+- [x] Check all published links, reciprocal alternates, canonical origin, sitemap/robots and error statuses.
+- [x] Audit source/rendered payloads for hard-coded UI strings, unregistered URLs and commerce leakage.
+- [x] Check all media paths/responses/dimensions/crops, distinguishing source blocking from invalid registry data.
+- [x] Measure performance/bundles on representative routes and record actual results/deviations.
 - [ ] Confirm domain/contact targets/local claims/assortment/final assets before calling the site release-ready.
-- [ ] Update README with commands, JSON editing examples, validation, translations and publishing procedure.
-- [ ] Update PLAN.md checkboxes and CHANGELOGS.md verification/limitations.
-- [ ] Present completed website and evidence. Deployment follows when a destination is provided/requested.
+- [x] Update README with commands, JSON editing examples, validation, translations and publishing procedure.
+- [x] Update PLAN.md checkboxes and CHANGELOGS.md verification/limitations.
+- [x] Present the completed local website and verification evidence. Deployment remains a separate requested action.
+
 
 ## 11. Commands, dependencies and tests
 
-Use pnpm. Existing scripts: `pnpm dev`, `pnpm build`, `pnpm start`, `pnpm lint`. Proposed additions below do not exist yet.
+Use pnpm. The scripts below are implemented except the browser E2E runner; browser checks were performed through the available in-app browser tooling.
 
 | Command | Purpose |
 | --- | --- |
@@ -563,11 +564,12 @@ Use pnpm. Existing scripts: `pnpm dev`, `pnpm build`, `pnpm start`, `pnpm lint`.
 | `pnpm seo:generate` | Generate sitemap/robots from route/deployment JSON |
 | `pnpm assets:check` | Changed/full local and remote media checks |
 | `pnpm test` | Focused content/route/search/serialization/MDX tests |
-| `pnpm test:e2e` | Production browser journeys and accessibility |
+| Browser tooling | Production journeys performed manually; an automated E2E/axe runner remains release QA |
+| `pnpm audit:production` | Read-only Python HTTP crawl of every published route; initial JS byte measurements |
 
-Build preparation: content validation → design generation → SEO generation → next build. MDX compiles through build-only loaders or a cached preparation step. Dev runs required generators before startup; document token regeneration rather than silently serving stale generated CSS.
+Build preparation: content validation → UI string/key audit → design generation → SEO generation → next build. MDX compiles through build-only loaders. Dev runs required generators before startup; document token regeneration rather than silently serving stale generated CSS.
 
-Likely additions after approval: Zod, YAML parser for DESIGN.md frontmatter, build-only @mdx-js/mdx, a TypeScript script runner, lightweight test runner, Playwright/axe. Check existing tooling first. No motion/backend/form-service dependency is needed by default.
+Installed additions: Zod, YAML parser for DESIGN.md frontmatter, build-only @mdx-js/mdx, tsx and Prettier. Focused tests use Node's test runner. Browser checks used the in-app tooling; Playwright/axe are not installed. No motion/backend/form-service dependency was added.
 
 Test meaningful failures: missing English data, incorrect localized slugs, invalid membership/media, unsafe JSON-LD/MDX, hydration drift, query history, keyboard traps, incorrect store links and prices in output. Do not snapshot every static copy paragraph or mirror implementation with trivial tests.
 
@@ -576,6 +578,14 @@ Test meaningful failures: missing English data, incorrect localized slugs, inval
 AGENTS.md contains supplied links, version findings, source mapping and the official Cyprus contact record. DESIGN.md holds the style defaults, motion inventory, implementation adaptations and candidate asset references. CHANGELOGS.md records modification batches.
 
 - HAY's loaded main stylesheet was inspected through browser CSSOM after direct HTTP source fetches returned 403. Presence of a rule does not prove that every historical widget runs on the homepage.
-- Desktop/mobile homepage layout was observed; complete expanded mobile navigation and every product/editorial interaction remain comparison tasks in Phase 11.
+- Desktop/mobile homepage layout and expanded mobile navigation were observed. Every HAY product/editorial interaction was not inspected; DESIGN.md identifies the observed behaviors and implementation adaptations.
 - The motion inventory groups all inspected declarations and separates inactive/out-of-scope families. It is not a claim that every animation across all HAY URLs and third-party widgets has been reproduced.
-- No website implementation, application build, accessibility audit or performance benchmark has happened in this planning task. Documentation checks must not be reported as application tests.
+- The initial planning task performed documentation checks only. Approved implementation subsequently added the website and verification evidence in reports/verification.md. That report distinguishes executed checks from pending release QA.
+
+## 13. Implementation handoff — 2026-09-15
+
+- All requested page templates exist. The build generates 50 published locale routes plus localized 404/500 documents, using Pages Router static props/paths and the normal Next runtime.
+- Data: 12 sourced products, three collections, five editorial topics, 30 registered assets and two original bilingual MDX drafts. Drafts require real author/date records before publication.
+- User confirmed `https://www.normodcyprus.com`; preview indexing remains disabled until deployment review. Store coordinates were verified from the official source after planning. International phone/WhatsApp, current assortment and final imagery remain owner checks.
+- Passed: content validation, TypeScript, ESLint, 18 focused tests, production build, all-route HTTP/SEO/link audit, asset response/dimension checks and responsive/native-control browser checks. See reports/verification.md and machine-readable reports for evidence and limits.
+- Remaining unchecked tasks are specific release QA/publication checks, not missing page implementations. No deployment was requested or performed.

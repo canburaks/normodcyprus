@@ -1,0 +1,15 @@
+{
+  "categories": {
+    "seating": "Sofas & armchairs",
+    "bedroom": "Bedroom",
+    "tables": "Tables",
+    "storage": "Storage"
+  },
+  "materials": {
+    "velvet": "Velvet",
+    "boucle": "Bouclé",
+    "texture": "Natural texture",
+    "oak": "Oak",
+    "lacquer": "Lacquer"
+  }
+}

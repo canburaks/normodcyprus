@@ -1,0 +1,24 @@
+{
+  "slug": "inspiration",
+  "name": "Find your inspiration",
+  "title": "Your home. Your point of view.",
+  "description": "Before deciding how a room should look, think about how you live in it. Films together, quiet reading or friends staying late. Let the arrangement make room for those moments.",
+  "sections": {
+    "section-1": {
+      "title": "Start with the bigger picture.",
+      "body": "Before deciding how a room should look, think about how you live in it. Films together, quiet reading or friends staying late. Let the arrangement make room for those moments."
+    },
+    "section-2": {
+      "title": "Think in colours and textures.",
+      "body": "Choose a starting tone and add depth through texture. Warm wood, a fabric surface and daylight can change how a colour feels. Leave room for those differences when bringing your favourite pieces together."
+    },
+    "section-3": {
+      "title": "A little space makes a difference.",
+      "body": "You do not have to fill every corner. Clear paths between seats and an open space by the window help a room breathe."
+    }
+  },
+  "seo": {
+    "title": "Find your inspiration | Normod Cyprus",
+    "description": "Before deciding how a room should look, think about how you live in it. Films together, quiet reading or friends staying late. Let the arrangement make room for those moments."
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "title": "Make room for living.",
+  "description": "Sofas, natural textures and considered details that move to the rhythm of your home.",
+  "seo": {
+    "title": "Products | Normod Cyprus",
+    "description": "Explore Normod sofas, bedroom furniture, tables and storage. Discover the materials and models at our Cyprus store."
+  },
+  "search": "Search products",
+  "searchPlaceholder": "A design or a texture…",
+  "searchAction": "Search",
+  "category": "Category",
+  "collection": "Collection",
+  "material": "Material",
+  "sort": "Sort by",
+  "all": "All",
+  "featured": "Our selection",
+  "alphabetical": "Name, A–Z",
+  "count_one": "{{count}} design",
+  "count_other": "{{count}} designs",
+  "emptyTitle": "No matches just yet.",
+  "emptyText": "Try another word or clear your filters.",
+  "reset": "Clear filters",
+  "filters": "Filter",
+  "apply": "Show products",
+  "details": "Design details",
+  "dimensions": "Dimensions",
+  "width": "Width",
+  "depth": "Depth",
+  "height": "Height",
+  "unit": "cm",
+  "care": "Care",
+  "inquire": "Enquire about this design",
+  "availability": "Contact us to discover the models and fabrics available in store.",
+  "collectionsTitle": "Considered together.",
+  "collectionsDescription": "Different characters. A shared design language. Discover collections for a home that feels like you.",
+  "collectionsSeo": {
+    "title": "Collections | Normod Cyprus",
+    "description": "The Klem, Carle and Norac collections: considered Normod designs for living and sleeping."
+  },
+  "results": "Design selection"
+}

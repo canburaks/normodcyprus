@@ -1,0 +1,26 @@
+{
+  "id": "norac-tables",
+  "isPublished": true,
+  "categoryId": "tables",
+  "materialIds": [
+    "oak"
+  ],
+  "collectionIds": [
+    "norac"
+  ],
+  "galleryAssetIds": [
+    "norac-tables-1",
+    "norac-tables-2"
+  ],
+  "dimensions": {
+    "height": 50.0
+  },
+  "source": "https://normod.com/products/norac-masif-mese-uclu-sehpa-takimi",
+  "verifiedAt": "2026-09-15",
+  "sortOrder": 10,
+  "relatedIds": [
+    "norac-bed",
+    "norac-bedside",
+    "norac-dresser"
+  ]
+}

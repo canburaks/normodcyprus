@@ -1,0 +1,11 @@
+{
+  "id": "klem",
+  "isPublished": true,
+  "heroAssetId": "living-room",
+  "featuredProductIds": [
+    "klem-three",
+    "klem-two",
+    "klem-armchair"
+  ],
+  "source": "https://normod.com/collections/klem-koleksiyonu"
+}

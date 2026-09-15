@@ -1,5 +1,5 @@
 ---
-version: planning-2026-09-15
+version: implementation-2026-09-15
 name: HAY Minimal Editorial
 description: A calm Scandinavian retail system with airy whitespace, restrained black accents, and an elegant editorial voice.
 colors:
@@ -146,7 +146,7 @@ components:
     rounded: "{rounded.sm}"
     padding: "8px 16px"
     size: "120px"
-    height: "40px"
+    height: "44px"
   button-secondary:
     backgroundColor: "{colors.neutral}"
     textColor: "{colors.on-surface}"
@@ -154,7 +154,7 @@ components:
     rounded: "{rounded.sm}"
     padding: "8px 16px"
     size: "120px"
-    height: "40px"
+    height: "44px"
   button-tertiary:
     backgroundColor: "transparent"
     textColor: "{colors.on-surface}"
@@ -212,7 +212,7 @@ The design is intentionally flat. Hierarchy comes from contrast, scale, and whit
 The shape language is understated and architectural. Corners are usually sharp or only gently rounded, with `4px` radius on buttons and small controls and `8px` for cards. Full-rounded pills are appropriate only for chips or status tags where a softer editorial badge is needed.
 
 ## Components
-Buttons are restrained and functional. `button-primary` uses a solid black fill with white text and compact `8px 16px` padding, making it suitable for the main action. `button-secondary` reverses the treatment with a white background and black outline for secondary actions. `button-tertiary` is text-only and should be used for low-emphasis actions, links, or utility navigation. Keep button heights near `40px` and avoid oversized, pill-like forms.
+Buttons are restrained and functional. `button-primary` uses a solid black fill with white text and compact `8px 16px` padding, making it suitable for the main action. `button-secondary` reverses the treatment with a white background and black outline for secondary actions. `button-tertiary` is text-only and should be used for low-emphasis actions, links, or utility navigation. Keep button heights at least `44px` and avoid oversized, pill-like forms.
 
 Cards should use `card` styling with a light surface fill, subtle `1px` border, and `8px` radius. They should not cast visible shadows; structure should come from spacing and border contrast instead. Inputs should be simple, bordered, and low-friction, with the same visual language as secondary buttons. Chips should be small, rounded, and neutral-toned, functioning as metadata or filters rather than loud interactive elements.
 
@@ -367,3 +367,16 @@ Do not use small preview thumbnails as full-width hero images. Do not claim an u
 - [ ] Compare finished desktop/mobile navigation, editorial grids and product galleries with applicable reference behavior.
 - [ ] Verify all breakpoints, both languages, keyboard/touch, reduced motion, no-JS baseline and unsupported-feature fallbacks.
 - [ ] Record final approved style changes here and summarize their verification in CHANGELOGS.md.
+
+
+## Implemented design and verification — 2026-09-15
+
+- `src/styles/generated/tokens.css` is generated from the YAML above. `globals.css` maps these tokens to shadcn/Tailwind and shared page patterns; `motion.css` owns motion. All controls have a 44px minimum target. The supplied font families remain unsupplied; system sans/serif fallbacks are active with no external font requests.
+- The centered Normod wordmark retains the source artwork and its colour. Desktop uses the wordmark/utility row above tracked navigation. This adapts HAY's centered two-level masthead to the wider Normod logo. Mobile keeps the logo between the native menu and language controls.
+- Desktop header space begins at 130px (82px wordmark row + 48px navigation). In supporting browsers, only the wordmark row contracts to 55px, for a 103px total, retaining both logo and navigation. HAY's source 55px total hides the large wordmark; that behavior is deliberately adapted here for navigation clarity. Unsupported browsers retain the expanded header.
+- Home/collection/editorial images have square CSS corners, mixed landscape proportions and restrained captions. Any small rounded edge baked into a remote placeholder is part of the source image and can be removed by replacing that asset. No photograph is boxed in a generic rounded card.
+- Native popover handles non-modal language/mobile navigation; native dialog handles modal filters and the expanded gallery. Native select/disclosure and CSS scroll snap provide the baseline. There is no animation, carousel or modal library.
+- HAY's expanded mobile menu was inspected on 2026-09-15: a hamburger/close control, centered identity, a search line and centered uppercase category links, with page content remaining present. Normod uses the same light background and restrained link rhythm, with larger touch targets and a complete navigation list in a light-dismiss popover. Search belongs to the catalog.
+- Applicable motion: 500ms underlines/popover entrances, 600ms alternate-image fades, CSS scroll-driven header/reveals and a 200ms native cross-document transition where supported. No client-side transition framework is added to Pages Router navigation. Reduced motion removes decorative transitions and movement. Essential content starts visible; the hero uses eager/high-priority loading without an opacity entrance.
+- The first product hover image containing Turkish promotional text was replaced with a text-free close-up. The showroom image is an exterior entrance photo, with matching Turkish/English alt text. Contact coordinates were subsequently verified from the official source record.
+- Browser checks covered 320, 390, 768, 1024 and 1440px across both languages, with no document overflow or broken visible images. Keyboard/Escape/focus return were verified for native menus, filters and the gallery. Broader browser-engine, reduced-motion emulation, 200% zoom, axe and Lighthouse runs are still release QA items; do not represent them as measured.
