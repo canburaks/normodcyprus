@@ -23,5 +23,15 @@
   "relatedIds": [
     "klem-three",
     "klem-two"
-  ]
+  ],
+  "presentation": {
+    "frame": {
+      "ratio": "portrait",
+      "fit": "contain",
+      "position": "50% 50%"
+    },
+    "hoverBackground": "#D5CEB8",
+    "hoverForeground": "#0A0A0A",
+    "detailRatio": "portrait"
+  }
 }

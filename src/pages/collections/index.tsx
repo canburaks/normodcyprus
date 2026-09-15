@@ -1,6 +1,7 @@
 import type { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import { useTranslation } from "next-i18next/pages";
 import { Container, Section } from "@/components/layout/container";
+import { CatalogNavigation } from "@/components/content/catalog-navigation";
 import { PageHeading } from "@/components/content/page-heading";
 import { PageSeo } from "@/components/seo/page-seo";
 import { CollectionCard } from "@/features/catalog/collection-card";
@@ -32,12 +33,17 @@ export default function CollectionsPage({
         ]}
       />
       <Container>
-        <PageHeading title={t("collectionsTitle")} description={t("collectionsDescription")} />
+        <CatalogNavigation />
+        <PageHeading
+          variant="compact"
+          title={t("collectionsTitle")}
+          description={t("collectionsDescription")}
+        />
         <Section className="!mt-0">
           <h2 className="sr-only">{t("collectionsTitle")}</h2>
-          <div className="editorial-grid">
-            {collections.map((collection) => (
-              <CollectionCard key={collection.id} collection={collection} />
+          <div className="collection-banners">
+            {collections.map((collection, index) => (
+              <CollectionCard key={collection.id} collection={collection} isEager={index < 3} />
             ))}
           </div>
         </Section>

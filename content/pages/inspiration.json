@@ -6,15 +6,110 @@
   "sections": [
     {
       "id": "section-1",
-      "type": "text"
+      "type": "text",
+      "assetId": "living-room",
+      "frame": {
+        "ratio": "portrait",
+        "fit": "cover",
+        "position": "50% 50%"
+      },
+      "layout": {
+        "small": {
+          "column": 1,
+          "span": 12,
+          "row": 1,
+          "rowSpan": 1
+        },
+        "medium": {
+          "column": 1,
+          "span": 6,
+          "row": 1,
+          "rowSpan": 2
+        },
+        "large": {
+          "column": 1,
+          "span": 6,
+          "row": 1,
+          "rowSpan": 2
+        }
+      },
+      "target": {
+        "kind": "collections",
+        "id": "klem"
+      }
     },
     {
       "id": "section-2",
-      "type": "text"
+      "type": "text",
+      "assetId": "bedroom",
+      "frame": {
+        "ratio": "landscape",
+        "fit": "cover",
+        "position": "50% 50%"
+      },
+      "layout": {
+        "small": {
+          "column": 1,
+          "span": 12,
+          "row": 2,
+          "rowSpan": 1
+        },
+        "medium": {
+          "column": 7,
+          "span": 6,
+          "row": 1,
+          "rowSpan": 1
+        },
+        "large": {
+          "column": 7,
+          "span": 6,
+          "row": 1,
+          "rowSpan": 1
+        }
+      },
+      "target": {
+        "kind": "collections",
+        "id": "norac"
+      }
     },
     {
       "id": "section-3",
-      "type": "text"
+      "type": "text",
+      "assetId": "comfort",
+      "frame": {
+        "ratio": "portrait",
+        "fit": "cover",
+        "position": "50% 50%"
+      },
+      "layout": {
+        "small": {
+          "column": 1,
+          "span": 12,
+          "row": 3,
+          "rowSpan": 1
+        },
+        "medium": {
+          "column": 7,
+          "span": 6,
+          "row": 2,
+          "rowSpan": 1
+        },
+        "large": {
+          "column": 7,
+          "span": 6,
+          "row": 2,
+          "rowSpan": 1
+        }
+      },
+      "target": {
+        "kind": "collections",
+        "id": "carle"
+      }
     }
+  ],
+  "relatedProductIds": [
+    "klem-three",
+    "carle-set",
+    "norac-bed"
   ]
 }

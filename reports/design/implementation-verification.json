@@ -1,0 +1,180 @@
+{
+  "date": "2026-09-15",
+  "scope": "HAY measured design implementation",
+  "productionPreview": "http://127.0.0.1:3002",
+  "sourceSpec": "../../DESIGN.md",
+  "fonts": {
+    "sans": "Helvetica, Arial, sans-serif",
+    "serif": "Georgia, serif",
+    "hasLicensedReferenceFonts": false
+  },
+  "checks": {
+    "contentValidation": "pass:12 products,3 collections,5 editorial pages,2 drafts,30 assets,2 locales",
+    "editorSchemas": 13,
+    "designVariables": 145,
+    "typecheck": "pass",
+    "lint": "pass",
+    "testsPassed": 21,
+    "productionDocuments": 54,
+    "publishedRoutesAudited": 50,
+    "httpAuditErrors": 0,
+    "draftProductionStatus": 404,
+    "isIndexable": false
+  },
+  "geometry": {
+    "desktop": {
+      "viewport": [
+        1440,
+        1000
+      ],
+      "clientWidth": 1425,
+      "headerExpanded": 130,
+      "headerCompact": 55,
+      "homeHero": {
+        "x": 55,
+        "y": 130,
+        "width": 1315,
+        "height": 756.78125
+      },
+      "homePortrait": {
+        "width": 405,
+        "height": 489.546875
+      },
+      "homeHalf": {
+        "width": 632.5,
+        "height": 364.015625
+      },
+      "productSmall": {
+        "width": 291.25,
+        "height": 352.046875
+      },
+      "productLarge": {
+        "width": 632.5,
+        "height": 764.546875
+      },
+      "productPrimaryPortrait": {
+        "width": 657.5,
+        "height": 794.765625
+      },
+      "productPrimarySquare": {
+        "width": 657.5,
+        "height": 657.5
+      }
+    },
+    "mobile": {
+      "viewport": [
+        390,
+        844
+      ],
+      "clientWidth": 375,
+      "header": 70,
+      "hero": {
+        "x": 20,
+        "y": 105,
+        "width": 335,
+        "height": 192.78125
+      },
+      "portrait": {
+        "width": 335,
+        "height": 404.9375
+      },
+      "smallProductWidth": 157.5
+    },
+    "wide": {
+      "viewportWidth": 1800,
+      "clientWidth": 1785,
+      "heroX": 197.5,
+      "heroWidth": 1390,
+      "portraitWidth": 430
+    },
+    "settledCategoryComparison": {
+      "viewport": [
+        1280,
+        720
+      ],
+      "clientWidth": 1265,
+      "referenceWidth": 351.65625,
+      "localWidths": [
+        351.65625,
+        351.671875,
+        351.671875
+      ],
+      "referenceHeight": 202.1875,
+      "ratio": "1390 / 800",
+      "columns": 3,
+      "submenuTop": 110,
+      "sourceSubmenuHeight": 50.203125,
+      "note": "Reference masonry rounds x coordinates; local Grid retains fractional positions. Copy-dependent vertical placement is reported separately."
+    }
+  },
+  "responsiveWidths": [
+    320,
+    390,
+    409,
+    410,
+    639,
+    640,
+    767,
+    768,
+    900,
+    901,
+    1023,
+    1024,
+    1300,
+    1301,
+    1600,
+    1601,
+    1800
+  ],
+  "responsiveNotes": "No document overflow in the home matrix. Header readings during resize transitions excluded; resting130/55/70 measured separately. All five editorial topics, contact and square product checked in both locales at390 and1440. This is not every route/width Cartesian combination.",
+  "motion": {
+    "editorial": {
+      "imageOpacity": 0.4,
+      "durationMs": 800
+    },
+    "product": {
+      "imageOpacity": 0,
+      "labelOpacity": 1,
+      "durationMs": 600,
+      "backgroundEnterMs": 200,
+      "backgroundLeaveMs": 400,
+      "backgroundLeaveDelayMs": 300
+    },
+    "news": {
+      "imageOpacity": 0.4,
+      "durationMs": 600,
+      "hasExamineCircle": false
+    },
+    "reveal": {
+      "distancePx": 90,
+      "durationMs": 800,
+      "implementation": "Native IntersectionObserver; visible initial/no-JS baseline"
+    },
+    "headerThresholdPx": 360,
+    "thresholdProvenance": "Implementation choice; source exact threshold remains unverified"
+  },
+  "interactions": [
+    "Desktop popover opens, focuses close control and closes with Escape",
+    "Mobile menu and nested category disclosures",
+    "Product details expand inline; plus becomes X",
+    "Gallery dialog arrows change selected image; Escape returns focus",
+    "Search Klem gives3 results; unmatched query gives0; Back restores3",
+    "Native material filter preserves query",
+    "Translated entity routes and store destinations retained"
+  ],
+  "fallbacks": {
+    "gridLanesSupportedInInspectedBrowser": false,
+    "cssMasonrySupportedInInspectedBrowser": false,
+    "news": "CSS columns; native masonry/Grid Lanes enhancement",
+    "inspiration": "JSON-authored CSS Grid positions preserving DOM order",
+    "reducedMotion": "Source/CSS verified; preference emulation not performed",
+    "noJavaScript": "Initial HTML and native semantics checked; fully JS-disabled browser not run"
+  },
+  "remaining": [
+    "Matching licensed font assets and final photography",
+    "Second genuine Cyprus showroom photo",
+    "Physical touch, multi-engine, assistive technology, automated axe,200% zoom and reduced-motion preference checks",
+    "Durable paired screenshot files and automated raster comparison"
+  ],
+  "evidence": "DOM/CSS measurements and inline browser screenshots inspected in this task. No screenshot files or complete raster-level pixel-perfect claim."
+}

@@ -2,9 +2,9 @@
 
 ## 1. Status, scope, and approval
 
-**Status: approved implementation completed for local review, 2026-09-15. Release QA and owner-supplied publication details remain tracked below.**
+**Status: functional first implementation exists; visual fidelity rejected by the user, 2026-09-15. Deep HAY inspection is documented; the measured visual rebuild in Phase 14 remains pending. Release QA and owner-supplied publication details are also tracked below.**
 
-Implement all twelve phases below. Release-specific unknowns remain tracked separately.
+Phases 1–12 record the first implementation and its functional checks. They do not establish HAY visual fidelity. Phase 14 below supersedes their approximate visual decisions and defines the required rebuild; release-specific unknowns remain tracked separately.
 
 **Confirmed clarification, 2026-09-15:** use Next.js Pages Router; **static export is not required**. Content pages will be generated at build time and served by the normal Next.js runtime. Do not add `output: 'export'`, a manual `[locale]` route tree, or App Router.
 
@@ -440,7 +440,7 @@ Dependency: Phase 1.
 
 Dependency: Phases 1–2.
 
-- [x] Finalize approved DESIGN.md token values and generate shared CSS variables.
+- [x] Replace approximate tokens and regenerate145 shared variables plus responsive layout JSON; Phase14 records visual evidence.
 - [x] Map tokens to shadcn/Tailwind; remove duplicate starter theme rules and unintended automatic dark mode.
 - [x] Retain Base UI preset and install only necessary shadcn components with the installed CLI.
 - [x] Build reusable container/section/heading/media/link and editorial typography primitives.
@@ -520,18 +520,18 @@ Dependency: Phases 1–4.
 - [x] Build blog listing/article with related links, covers and BlogPosting metadata.
 - [x] Generate published paths; unknown/draft slugs return localized 404.
 - [x] Test invalid source/forbidden constructs and verify compiler code is excluded from browser bundles.
-- [ ] Verify article headings/figures/links/dates/translations and no-JS reading.
+- [x] Verify article headings/photo pairs/links/translations through development-only drafts and static HTML. Unknown author/date stay omitted; publication remains gated.
 
 ### Phase 11 — HAY motion and complete UI review
 
-- [x] Implement applicable DESIGN.md inventory families with shared CSS/native controls.
-- [x] Recheck desktop and expanded mobile navigation against HAY; distinguish measured adaptations from source-only patterns.
+- [x] Implement measured header, menu, editorial/product/news fade and reveal families through shared CSS/native controls.
+- [x] Implement and inspect desktop130/55px and mobile70px navigation states, categories, native Escape/focus return and translated links.
 - [x] Add below-fold reveals/header compaction progressively without hiding content or decoration scroll listeners.
 - [x] Provide hover/focus equivalents and visible mobile captions.
-- [x] Add native state/view transitions only if behavior/support is reliable. Cross-document CSS transition is progressive; Pages Router state changes retain their native React update behavior.
+- [x] Keep Pages Router state changes native. Remove the unsupported arbitrary cross-document page transition; no HAY page-transition behavior was verified.
 - [ ] Verify reduced motion, unsupported-feature fallback, no-JS baseline, resize and zoom.
-- [x] Review all page families in both languages at 320/390/768/1024/1440 px; fix crop/overflow/rhythm centrally.
-- [x] Synchronize DESIGN.md with final style decisions and reference deviations.
+- [ ] Complete visual comparisons of all page families in both languages and at breakpoint boundaries. Prior 320/390/768/1024/1440 reviews checked overflow/media, not pixel fidelity.
+- [x] Synchronize DESIGN.md and generated outputs; document licensed-font, photograph, source-state and browser-tooling differences.
 
 ### Phase 12 — Production verification and handoff
 
@@ -575,10 +575,10 @@ Test meaningful failures: missing English data, incorrect localized slugs, inval
 
 ## 12. Evidence and research limits
 
-AGENTS.md contains supplied links, version findings, source mapping and the official Cyprus contact record. DESIGN.md holds the style defaults, motion inventory, implementation adaptations and candidate asset references. CHANGELOGS.md records modification batches.
+AGENTS.md contains supplied links, version findings, source mapping and the official Cyprus contact record. DESIGN.md holds the authoritative measured HAY specification, source-only motion inventory and evidence limits. The initial design is archived under reports/design/initial-design-superseded.md. CHANGELOGS.md records modification batches.
 
 - HAY's loaded main stylesheet was inspected through browser CSSOM after direct HTTP source fetches returned 403. Presence of a rule does not prove that every historical widget runs on the homepage.
-- Desktop/mobile homepage layout and expanded mobile navigation were observed. Every HAY product/editorial interaction was not inspected; DESIGN.md identifies the observed behaviors and implementation adaptations.
+- The deep audit now covers 14 representative URLs, desktop/mobile page families, product/editorial/news hover, header/menu states, product disclosure and news category/load-more behavior. DESIGN.md lists precise coverage and remaining unverified interactions.
 - The motion inventory groups all inspected declarations and separates inactive/out-of-scope families. It is not a claim that every animation across all HAY URLs and third-party widgets has been reproduced.
 - The initial planning task performed documentation checks only. Approved implementation subsequently added the website and verification evidence in reports/verification.md. That report distinguishes executed checks from pending release QA.
 
@@ -588,4 +588,111 @@ AGENTS.md contains supplied links, version findings, source mapping and the offi
 - Data: 12 sourced products, three collections, five editorial topics, 30 registered assets and two original bilingual MDX drafts. Drafts require real author/date records before publication.
 - User confirmed `https://www.normodcyprus.com`; preview indexing remains disabled until deployment review. Store coordinates were verified from the official source after planning. International phone/WhatsApp, current assortment and final imagery remain owner checks.
 - Passed: content validation, TypeScript, ESLint, 18 focused tests, production build, all-route HTTP/SEO/link audit, asset response/dimension checks and responsive/native-control browser checks. See reports/verification.md and machine-readable reports for evidence and limits.
-- Remaining unchecked tasks are specific release QA/publication checks, not missing page implementations. No deployment was requested or performed.
+- Phase14 now implements the measured design. Remaining visual limits are the listed fonts/photos and complete cross-engine/touch/reduced-motion/zoom acceptance. No deployment or indexing change was performed.
+
+## 14. HAY fidelity rebuild — user correction, 2026-09-15
+
+The user explicitly requested deep inspection and notes for the same pixel-perfect hay.com design. The audit was followed by the user's explicit request to implement the design. The rebuild and its verification are now recorded here. Earlier implementation approval remains valid; no new deployment or publication is implied. All visual decisions below supersede contradictory approximate styling in Phases 1–12. Follow DESIGN.md's measured rules, with Normod content/identity and the original technical constraints.
+
+### 14.0 Research and reviewable specification
+
+- [x] Inspect homepage, category/family, two product-detail states, news, article, inspiration index/detail, contact chooser/offices, store locator/store detail and search: 14 URLs.
+- [x] Measure homepage geometry at 320, 390, 639, 640, 767, 768, 900, 1024, 1440 and 1800px; record viewport versus document client width.
+- [x] Inspect desktop/mobile navigation, collapsed header and restoration, mobile Furniture expansion, collection card layout, product disclosure and editorial page patterns.
+- [x] Exercise settled editorial/product/news hover and news category/load-more; distinguish actual computed styles from inactive CSS.
+- [x] Write DESIGN.md's component/page/motion specification, structured measurements and explicit coverage limits; archive the superseded design.
+- [x] Reopen inaccurate visual completion claims and document the concrete discrepancies without changing runtime code or tokens during this audit.
+
+### 14.1 Shared geometry, type and token migration — P0
+
+Dependencies: 14.0. Read installed Next.js guides and existing frontend skills before implementation changes.
+
+- [x] Replace approximate container values with the measured 1440px maximum row, 10/30/0 row padding and 10/25 column padding. Use one shared source for image edges and grid gutters; avoid double-counting gap plus column padding.
+- [x] Introduce role-specific breakpoint constants/tokens for 410, 640, 768, 900, 1024, 1300 and 1600px; retain the below374 social-wrap rule where needed. Verify both sides of each boundary.
+- [x] Add typography roles from DESIGN.md for navigation, editorial captions, product headings, story headings/leads, product labels, news metadata and footer links. Replace default bold sans display styling where the reference is serif400.
+- [x] Set editorial/product media shells to zero radius, zero border/shadow and no generic card padding. Add product panel #ECECEC and action outline #55BBBA roles.
+- [x] Migrate DESIGN.md YAML and shared stylesheet consumers together; regenerate src/styles/generated/tokens.css through pnpm design:generate. Remove obsolete approximate tokens/selectors after confirming no consumers remain.
+- [x] Inspect actual available font assets and Turkish glyph coverage. If a licensed matching font is unavailable, measure the chosen fallback and record typography as an outstanding fidelity difference rather than claiming an exact match.
+- [x] Verify desktop media widths1315/632.5/405/291.25 at1440/client1425 and mobile full/half widths335/157.5 at390/client375 before page-specific tuning.
+
+### 14.2 Header, menus and footer — P0
+
+- [x] Place desktop navigation above the centered Normod logo within the130px header; align inner edges to the shared container. Match tracked12px navigation and underline geometry.
+- [x] Build the55px compact state with the large logo/navigation hidden and centered two-line trigger. Implement restoration without layout shift or inaccessible focus targets; establish and document the chosen scroll threshold because exact HAY runtime threshold is unverified.
+- [x] Recreate the desktop Products overlay with three JSON groups, right preview, centered close control and500ms entry. Native nested disclosures expose the available groups on mobile; no unavailable fourth-level taxonomy was fabricated.
+- [x] Match70px mobile header,20px inset, three-stroke hamburger/X, centered wordmark and internally scrollable full-height menu below it. Recreate search underline, centered hierarchy, Furniture-style expansion and410px typography change.
+- [x] Keep language switching available as a quiet JSON-owned utility in menu/footer; document the necessary Normod-specific addition without reversing header rows.
+- [x] Replace the current large four-column footer with centered wrapped links, social icons and company/store line. Match12/20 tracked links,5px15px item margins and30px container margins.
+- [x] Verify desktop closed/open/compact/restored and mobile closed/open/nested states, Escape, focus return, keyboard access and overlay scrolling in both languages.
+
+### 14.3 Landing page composition — P0
+
+- [x] Update home JSON to express six ordered editorial tiles: landscape span12; three portrait span4 tiles; two landscape span6 tiles at medium+; each spans12 below640. Keep destinations and captions localized.
+- [x] Register Normod placeholders with2000:1151 hero,1390:800 landscape-tile and910:1100 portrait frames, intrinsic dimensions and source provenance. Mark unresolved replacements honestly.
+- [x] Replace the current hero paragraph/CTA structure and incompatible grid/store bands with HAY's measured image-caption sequence. Retain showroom navigation through the shared menu/footer and relevant tile destinations.
+- [x] Match desktop y130 hero start,83px single-line/111px two-line captions,40px item margins and media row starts using reference-length comparison content. Match mobile y105 media start,20px item margin and caption margin behavior.
+- [x] Match actual hero/editorial hover to opacity0.4/800ms; retain prompt initial hero loading and a visible no-JS baseline.
+- [x] Compare complete home pages at390×844 and1440×1000, then verify639/640 and767/768 jumps and1800px maximum-width behavior.
+
+### 14.4 Card data and product/collection composition — P1
+
+- [x] Extend neutral JSON/Zod/editor schemas with tile kind, responsive spans/offset/order, hover background/foreground and media ratio/focal point where required. Localized alt/caption/title remain in public/locales. Validate valid spans, safe colors and referenced IDs.
+- [x] Split shared card composition into editorial-tile, product-tile and news-tile families; compose small media/label pieces rather than adding many booleans to one universal card.
+- [x] Replace alternate-image product hover with600ms image1→0/text0→1 and JSON color backing; apply200ms enter and400ms/300ms-delay leave color timing. Keep focus equivalence and meaningful accessible names.
+- [x] At≤1023px show labels below images at11/23 with5px top padding and transparent backing; preserve two-up small tiles and authored full-width features.
+- [x] Rebuild collections index as settled HAY landscape cards: two below640px, three above; compact intro and serif slash captions. Late source inspection corrected the earlier pre-layout full-width measurement.
+- [x] Rebuild collection members as a curated mixed-span grid matching the measured small/medium/large span assignments; provide deterministic accessible fallback without a JS masonry library.
+- [x] Restyle catalog search/filter controls to the restrained source patterns while preserving existing URL state, sorting, native filters and search functionality. Search remains the existing URL-filtered showroom catalog; HAY's separate all-site search taxonomy is outside this data model.
+- [x] Verify desktop card hover/leave rules and mobile visible captions; physical touch-device acceptance remains in release QA. News must settle at0.4 with no EXAMINE circle; generic source .box.info styles are not the active news design.
+- [x] Verify image/card dimensions, visual and keyboard ordering, query changes, browser history, translated slugs and empty results after data/layout migration.
+
+### 14.5 Product detail — P1
+
+- [x] Rebuild primary product media/information as equal adjacent50% panels without a gutter at≥1024, with white page/header and#ECECEC shared panel. Preserve portrait and square media ratios without stretching.
+- [x] Center serif35/49 heading and13/23 description, max450px; match25px column padding and20px top/100px bottom information spacing.
+- [x] Restyle the store action to square40px visual height/teal1px border and preserve the physical-store destination and44px interaction target.
+- [x] Build the inline details expansion with250×80px trigger,30px circle and plus/X transition; use native disclosure semantics, truthful specifications and no price/purchase content. Record the selected height-transition behavior as implementation choice, not a measured HAY duration.
+- [x] Match stacked mobile image/information,335px panel width at390/client375,10px inner side padding and26/36.4 heading.
+- [x] Compose variants/family/story/related sections from existing truthful records and shared card primitives. Do not fabricate designers, variants, video or downloads to fill source sections.
+- [x] Place any retained secondary Normod gallery as an explicit functional extension below the faithful primary composition; both inspected HAY product image containers are single-image. Preserve existing keyboard/Escape/focus behavior if the extension remains.
+- [x] Verify portrait and square examples, long Turkish/English descriptions, disclosure open/closed and gallery behavior without breaking page-specific head metadata.
+
+### 14.6 Contact, editorial and MDX templates — P1
+
+- [x] Implement the store-detail title/contact pattern and gallery support for two photos. Current genuine landscape photo occupies two-thirds, contact one-third; mobile stacks naturally. Match12/23 text and underlined real destinations.
+- [x] Audit the available Cyprus media against those slots. Request or register additional genuine store photos when supplied; keep the current1020×573 exterior honest and avoid stretching or mislabeling unrelated rooms.
+- [x] Restyle inspiration index as two-column mixed-ratio masonry with serif captions; author detail rows with spans/offsets and product caption references in JSON.
+- [x] Restyle blog index with two desktop/one mobile columns, mixed portrait/landscape ratios,11/16sans category/title captions and measured hover. Preserve unpublished drafts.
+- [x] Add allowed JSON-owned MDX/story blocks for centered860px title,710px serif lead, full-width media and offset photo/quote rows; keep build-only compilation and localized content validation.
+- [x] Do not introduce hotspots, autoplay embeds, newsletters, worldwide locator or contact forms solely because source CSS mentions them. Implement only sourced content and authorized useful functionality.
+- [x] Verify each `/us` topic, store actions and article template in both locales, including sparse content and drafts via a non-public review method.
+
+### 14.7 Motion and visual acceptance — required before completion
+
+- [x] Centralize the measured motion inventory:300ms header,500ms navigation/underlines,600ms product/news fades,800ms editorial transitions,90px applicable reveals, role-specific delays. Avoid nested double translation.
+- [ ] Keep native semantics and no-JS readable content; reduced motion must settle instantly. Verify feature fallbacks and do not claim cross-document CSS animates Pages Router client transitions.
+- [ ] Create paired reference/local screenshot evidence at identical viewport, client width, zoom, font state, scroll position and settled interaction. Reference geometry tolerance≤1px for controlled boxes; explain font/text/asset differences separately.
+- [x] Cover home, collection index/detail, product portrait/square, catalog results/empty, news/article, inspiration and contact; include header states, hover entry/leave, details expansion and mobile menu hierarchy.
+- [ ] Verify320/390/1800 widths and both sides of640/768/900/1024/1300/1600 boundaries; check200% zoom, keyboard/touch and both locales. Record unsupported tooling honestly.
+- [x] Re-run content validation, schema generation where changed, typecheck, lint, meaningful existing tests and production build. Re-run route/head/link audit after changed page/data composition.
+- [x] Update DESIGN.md compatibility token warning only after token migration is complete; update verification report with actual fidelity outcomes and remaining asset/font discrepancies.
+- [x] Mark each completed checkbox, add CHANGELOGS.md entries per modification batch and present the verified result. Keep publishing/indexing separate from visual completion.
+
+### 14.8 Verified handoff and outstanding acceptance
+
+- [x] Correct settled collection category grid and fixed submenu after re-inspecting HAY at1280/client1265. Preserve the correction in DESIGN.md and measurement JSON.
+- [x] Match controlled home/card/product media at1440/client1425 and390/client375 to within1px; verify17 responsive boundary/extreme widths without overflow.
+- [x] Inspect all five `/us` topics, contact and square product in both locales at390 and1440px; inspect article drafts privately, native gallery/disclosures, menu hierarchy, filters, search and history.
+- [x] Run production build,21 focused tests, content/UI audits, schemas, strict typecheck, ESLint, formatting and50-route HTTP/head/link audit.
+- [x] Keep production drafts404, preview noindex and the confirmed canonical origin unchanged. Show local production preview.
+- [ ] Supply licensed matching fonts and final Normod crops/additional genuine Cyprus photos for final raster-level comparison.
+- [ ] Complete physical touch/assistive technology, multi-engine, reduced-motion preference and200% zoom testing, plus durable paired screenshot files/automated visual diff. Current evidence is measured DOM/CSS and screenshots inspected during the task; no image files are claimed.
+
+Detailed evidence: `reports/design/implementation-verification.json`, `reports/verification.md`, `reports/production-audit.json`. Checked implementation tasks do not imply the two outstanding acceptance gates have passed.
+
+### 14.9 User screenshot correction — 2026-09-15
+
+- [x] Reproduce the reported layout at 679px viewport / 664px client width and inspect the live HAY equivalent.
+- [x] Correct the homepage spacing breakpoint, consistent portrait crops and bilingual caption length.
+- [x] Verify caption wrapping, slash placement, card geometry and mobile/desktop boundaries in both languages; preserve the existing800ms editorial fade.
+- [x] Update source measurements and design guidance, run checks/build, and refresh the production preview. Build,21 tests, strict TypeScript, lint, formatting, content/UI validation and50-route production audit pass.

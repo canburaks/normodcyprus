@@ -12,5 +12,29 @@
     "fabric-samples",
     "blog",
     "contact"
+  ],
+  "groups": [
+    {
+      "id": "furniture",
+      "type": "categories",
+      "ids": []
+    },
+    {
+      "id": "collections",
+      "type": "collections",
+      "ids": []
+    },
+    {
+      "id": "inspiration",
+      "type": "editorial",
+      "ids": [
+        "inspiration",
+        "why-normod",
+        "fabric-samples",
+        "comfort",
+        "quality",
+        "blog"
+      ]
+    }
   ]
 }

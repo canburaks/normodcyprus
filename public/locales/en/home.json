@@ -14,5 +14,13 @@
   "seo": {
     "title": "Normod Cyprus | A home, like you",
     "description": "Discover Normod furniture in Cyprus. Explore sofas, collections and ideas for your home, then visit our Nicosia experience centre."
+  },
+  "tiles": {
+    "living": "Designs for the way you live",
+    "klem": "Klem sofa series",
+    "carle": "Carle modular series",
+    "norac": "Norac wood series",
+    "texture": "Colours, textures, possibilities",
+    "bedroom": "Make yourself at home"
   }
 }

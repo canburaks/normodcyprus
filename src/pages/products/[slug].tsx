@@ -1,7 +1,11 @@
 import type { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import { useTranslation } from "next-i18next/pages";
 import { Container, Section } from "@/components/layout/container";
-import { PageBreadcrumb } from "@/components/content/page-breadcrumb";
+import Link from "next/link";
+import { AssetImage } from "@/components/media/asset-image";
+import { MediaFrame } from "@/components/media/media-frame";
+import { mediaSizes } from "@/lib/design/layout";
+import { ProductDetails } from "@/features/product/product-details";
 import { PageSeo } from "@/components/seo/page-seo";
 import { ProductGrid } from "@/features/catalog/product-grid";
 import { ProductGallery } from "@/features/product/product-gallery";
@@ -32,12 +36,33 @@ export default function ProductPage({
           },
         ]}
       />
-      <Container>
-        <PageBreadcrumb title={product.name} />
+      <Container className="product-page">
+        {product.collections[0] ? (
+          <Link href={product.collections[0].href} className="product-backlink">
+            {product.collections[0].label}
+          </Link>
+        ) : null}
         <div className="product-layout">
-          <ProductGallery images={product.gallery} name={product.name} />
+          <MediaFrame
+            frame={{ ...product.presentation.frame, ratio: product.presentation.detailRatio }}
+            className="product-primary-image"
+          >
+            <AssetImage asset={product.gallery[0]} sizes={mediaSizes(12, 12, 6)} isEager />
+          </MediaFrame>
           <ProductSummary product={product} />
         </div>
+        <ProductDetails product={product} />
+        {product.gallery.length > 1 ? (
+          <Section className="product-secondary-gallery">
+            <div className="section-heading">
+              <h2>
+                {t("galleryTitle")}
+                <span aria-hidden="true">{t("captionSuffix")}</span>
+              </h2>
+            </div>
+            <ProductGallery images={product.gallery} name={product.name} />
+          </Section>
+        ) : null}
         {product.related.length ? (
           <Section>
             <div className="section-heading">

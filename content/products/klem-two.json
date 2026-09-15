@@ -23,5 +23,15 @@
   "relatedIds": [
     "klem-three",
     "klem-armchair"
-  ]
+  ],
+  "presentation": {
+    "frame": {
+      "ratio": "portrait",
+      "fit": "contain",
+      "position": "50% 50%"
+    },
+    "hoverBackground": "#303F54",
+    "hoverForeground": "#FFFFFF",
+    "detailRatio": "portrait"
+  }
 }

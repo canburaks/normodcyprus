@@ -43,13 +43,9 @@ export function ProductGallery({ images, name }: { images: ImageAsset[]; name: s
           setIndex(Math.round(track.scrollLeft / track.clientWidth));
         }}
       >
-        {images.map((image, imageIndex) => (
+        {images.map((image) => (
           <div className="gallery-slide" key={image.id}>
-            <AssetImage
-              asset={image}
-              sizes="(min-width: 1024px) 55vw, 90vw"
-              isEager={imageIndex === 0}
-            />
+            <AssetImage asset={image} sizes="(min-width: 1024px) 55vw, 90vw" />
           </div>
         ))}
       </div>

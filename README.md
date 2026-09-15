@@ -26,11 +26,12 @@ Use the pnpm version recorded in `package.json`. Node 20.9+ is required by Next.
 | --- | --- |
 | `content/config/site.json` | Global schema version, locales, canonical origin, indexability, shared asset IDs |
 | `content/config/routes.json` | Fixed route segments (changes also require the matching Pages Router files) |
-| `content/config/navigation.json` | Header/footer link order, by stable ID |
+| `content/config/navigation.json` | Header/footer link order and menu groups, by stable ID |
+| `content/config/presentation.json` | Product collage slots, collection spans/frame and navigation preview |
 | `content/assets.json` | Every remote image URL and public asset path, dimensions and provenance |
 | `content/store.json` | Sourced contact destinations, hours, coordinates and verification history |
 | `content/taxonomy.json` | Category/material IDs |
-| `content/products/*.json` | Product references, membership, dimensions, ordering and publication |
+| `content/products/*.json` | Product references, membership, dimensions, media frame, hover colors, ordering and publication |
 | `content/collections/*.json` | Collection hero and featured product order |
 | `content/pages/*.json` | Home composition references and editorial section IDs |
 | `content/posts/*.json` | Blog publication, cover, author and related products |
@@ -64,11 +65,11 @@ Never add monetary, availability, review or offer fields to make a source produc
 
 Follow the matching neutral record and both localized records. A collection's `featuredProductIds` must be members of that collection. Additional members appear after the featured order.
 
-Editorial records allow typed `text` sections, with translated heading/body content joined by section ID. Unsupported section types fail validation. Add a new renderer/schema together when a new section type is needed.
+Editorial records allow typed `text` sections with asset/frame, responsive placement and optional registered destination. Translated heading/body content joins by section ID. Unsupported section types fail validation. Add a new renderer/schema together when a new section type is needed.
 
 ### Blog and MDX
 
-Two original bilingual articles are included as **drafts**. No author credit was supplied, so their detail URLs return 404 and they are omitted from the sitemap. The journal shows a localized empty state.
+Two original bilingual articles are included as **drafts**. No author credit was supplied, so production detail URLs return404 and remain absent from the sitemap. The production journal shows a localized empty state. In development, `/blog` and `/en/blog` include clearly labelled draft previews; author/date stay omitted and draft pages force noindex.
 
 To publish:
 
@@ -83,6 +84,7 @@ Supported: Markdown paragraphs, emphasis, lists, links, blockquotes, level 2/3 h
 ```mdx
 <Callout>A translated note from the JSON article.</Callout>
 <Figure id="klem-three-2" />
+<PhotoPair left="klem-three-1" right="bedroom" />
 <ProductLink id="klem-three">Translated link text</ProductLink>
 <CollectionLink id="klem">Translated link text</CollectionLink>
 ```
@@ -101,9 +103,10 @@ src/
     media/               # responsive registered images and fallback
     seo/                 # next/head and initial-head JSON-LD
   features/
-    catalog, product, contact, blog, errors
+    catalog, product, editorial, blog, errors
   lib/
     content/             # schemas, build-only readers/loaders/validation
+    design/              # generated geometry consumers and responsive image sizes
     catalog/             # pure filter query and matching functions
     routes/              # fixed/localized/published route helpers
     mdx/                 # build-only AST validation and compilation
@@ -127,7 +130,7 @@ Zustand holds transient gallery/filter drafts in a provider-owned store. Committ
 pnpm content:validate  # shape, translations, slugs, joins, publication and MDX
 pnpm content:lint      # hard-coded JSX prose and accessibility labels
 pnpm content:schemas   # generated editor schemas
-pnpm design:generate  # DESIGN.md → shared CSS variables
+pnpm design:generate  # DESIGN.md → shared CSS variables and layout JSON
 pnpm seo:generate     # published routes → sitemap and robots
 pnpm assets:check     # remote/local responses and actual image proportions
 pnpm typecheck
@@ -153,3 +156,11 @@ The HTTP audit checks every sitemap route, language, unique titles, metadata, re
 - Run release browser-engine, reduced-motion/200% zoom, axe and Lighthouse checks in the deployment environment. Local transfer measurements are not field Core Web Vitals.
 
 See [PLAN.md](PLAN.md) for checked implementation tasks and remaining release checks, [AGENTS.md](AGENTS.md) for agent rules, [DESIGN.md](DESIGN.md) for the visual reference, and [CHANGELOGS.md](CHANGELOGS.md) for change history. Verification details are in [reports/verification.md](reports/verification.md).
+
+## HAY layout and motion
+
+The measured design uses a130px desktop masthead,55px compact state,70px mobile masthead, a landscape/three-portrait/two-landscape home, two/three-column collection cards, mixed-span product collages, adjacent equal product panels and a centered footer. The final settled HAY collection grid corrected an earlier full-width reading; see DESIGN.md.
+
+Card families are separate: editorial opacity0.4/800ms; product color reveal600ms with visible mobile labels; news opacity0.4/600ms. Reduced-motion CSS settles instantly. Store information stays truthful; add genuine photos to `content/store.json` to enable the intended two-photo composition. All frames have configurable ratio/fit/focal point.
+
+Matching licensed fonts are not supplied. Helvetica/Arial and Georgia use the measured roles; final photography and text lengths also affect pixel comparison. Evidence and remaining release checks are in `reports/design/implementation-verification.json` and `reports/verification.md`.

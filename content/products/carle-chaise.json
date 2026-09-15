@@ -19,5 +19,15 @@
   "relatedIds": [
     "carle-set",
     "carle-three"
-  ]
+  ],
+  "presentation": {
+    "frame": {
+      "ratio": "portrait",
+      "fit": "contain",
+      "position": "50% 50%"
+    },
+    "hoverBackground": "#B6AA98",
+    "hoverForeground": "#0A0A0A",
+    "detailRatio": "portrait"
+  }
 }

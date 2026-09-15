@@ -15,5 +15,11 @@
   "tr": "Türkçe",
   "en": "English",
   "openMenu": "Menüyü aç",
-  "closeMenu": "Menüyü kapat"
+  "closeMenu": "Menüyü kapat",
+  "search": "Ara",
+  "searchPlaceholder": "Ürün ara",
+  "expandHeader": "Menüyü göster",
+  "allProducts": "Tüm ürünler",
+  "allCollections": "Tüm koleksiyonlar",
+  "furniture": "Mobilyalar"
 }

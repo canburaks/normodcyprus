@@ -1,56 +1,45 @@
 import Link from "next/link";
+import { Mail, MapPin } from "lucide-react";
 import { useTranslation } from "next-i18next/pages";
 import { Container } from "./container";
 import { useSite } from "./site-context";
-import { AssetImage } from "@/components/media/asset-image";
-import { routes } from "@/lib/routes/paths";
+import { LanguageSwitcher } from "./language-switcher";
 
 export function SiteFooter() {
   const { t } = useTranslation(["brand", "navigation", "store", "common"]);
   const { shell } = useSite();
+  const links = [
+    ...new Map(
+      [...shell.primaryLinks, ...shell.footerLinks].map((link) => [link.id, link]),
+    ).values(),
+  ];
   return (
     <footer className="site-footer">
       <Container>
-        <div className="footer-grid">
-          <div className="footer-brand">
-            <Link href={routes.home} aria-label={t("name")}>
-              <AssetImage asset={shell.logo} sizes="170px" />
+        <nav className="footer-links" aria-label={t("footer", { ns: "navigation" })}>
+          {links.map((link) => (
+            <Link key={link.id} href={link.href}>
+              <span>{link.label}</span>
             </Link>
-            <p>{t("description")}</p>
-          </div>
-          <nav aria-label={t("footer", { ns: "navigation" })}>
-            <p className="eyebrow">{t("name")}</p>
-            {shell.primaryLinks.slice(0, 4).map((link) => (
-              <Link key={link.id} href={link.href}>
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-          <nav aria-label={t("inspiration", { ns: "navigation" })}>
-            <p className="eyebrow">{t("inspiration", { ns: "navigation" })}</p>
-            {shell.footerLinks
-              .filter((link) => link.id !== "contact")
-              .map((link) => (
-                <Link key={link.id} href={link.href}>
-                  {link.label}
-                </Link>
-              ))}
-          </nav>
-          <div>
-            <p className="eyebrow">{t("contact", { ns: "navigation" })}</p>
-            <address>
-              {t("address", { ns: "store" })}
-              <br />
-              {t("addressLine2", { ns: "store" })}
-            </address>
-            <Link href={routes.contact}>{t("hours", { ns: "store" })}</Link>
-            <a href={`mailto:${shell.store.email}`}>{shell.store.email}</a>
-          </div>
+          ))}
+        </nav>
+        <LanguageSwitcher />
+        <div className="footer-icons">
+          <a href={"mailto:" + shell.store.email} aria-label={t("email", { ns: "common" })}>
+            <Mail size={18} strokeWidth={1.3} aria-hidden="true" />
+          </a>
+          <a href={shell.store.directionsUrl} aria-label={t("directions", { ns: "common" })}>
+            <MapPin size={18} strokeWidth={1.3} aria-hidden="true" />
+          </a>
         </div>
-        <div className="footer-bottom">
-          <p>{t("copyright", { year: new Date().getFullYear() })}</p>
-          <p>{t("tagline")}</p>
+        <div className="footer-company">
+          <span>{t("branch")}</span>
+          <address>
+            {t("address", { ns: "store" })} {t("city", { ns: "store" })}
+          </address>
+          <a href={"mailto:" + shell.store.email}>{shell.store.email}</a>
         </div>
+        <p className="footer-copyright">{t("copyright")}</p>
       </Container>
     </footer>
   );

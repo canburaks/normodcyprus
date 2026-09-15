@@ -52,5 +52,15 @@
   "geo": {
     "latitude": 35.183864,
     "longitude": 33.357587
-  }
+  },
+  "gallery": [
+    {
+      "assetId": "showroom",
+      "frame": {
+        "ratio": "natural",
+        "fit": "cover",
+        "position": "50% 50%"
+      }
+    }
+  ]
 }

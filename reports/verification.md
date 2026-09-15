@@ -1,4 +1,38 @@
-# Verification — 2026-09-15
+# HAY rebuild verification — 2026-09-15
+
+## Screenshot correction — current verification
+
+Corrected the reported homepage defect: cover photography in all three portrait frames; concise bilingual captions with no isolated slash;20px row gaps and compact caption padding through1023px;40px gaps from1024px;40px caption side padding only above1300px. The shared collection-caption rule and black masthead contrast are corrected too.
+
+At679px viewport/664px client width, the first portrait frame matches HAY at(35,529.844),164.656×199.031, with the caption starting at748.875. The previous extra40px vertical space is removed. Checked26 bilingual home cases at13 widths and36 related-page cases with actual text-range bounds:0 overflows above1px and0 isolated slashes. Development screenshots inspected at390,679and1440px. Production build, strict TypeScript,21 tests, lint, formatting, content/UI checks and50-route HTTP audit pass. Refreshed the existing production browser tab at3002.
+
+[Correction evidence](design/caption-correction-verification.json) supersedes the earlier generic overflow-only acceptance for this defect. Font, photo and translated line-count differences remain; no full raster identity is claimed.
+
+## Previous rebuild result
+
+The measured design is implemented across home, collections, catalog/product, contact, editorial and MDX templates. The original functional implementation report below is historical. Current machine-readable evidence is in [design verification](design/implementation-verification.json) and [production audit](production-audit.json).
+
+- Passed: production build54 documents/50 published routes; strict TypeScript; ESLint; formatting;21 focused tests; content/UI audits;13 editor schemas;146 generated design variables.
+- Fresh production crawl:50 routes,0 errors; localized initial HTML, one H1, unique titles/descriptions, reciprocal alternates, canonical domain, JSON-LD in head, internal links, no commerce payload and correct404/500 statuses.
+- Desktop media matches:1315px hero;405px thirds;632.5px halves;291.25×352.05px product tiles;657.5×794.77px portrait and657.5px square product panels. Mobile335px full media and157.5px product tiles. Measured reference tolerance is within1px for these controlled boxes.
+- Home checked at17 breakpoint/extreme widths320–1800px without overflow. Both-language editorial/contact/square-product pages checked at390 and1440px; separate screenshots inspected for home, collections, catalog, contact, article, inspiration, product disclosure and gallery.
+- Native menu focus/Escape, mobile hierarchy, details, gallery keyboard/focus return, search, empty results, native filters and browser history verified. Product image0/label1/600ms; news image0.4/600ms with no circle; editorial0.4/800ms rules centralized.
+- Corrected a reference-audit error: settled HAY category cards are two-up mobile/three-up desktop, not full-width banners. Its category bar is fixed above the header surface. The correction and source dimensions are in DESIGN.md.
+- Draft articles are reviewable only in development, with localized draft labels and no fabricated author/date. Production draft URLs return404; preview indexing remains disabled.
+
+Initial first-party JavaScript is178–190KB gzip across representative pages. These are transfer measurements, not Lighthouse or field Core Web Vitals. Normod remote photos can take time on a cold image-optimizer cache.
+
+## Honest limits
+
+Typography uses available Helvetica/Arial and Georgia; no licensed matching fonts were supplied. Normod image contents, logo and translated copy lengths differ from HAY. The single real Cyprus landscape photo keeps its natural proportions in a two-thirds photo/one-third contact layout; the data/rendering supports a second real photo later.
+
+CSS/native semantics provide reduced-motion and no-JS fallbacks; full preference emulation/JS-disabled browsing, physical touch, multi-engine/assistive technology,200% zoom, automated axe and durable paired screenshot files remain release acceptance work. Screenshots were inspected inline; no repository screenshot files or complete pixel-perfect raster comparison are claimed. No deployment or indexing change was performed.
+
+---
+
+## Historical first implementation evidence
+
+### Initial implementation — 2026-09-15
 
 ## Passed
 

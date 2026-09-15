@@ -1,0 +1,135 @@
+{
+  "productCollageSlots": [
+    {
+      "small": {
+        "column": 1,
+        "span": 6,
+        "row": 1,
+        "rowSpan": 1
+      },
+      "medium": {
+        "column": 1,
+        "span": 6,
+        "row": 1,
+        "rowSpan": 1
+      },
+      "large": {
+        "column": 1,
+        "span": 3,
+        "row": 1,
+        "rowSpan": 1
+      }
+    },
+    {
+      "small": {
+        "column": 7,
+        "span": 6,
+        "row": 1,
+        "rowSpan": 1
+      },
+      "medium": {
+        "column": 7,
+        "span": 6,
+        "row": 1,
+        "rowSpan": 1
+      },
+      "large": {
+        "column": 4,
+        "span": 3,
+        "row": 1,
+        "rowSpan": 1
+      }
+    },
+    {
+      "small": {
+        "column": 1,
+        "span": 12,
+        "row": 2,
+        "rowSpan": 1
+      },
+      "medium": {
+        "column": 1,
+        "span": 12,
+        "row": 2,
+        "rowSpan": 1
+      },
+      "large": {
+        "column": 7,
+        "span": 6,
+        "row": 1,
+        "rowSpan": 2
+      }
+    },
+    {
+      "small": {
+        "column": 1,
+        "span": 6,
+        "row": 3,
+        "rowSpan": 1
+      },
+      "medium": {
+        "column": 1,
+        "span": 6,
+        "row": 3,
+        "rowSpan": 1
+      },
+      "large": {
+        "column": 1,
+        "span": 6,
+        "row": 2,
+        "rowSpan": 2
+      }
+    },
+    {
+      "small": {
+        "column": 7,
+        "span": 6,
+        "row": 3,
+        "rowSpan": 1
+      },
+      "medium": {
+        "column": 7,
+        "span": 6,
+        "row": 3,
+        "rowSpan": 1
+      },
+      "large": {
+        "column": 7,
+        "span": 3,
+        "row": 3,
+        "rowSpan": 1
+      }
+    },
+    {
+      "small": {
+        "column": 1,
+        "span": 6,
+        "row": 4,
+        "rowSpan": 1
+      },
+      "medium": {
+        "column": 1,
+        "span": 6,
+        "row": 4,
+        "rowSpan": 1
+      },
+      "large": {
+        "column": 10,
+        "span": 3,
+        "row": 3,
+        "rowSpan": 1
+      }
+    }
+  ],
+  "collectionFrame": {
+    "ratio": "landscape",
+    "fit": "cover",
+    "position": "50% 50%"
+  },
+  "navigationPreviewAssetId": "klem-three-1",
+  "collectionSpans": {
+    "small": 6,
+    "medium": 4,
+    "large": 4
+  }
+}

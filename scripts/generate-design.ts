@@ -19,9 +19,14 @@ for (const key of [
   "responsive",
   "font-fallbacks",
   "motion",
+  "geometry",
 ])
   flatten(tokens[key], [key]);
 fs.mkdirSync("src/styles/generated", { recursive: true });
+fs.writeFileSync(
+  "src/styles/generated/layout.json",
+  JSON.stringify({ responsive: tokens.responsive, geometry: tokens.geometry }, null, 2) + "\n",
+);
 fs.writeFileSync(
   "src/styles/generated/tokens.css",
   `/* Generated from DESIGN.md. Run pnpm design:generate. */\n:root {\n${declarations.join("\n")}\n}\n`,

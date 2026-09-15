@@ -28,5 +28,9 @@
   "collectionProducts": "Designs in this collection",
   "viewCollection": "Explore the collection",
   "emptySelectionTitle": "This selection is being refreshed.",
-  "emptySelectionText": "In the meantime, explore our other designs."
+  "emptySelectionText": "In the meantime, explore our other designs.",
+  "captionSuffix": " /",
+  "galleryTitle": "A closer look",
+  "detailsToggle": "Details & more information",
+  "contactAction": "Find our store"
 }

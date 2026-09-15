@@ -3,9 +3,8 @@ import { useTranslation } from "next-i18next/pages";
 import { Container, Section } from "@/components/layout/container";
 import { TextLink } from "@/components/content/text-link";
 import { PageHeading } from "@/components/content/page-heading";
-import { PageBreadcrumb } from "@/components/content/page-breadcrumb";
+import { CatalogNavigation } from "@/components/content/catalog-navigation";
 import { PageSeo } from "@/components/seo/page-seo";
-import { AssetImage } from "@/components/media/asset-image";
 import { ProductGrid } from "@/features/catalog/product-grid";
 import { baseProps, collectionDetail, entityPaths, findEntityId } from "@/lib/content/loaders";
 import { getLocale } from "@/lib/content/read";
@@ -35,21 +34,16 @@ export default function CollectionPage({
         ]}
       />
       <Container>
-        <PageBreadcrumb title={collection.name} />
+        <CatalogNavigation />
         <PageHeading
-          eyebrow={collection.name}
+          variant="compact"
           title={collection.title}
           description={collection.description}
         />
-        <div className="editorial-hero">
-          <AssetImage asset={collection.hero} sizes="96vw" isEager />
-        </div>
-        <Section>
-          <div className="section-heading">
-            <h2>{t("collectionProducts")}</h2>
-          </div>
+        <Section className="collection-products">
+          <h2 className="sr-only">{t("collectionProducts")}</h2>
           {collection.products.length ? (
-            <ProductGrid products={collection.products} />
+            <ProductGrid products={collection.products} hasPriorityImage />
           ) : (
             <div className="empty-state">
               <h3>{t("emptySelectionTitle")}</h3>

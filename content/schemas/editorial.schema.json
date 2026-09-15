@@ -30,13 +30,210 @@
           "type": {
             "type": "string",
             "const": "text"
+          },
+          "assetId": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "frame": {
+            "type": "object",
+            "properties": {
+              "ratio": {
+                "type": "string",
+                "enum": [
+                  "portrait",
+                  "landscape",
+                  "hero",
+                  "square",
+                  "natural"
+                ]
+              },
+              "fit": {
+                "type": "string",
+                "enum": [
+                  "cover",
+                  "contain"
+                ]
+              },
+              "position": {
+                "type": "string",
+                "pattern": "^(?:100|\\d{1,2})% (?:100|\\d{1,2})%$"
+              }
+            },
+            "required": [
+              "ratio",
+              "fit",
+              "position"
+            ],
+            "additionalProperties": false
+          },
+          "layout": {
+            "type": "object",
+            "properties": {
+              "small": {
+                "type": "object",
+                "properties": {
+                  "column": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 12
+                  },
+                  "span": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 12
+                  },
+                  "row": {
+                    "type": "integer",
+                    "exclusiveMinimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  "rowSpan": {
+                    "type": "integer",
+                    "exclusiveMinimum": 0,
+                    "maximum": 9007199254740991
+                  }
+                },
+                "required": [
+                  "column",
+                  "span",
+                  "row",
+                  "rowSpan"
+                ],
+                "additionalProperties": false
+              },
+              "medium": {
+                "type": "object",
+                "properties": {
+                  "column": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 12
+                  },
+                  "span": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 12
+                  },
+                  "row": {
+                    "type": "integer",
+                    "exclusiveMinimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  "rowSpan": {
+                    "type": "integer",
+                    "exclusiveMinimum": 0,
+                    "maximum": 9007199254740991
+                  }
+                },
+                "required": [
+                  "column",
+                  "span",
+                  "row",
+                  "rowSpan"
+                ],
+                "additionalProperties": false
+              },
+              "large": {
+                "type": "object",
+                "properties": {
+                  "column": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 12
+                  },
+                  "span": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 12
+                  },
+                  "row": {
+                    "type": "integer",
+                    "exclusiveMinimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  "rowSpan": {
+                    "type": "integer",
+                    "exclusiveMinimum": 0,
+                    "maximum": 9007199254740991
+                  }
+                },
+                "required": [
+                  "column",
+                  "span",
+                  "row",
+                  "rowSpan"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "small",
+              "medium",
+              "large"
+            ],
+            "additionalProperties": false
+          },
+          "target": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "kind": {
+                    "type": "string",
+                    "const": "route"
+                  },
+                  "id": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+                  }
+                },
+                "required": [
+                  "kind",
+                  "id"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "kind": {
+                    "type": "string",
+                    "enum": [
+                      "collections",
+                      "products",
+                      "editorial"
+                    ]
+                  },
+                  "id": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+                  }
+                },
+                "required": [
+                  "kind",
+                  "id"
+                ],
+                "additionalProperties": false
+              }
+            ]
           }
         },
         "required": [
           "id",
-          "type"
+          "type",
+          "assetId",
+          "frame",
+          "layout"
         ],
         "additionalProperties": false
+      }
+    },
+    "relatedProductIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
       }
     }
   },
@@ -45,7 +242,8 @@
     "isPublished",
     "heroAssetId",
     "source",
-    "sections"
+    "sections",
+    "relatedProductIds"
   ],
   "additionalProperties": false
 }

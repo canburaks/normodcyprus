@@ -1,0 +1,93 @@
+{
+  "date": "2026-09-15",
+  "scope": "User screenshot correction: home portraits, editorial captions and spacing breakpoints; masthead contrast",
+  "reference": "https://www.hay.com/",
+  "viewports": [
+    320,
+    390,
+    639,
+    640,
+    679,
+    767,
+    768,
+    1023,
+    1024,
+    1300,
+    1301,
+    1440,
+    1800
+  ],
+  "locales": [
+    "tr",
+    "en"
+  ],
+  "homepageChecks": {
+    "cases": 26,
+    "documentOverflowFailures": 0,
+    "headingTextOverflowOver1px": 0,
+    "orphanSlashFailures": 0,
+    "allFramesUseCover": true,
+    "method": "Read rendered DOM ranges for actual heading glyph bounds and final-word/suffix positions, in addition to media rectangles. English captions were corrected from collection to series after the first 640px check exposed overflow."
+  },
+  "relatedPageChecks": {
+    "cases": 36,
+    "widths": [
+      320,
+      640,
+      1024
+    ],
+    "templates": [
+      "collection index",
+      "collection detail",
+      "portrait product",
+      "square product",
+      "inspiration",
+      "contact"
+    ],
+    "locales": [
+      "tr",
+      "en"
+    ],
+    "positiveDocumentOverflowFailures": 0,
+    "headingTextOverflowOver1px": 0,
+    "orphanSlashFailures": 0
+  },
+  "sameViewportGeometry": {
+    "viewport": 679,
+    "client": 664,
+    "referenceFirstPortrait": [
+      35,
+      529.84375,
+      164.65625,
+      199.03125
+    ],
+    "localFirstPortrait": [
+      35,
+      529.84375,
+      164.65625,
+      199.03125
+    ],
+    "referenceCaptionTop": 748.875,
+    "localCaptionTop": 748.875,
+    "previousVerticalErrorPx": 40
+  },
+  "limitations": [
+    "Different brand photography and localized words intentionally remain. Text-driven lower-row positions depend on caption line count.",
+    "System serif/sans fallbacks remain; matching licensed HAY fonts are not supplied.",
+    "Browser screenshots were visually inspected inline; no durable paired raster files or image-diff score is claimed."
+  ],
+  "productionVerification": {
+    "build": "passed: 54 generated documents / 50 published routes",
+    "typecheck": "passed",
+    "tests": "21 passed",
+    "lint": "passed",
+    "format": "passed",
+    "contentAndUiAudits": "passed",
+    "httpAudit": {
+      "routes": 50,
+      "errors": 0
+    },
+    "preview": "http://127.0.0.1:3002/",
+    "browser": "Refreshed existing production tab; corrected captions, covered images and black masthead visibly present; no heading-bound or document overflow failures. Temporary viewport overrides reset."
+  }
+}

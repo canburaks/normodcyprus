@@ -6,15 +6,98 @@
   "sections": [
     {
       "id": "section-1",
-      "type": "text"
+      "type": "text",
+      "assetId": "comfort",
+      "frame": {
+        "ratio": "portrait",
+        "fit": "cover",
+        "position": "50% 50%"
+      },
+      "layout": {
+        "small": {
+          "column": 1,
+          "span": 12,
+          "row": 1,
+          "rowSpan": 1
+        },
+        "medium": {
+          "column": 1,
+          "span": 6,
+          "row": 1,
+          "rowSpan": 1
+        },
+        "large": {
+          "column": 2,
+          "span": 4,
+          "row": 1,
+          "rowSpan": 1
+        }
+      }
     },
     {
       "id": "section-2",
-      "type": "text"
+      "type": "text",
+      "assetId": "klem-three-2",
+      "frame": {
+        "ratio": "landscape",
+        "fit": "cover",
+        "position": "50% 50%"
+      },
+      "layout": {
+        "small": {
+          "column": 1,
+          "span": 12,
+          "row": 2,
+          "rowSpan": 1
+        },
+        "medium": {
+          "column": 7,
+          "span": 6,
+          "row": 2,
+          "rowSpan": 1
+        },
+        "large": {
+          "column": 8,
+          "span": 4,
+          "row": 2,
+          "rowSpan": 1
+        }
+      }
     },
     {
       "id": "section-3",
-      "type": "text"
+      "type": "text",
+      "assetId": "norac-bed-2",
+      "frame": {
+        "ratio": "portrait",
+        "fit": "cover",
+        "position": "50% 50%"
+      },
+      "layout": {
+        "small": {
+          "column": 1,
+          "span": 12,
+          "row": 3,
+          "rowSpan": 1
+        },
+        "medium": {
+          "column": 1,
+          "span": 6,
+          "row": 3,
+          "rowSpan": 1
+        },
+        "large": {
+          "column": 2,
+          "span": 4,
+          "row": 3,
+          "rowSpan": 1
+        }
+      }
     }
+  ],
+  "relatedProductIds": [
+    "klem-three",
+    "norac-tables",
+    "carle-three"
   ]
 }

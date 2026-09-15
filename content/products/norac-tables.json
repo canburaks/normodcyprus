@@ -22,5 +22,15 @@
     "norac-bed",
     "norac-bedside",
     "norac-dresser"
-  ]
+  ],
+  "presentation": {
+    "frame": {
+      "ratio": "portrait",
+      "fit": "contain",
+      "position": "50% 50%"
+    },
+    "hoverBackground": "#A98C62",
+    "hoverForeground": "#0A0A0A",
+    "detailRatio": "portrait"
+  }
 }

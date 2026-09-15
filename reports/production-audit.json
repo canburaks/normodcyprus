@@ -10,32 +10,32 @@
   },
   "bundles": {
     "/": {
-      "gzipJsKB": 171.7,
-      "initialHtmlKB": 56.5
+      "gzipJsKB": 178.4,
+      "initialHtmlKB": 58.4
     },
     "/us/contact": {
-      "gzipJsKB": 174.8,
-      "initialHtmlKB": 27.0
+      "gzipJsKB": 182.0,
+      "initialHtmlKB": 37.2
     },
     "/products": {
-      "gzipJsKB": 186.3,
-      "initialHtmlKB": 102.2
+      "gzipJsKB": 190.3,
+      "initialHtmlKB": 110.2
     },
     "/products/klem-uclu-koltuk": {
-      "gzipJsKB": 179.9,
-      "initialHtmlKB": 58.0
+      "gzipJsKB": 189.9,
+      "initialHtmlKB": 69.3
     },
     "/collections": {
-      "gzipJsKB": 170.0,
-      "initialHtmlKB": 31.4
+      "gzipJsKB": 179.8,
+      "initialHtmlKB": 52.6
     },
     "/us/neden-normod": {
-      "gzipJsKB": 173.0,
-      "initialHtmlKB": 27.9
+      "gzipJsKB": 181.6,
+      "initialHtmlKB": 63.7
     },
     "/blog": {
-      "gzipJsKB": 169.8,
-      "initialHtmlKB": 21.1
+      "gzipJsKB": 179.9,
+      "initialHtmlKB": 30.1
     }
   }
 }

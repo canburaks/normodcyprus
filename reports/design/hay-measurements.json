@@ -1,0 +1,577 @@
+{
+  "auditDate": "2026-09-15",
+  "sourceOrigin": "https://www.hay.com",
+  "stylesheet": "https://www.hay.com/b18.0.0.2/Frontend/CSS/haybrand.css",
+  "units": "CSS pixels; document coordinates; fractional values rounded",
+  "status": "Reference inspection; not an implementation verification report",
+  "specification": "../../DESIGN.md",
+  "desktopSample": {
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "clientWidth": 1425
+  },
+  "mobileSample": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "clientWidth": 375
+  },
+  "homepageMediaMatrix": [
+    {
+      "viewportWidth": 320,
+      "clientWidth": 305,
+      "leftInset": 20,
+      "hero": {
+        "width": 265,
+        "height": 152.5
+      },
+      "portraitTile": {
+        "width": 265,
+        "height": 320.328
+      },
+      "landscapeTile": {
+        "width": 265,
+        "height": 152.516
+      }
+    },
+    {
+      "viewportWidth": 390,
+      "clientWidth": 375,
+      "leftInset": 20,
+      "hero": {
+        "width": 335,
+        "height": 192.781
+      },
+      "portraitTile": {
+        "width": 335,
+        "height": 404.938
+      },
+      "landscapeTile": {
+        "width": 335,
+        "height": 192.797
+      }
+    },
+    {
+      "viewportWidth": 639,
+      "clientWidth": 624,
+      "leftInset": 20,
+      "hero": {
+        "width": 584,
+        "height": 336.078
+      },
+      "portraitTile": {
+        "width": 584,
+        "height": 705.922
+      },
+      "landscapeTile": {
+        "width": 584,
+        "height": 336.109
+      }
+    },
+    {
+      "viewportWidth": 640,
+      "clientWidth": 625,
+      "leftInset": 35,
+      "hero": {
+        "width": 555,
+        "height": 319.391
+      },
+      "portraitTile": {
+        "width": 151.656,
+        "height": 183.313
+      },
+      "landscapeTile": {
+        "width": 252.5,
+        "height": 145.313
+      }
+    },
+    {
+      "viewportWidth": 767,
+      "clientWidth": 752,
+      "leftInset": 35,
+      "hero": {
+        "width": 682,
+        "height": 392.484
+      },
+      "portraitTile": {
+        "width": 194,
+        "height": 234.5
+      },
+      "landscapeTile": {
+        "width": 316,
+        "height": 181.859
+      }
+    },
+    {
+      "viewportWidth": 768,
+      "clientWidth": 753,
+      "leftInset": 35,
+      "hero": {
+        "width": 683,
+        "height": 393.063
+      },
+      "portraitTile": {
+        "width": 194.328,
+        "height": 234.891
+      },
+      "landscapeTile": {
+        "width": 316.5,
+        "height": 182.156
+      }
+    },
+    {
+      "viewportWidth": 900,
+      "clientWidth": 885,
+      "leftInset": 35,
+      "hero": {
+        "width": 815,
+        "height": 469.031
+      },
+      "portraitTile": {
+        "width": 238.328,
+        "height": 288.078
+      },
+      "landscapeTile": {
+        "width": 382.5,
+        "height": 220.141
+      }
+    },
+    {
+      "viewportWidth": 1024,
+      "clientWidth": 1009,
+      "leftInset": 55,
+      "hero": {
+        "width": 899,
+        "height": 517.359
+      },
+      "portraitTile": {
+        "width": 266.328,
+        "height": 321.922
+      },
+      "landscapeTile": {
+        "width": 424.5,
+        "height": 244.313
+      }
+    },
+    {
+      "viewportWidth": 1440,
+      "clientWidth": 1425,
+      "leftInset": 55,
+      "hero": {
+        "width": 1315,
+        "height": 756.781
+      },
+      "portraitTile": {
+        "width": 405,
+        "height": 489.547
+      },
+      "landscapeTile": {
+        "width": 632.5,
+        "height": 364.016
+      }
+    },
+    {
+      "viewportWidth": 1800,
+      "clientWidth": 1785,
+      "leftInset": 197.5,
+      "hero": {
+        "width": 1390,
+        "height": 799.938
+      },
+      "portraitTile": {
+        "width": 430,
+        "height": 519.766
+      },
+      "landscapeTile": {
+        "width": 670,
+        "height": 385.609
+      }
+    }
+  ],
+  "container": {
+    "maxRowWidth": 1440,
+    "gridColumns": 12,
+    "columnPadding": {
+      "below640": 10,
+      "from640": 25
+    },
+    "rowPadding": {
+      "through900": 10,
+      "above900Through1600": 30,
+      "above1600": 0
+    },
+    "visibleGutter": {
+      "below640": 20,
+      "from640": 50
+    }
+  },
+  "homepageDesktop": {
+    "url": "https://www.hay.com/",
+    "hero": {
+      "x": 55,
+      "y": 130,
+      "width": 1315,
+      "height": 756.781
+    },
+    "heroCaption": {
+      "x": 55,
+      "y": 886.781,
+      "width": 1315,
+      "height": 83
+    },
+    "portraitRow": {
+      "x": [
+        55,
+        510,
+        965
+      ],
+      "y": 1009.781,
+      "width": 405,
+      "height": 489.547,
+      "captionHeight": 111
+    },
+    "landscapeRow": {
+      "x": [
+        55,
+        737.5
+      ],
+      "y": 1650.328,
+      "width": 632.5,
+      "height": 364.016
+    },
+    "footerY": 2187.344,
+    "itemBottomMargin": 40
+  },
+  "homepageMobile": {
+    "hero": {
+      "x": 20,
+      "y": 105,
+      "width": 335,
+      "height": 192.781
+    },
+    "nextImageY": 408.781,
+    "itemBottomMargin": 20,
+    "caption": {
+      "fontSize": 20,
+      "lineHeight": 28,
+      "letterSpacing": 1.1
+    }
+  },
+  "header": {
+    "desktop": {
+      "expandedHeight": 130,
+      "compactHeight": 55,
+      "logoAnchor": {
+        "width": 100,
+        "height": 35,
+        "x": 662.5,
+        "y": 62.188
+      },
+      "navigationAboveLogo": true
+    },
+    "mobile": {
+      "height": 70,
+      "logoAnchor": {
+        "width": 100,
+        "height": 23,
+        "x": 137.5,
+        "y": 24
+      },
+      "trigger": {
+        "width": 24,
+        "height": 40,
+        "x": 20,
+        "y": 21
+      }
+    },
+    "mobileOpenMenu": {
+      "x": 0,
+      "y": 70,
+      "width": 375,
+      "height": 774,
+      "padding": "0px 20px 100px"
+    },
+    "timingMs": {
+      "heightAndTopPadding": 300,
+      "logo": 300,
+      "overlay": 500,
+      "compactTriggerEnter": 1000,
+      "compactTriggerLeave": 200
+    },
+    "unverified": [
+      "Exact scroll threshold/direction algorithm",
+      "Full desktop preview-image pointer choreography"
+    ]
+  },
+  "collectionDetail": {
+    "url": "https://www.hay.com/products/furniture/seating/sofas/mimi",
+    "responsiveSpans": [
+      {
+        "small": 6,
+        "medium": 6,
+        "large": 3
+      },
+      {
+        "small": 6,
+        "medium": 6,
+        "large": 3
+      },
+      {
+        "small": 12,
+        "medium": 12,
+        "large": 6
+      },
+      {
+        "small": 6,
+        "medium": 6,
+        "large": 6
+      },
+      {
+        "small": 6,
+        "medium": 6,
+        "large": 3
+      },
+      {
+        "small": 6,
+        "medium": 6,
+        "large": 3
+      }
+    ],
+    "desktop": {
+      "smallImage": {
+        "width": 291.25,
+        "height": 352.047
+      },
+      "largeImage": {
+        "width": 632.5,
+        "height": 764.547
+      },
+      "itemBottomMargin": 40
+    },
+    "mobile": {
+      "smallLoadedImage": {
+        "width": 157.5,
+        "height": 190.5625
+      },
+      "largeLoadedImage": {
+        "width": 335,
+        "height": 405.34375
+      },
+      "smallItemHeight": 219.375,
+      "itemBottomMargin": 20
+    },
+    "note": "Some loaded image dimensions differ slightly from the initially reserved aspect box. Source masonry rounds item positions."
+  },
+  "cards": {
+    "editorial": {
+      "selector": "a.box-hover",
+      "verifiedUrl": "https://www.hay.com/",
+      "hoverImageOpacity": 0.4,
+      "computedTransitionMs": 800,
+      "hasVerifiedZoom": false,
+      "note": "The inspected homepage hero is not inside the .hero exception."
+    },
+    "product": {
+      "selector": ".box.dynamic-background",
+      "verifiedUrl": "https://www.hay.com/products/furniture/seating/sofas/mimi",
+      "desktopMinWidth": 1024,
+      "hoverImageOpacity": 0,
+      "hoverLabelOpacity": 1,
+      "imageAndLabelTransitionMs": 600,
+      "backgroundEnterMs": 200,
+      "backgroundLeaveMs": 400,
+      "backgroundLeaveDelayMs": 300,
+      "sourceColorExamples": [
+        {
+          "background": "#98562D",
+          "foreground": "#FFFFFF"
+        },
+        {
+          "background": "#AD9270",
+          "foreground": "#000000"
+        },
+        {
+          "background": "#492814",
+          "foreground": "#FFFFFF"
+        }
+      ],
+      "hasAlternateImageHover": false,
+      "mobileLabel": {
+        "isVisible": true,
+        "placement": "below-image",
+        "fontSize": 11,
+        "lineHeight": 23,
+        "paddingTop": 5
+      }
+    },
+    "news": {
+      "selector": ".pulse .box.info",
+      "verifiedUrl": "https://www.hay.com/hays-world",
+      "hoverImageOpacity": 0.4,
+      "computedTransitionMs": 600,
+      "circleDisplay": "none",
+      "genericInactiveRules": {
+        "imageOpacity": 0.2,
+        "circleDiameter": 80,
+        "circleTransitionMs": 400
+      },
+      "note": "Settled live state takes precedence over generic bundled .box.info rules."
+    }
+  },
+  "productDetail": {
+    "url": "https://www.hay.com/hay/furniture/seating/lounge/mimi-1-seater",
+    "desktop": {
+      "panel": {
+        "x": 55,
+        "y": 130,
+        "width": 1315
+      },
+      "columnWidth": 657.5,
+      "gutter": 0,
+      "background": "#ECECEC",
+      "portraitImageHeight": 794.766,
+      "squareVariantImageHeight": 657.5,
+      "title": {
+        "fontSize": 35,
+        "lineHeight": 49,
+        "letterSpacing": 2.5
+      },
+      "description": {
+        "maxWidth": 450,
+        "fontSize": 13,
+        "lineHeight": 23
+      },
+      "storeAction": {
+        "width": 110.328,
+        "height": 40,
+        "borderWidth": 1,
+        "borderColor": "#55BBBA"
+      }
+    },
+    "mobile": {
+      "panel": {
+        "x": 20,
+        "y": 105,
+        "width": 335
+      },
+      "imageHeight": 404.9375,
+      "informationWidth": 315,
+      "title": {
+        "fontSize": 26,
+        "lineHeight": 36.4,
+        "letterSpacing": 2.5
+      }
+    },
+    "details": {
+      "placement": "inline-below-panel",
+      "observedExpandedHeight": 427.375,
+      "maxInnerWidth": 900,
+      "desktopPadding": "120px 10px 110px",
+      "mobileVerticalPadding": 40,
+      "heightAnimationDurationMs": null
+    },
+    "imageControls": {
+      "observedImageCount": 1,
+      "hasObservedCarousel": false,
+      "hasObservedThumbnails": false,
+      "hasObservedZoom": false,
+      "scope": "Both inspected model and upholstery variant primary image containers"
+    }
+  },
+  "editorial": {
+    "desktopTitle": {
+      "maxWidth": 860,
+      "fontSize": 28,
+      "lineHeight": 39.2,
+      "letterSpacing": 2.5,
+      "bottomMargin": 45
+    },
+    "desktopLead": {
+      "maxWidth": 710,
+      "fontSize": 23,
+      "lineHeight": 33,
+      "bottomMargin": 30
+    },
+    "mobileTitle": {
+      "fontSize": 25,
+      "lineHeight": 35,
+      "letterSpacing": 2.5
+    },
+    "inspirationDetail": {
+      "url": "https://www.hay.com/inspiration/summer-dining",
+      "observedHotspotCount": 0
+    }
+  },
+  "limitations": [
+    "No screenshot artifacts are stored with this audit; screenshots were inspected in-browser.",
+    "Declared font families were read; actual licensed font rasterization was not established.",
+    "Source CSS values are not all verified live states; DESIGN.md labels the distinction.",
+    "No claim of exhaustive coverage of every HAY URL, source browser engine, widget or campaign.",
+    "The application and generated design tokens were not changed during this audit."
+  ],
+  "collectionCategorySettledCorrection": {
+    "date": "2026-09-15",
+    "url": "https://www.hay.com/products/furniture/seating/sofas",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "clientWidth": 1265,
+    "classes": "mix-item columns small-6 medium-4 large-4 inview",
+    "media": {
+      "width": 351.65625,
+      "height": 202.1875,
+      "top": 372
+    },
+    "submenu": {
+      "position": "fixed",
+      "top": 110,
+      "height": 50.203125,
+      "zIndex": 120
+    },
+    "note": "Supersedes full-width category banner reading taken before the source masonry layout settled."
+  },
+  "compactCaptionCorrection": {
+    "date": "2026-09-15",
+    "sourcePages": [
+      "https://www.hay.com/",
+      "https://www.hay.com/products/furniture/seating/sofas"
+    ],
+    "observedViewport": 679,
+    "observedClientWidth": 664,
+    "home": {
+      "heroFrame": {
+        "x": 35,
+        "y": 105,
+        "width": 594,
+        "height": 341.84375
+      },
+      "firstPortraitFrame": {
+        "x": 35,
+        "y": 529.84375,
+        "width": 164.65625,
+        "height": 199.03125
+      },
+      "portraitCaptionTop": 748.875,
+      "gutter": 50
+    },
+    "rules": {
+      "below1024": {
+        "itemMarginBottom": 20,
+        "captionPadding": "20px 0px 0px"
+      },
+      "from1024Through1300": {
+        "itemMarginBottom": 40,
+        "captionPadding": "20px 0px"
+      },
+      "above1300": {
+        "itemMarginBottom": 40,
+        "captionPadding": "20px 40px"
+      }
+    },
+    "evidence": "Settled DOM rectangles and computed styles, plus matching first-party CSS media rules. Collection captions share the generalbrandsiteblock ancestor. Ignore intermediate values during the source 800ms padding transition."
+  }
+}

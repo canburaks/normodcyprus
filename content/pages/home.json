@@ -1,21 +1,203 @@
 {
   "id": "home",
-  "heroAssetId": "living-room",
-  "collectionIds": [
-    "klem",
-    "carle",
-    "norac"
-  ],
-  "featuredProductIds": [
-    "klem-three",
-    "carle-three",
-    "norac-bedside",
-    "marn-table"
-  ],
-  "editorialPageId": "fabric-samples",
-  "editorialAssetId": "comfort",
-  "postIds": [
-    "room-to-live",
-    "texture-and-light"
+  "tiles": [
+    {
+      "id": "living",
+      "assetId": "living-room",
+      "target": {
+        "kind": "editorial",
+        "id": "inspiration"
+      },
+      "frame": {
+        "ratio": "hero",
+        "fit": "cover",
+        "position": "50% 50%"
+      },
+      "layout": {
+        "small": {
+          "column": 1,
+          "span": 12,
+          "row": 1,
+          "rowSpan": 1
+        },
+        "medium": {
+          "column": 1,
+          "span": 12,
+          "row": 1,
+          "rowSpan": 1
+        },
+        "large": {
+          "column": 1,
+          "span": 12,
+          "row": 1,
+          "rowSpan": 1
+        }
+      }
+    },
+    {
+      "id": "klem",
+      "assetId": "klem-three-2",
+      "target": {
+        "kind": "collections",
+        "id": "klem"
+      },
+      "frame": {
+        "ratio": "portrait",
+        "fit": "cover",
+        "position": "50% 50%"
+      },
+      "layout": {
+        "small": {
+          "column": 1,
+          "span": 12,
+          "row": 2,
+          "rowSpan": 1
+        },
+        "medium": {
+          "column": 1,
+          "span": 4,
+          "row": 2,
+          "rowSpan": 1
+        },
+        "large": {
+          "column": 1,
+          "span": 4,
+          "row": 2,
+          "rowSpan": 1
+        }
+      }
+    },
+    {
+      "id": "carle",
+      "assetId": "comfort",
+      "target": {
+        "kind": "collections",
+        "id": "carle"
+      },
+      "frame": {
+        "ratio": "portrait",
+        "fit": "cover",
+        "position": "50% 50%"
+      },
+      "layout": {
+        "small": {
+          "column": 1,
+          "span": 12,
+          "row": 3,
+          "rowSpan": 1
+        },
+        "medium": {
+          "column": 5,
+          "span": 4,
+          "row": 2,
+          "rowSpan": 1
+        },
+        "large": {
+          "column": 5,
+          "span": 4,
+          "row": 2,
+          "rowSpan": 1
+        }
+      }
+    },
+    {
+      "id": "norac",
+      "assetId": "norac-bed-1",
+      "target": {
+        "kind": "collections",
+        "id": "norac"
+      },
+      "frame": {
+        "ratio": "portrait",
+        "fit": "cover",
+        "position": "50% 50%"
+      },
+      "layout": {
+        "small": {
+          "column": 1,
+          "span": 12,
+          "row": 4,
+          "rowSpan": 1
+        },
+        "medium": {
+          "column": 9,
+          "span": 4,
+          "row": 2,
+          "rowSpan": 1
+        },
+        "large": {
+          "column": 9,
+          "span": 4,
+          "row": 2,
+          "rowSpan": 1
+        }
+      }
+    },
+    {
+      "id": "texture",
+      "assetId": "comfort",
+      "target": {
+        "kind": "editorial",
+        "id": "fabric-samples"
+      },
+      "frame": {
+        "ratio": "landscape",
+        "fit": "cover",
+        "position": "50% 50%"
+      },
+      "layout": {
+        "small": {
+          "column": 1,
+          "span": 12,
+          "row": 5,
+          "rowSpan": 1
+        },
+        "medium": {
+          "column": 1,
+          "span": 6,
+          "row": 3,
+          "rowSpan": 1
+        },
+        "large": {
+          "column": 1,
+          "span": 6,
+          "row": 3,
+          "rowSpan": 1
+        }
+      }
+    },
+    {
+      "id": "bedroom",
+      "assetId": "bedroom",
+      "target": {
+        "kind": "products",
+        "id": "norac-bed"
+      },
+      "frame": {
+        "ratio": "landscape",
+        "fit": "cover",
+        "position": "50% 50%"
+      },
+      "layout": {
+        "small": {
+          "column": 1,
+          "span": 12,
+          "row": 6,
+          "rowSpan": 1
+        },
+        "medium": {
+          "column": 7,
+          "span": 6,
+          "row": 3,
+          "rowSpan": 1
+        },
+        "large": {
+          "column": 7,
+          "span": 6,
+          "row": 3,
+          "rowSpan": 1
+        }
+      }
+    }
   ]
 }

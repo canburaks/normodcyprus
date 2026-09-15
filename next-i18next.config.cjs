@@ -12,6 +12,7 @@ const config = {
   defaultNS: "common",
   localePath: "./public/locales",
   fallbackLng: false,
+  reloadOnPrerender: process.env.NODE_ENV === "development",
   interpolation: { escapeValue: false },
 };
 module.exports = config;

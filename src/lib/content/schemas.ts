@@ -6,6 +6,45 @@ export type Locale = z.infer<typeof localeSchema>;
 const text = z.string().trim().min(1);
 export const seoSchema = z.strictObject({ title: text, description: text });
 const source = z.url();
+export const mediaFrameSchema = z.strictObject({
+  ratio: z.enum(["portrait", "landscape", "hero", "square", "natural"]),
+  fit: z.enum(["cover", "contain"]),
+  position: z.string().regex(/^(?:100|\d{1,2})% (?:100|\d{1,2})%$/),
+});
+export const gridPlacementSchema = z
+  .strictObject({
+    column: z.number().int().min(1).max(12),
+    span: z.number().int().min(1).max(12),
+    row: z.number().int().positive(),
+    rowSpan: z.number().int().positive(),
+  })
+  .refine((value) => value.column + value.span <= 13, "Tile exceeds the twelve-column grid");
+export const tileLayoutSchema = z.strictObject({
+  small: gridPlacementSchema,
+  medium: gridPlacementSchema,
+  large: gridPlacementSchema,
+});
+export const linkTargetSchema = z.discriminatedUnion("kind", [
+  z.strictObject({ kind: z.literal("route"), id: idSchema }),
+  z.strictObject({ kind: z.enum(["collections", "products", "editorial"]), id: idSchema }),
+]);
+export const editorialTileSchema = z.strictObject({
+  id: idSchema,
+  assetId: idSchema,
+  target: linkTargetSchema,
+  frame: mediaFrameSchema,
+  layout: tileLayoutSchema,
+});
+export const presentationSchema = z.strictObject({
+  productCollageSlots: z.array(tileLayoutSchema).length(6),
+  collectionFrame: mediaFrameSchema,
+  collectionSpans: z.strictObject({
+    small: z.number().int().min(1).max(12),
+    medium: z.number().int().min(1).max(12),
+    large: z.number().int().min(1).max(12),
+  }),
+  navigationPreviewAssetId: idSchema,
+});
 export const siteSchema = z.strictObject({
   schemaVersion: z.literal(1),
   locales: z.tuple([z.literal("tr"), z.literal("en")]),
@@ -40,6 +79,7 @@ export const storeSchema = z.strictObject({
     .nullable(),
   directionsUrl: z.url().refine((url) => url.startsWith("https://"), "Directions must use HTTPS"),
   photoAssetId: idSchema,
+  gallery: z.array(z.strictObject({ assetId: idSchema, frame: mediaFrameSchema })).min(1),
   openingHours: z.array(openingHoursSchema).min(1),
   geo: z.strictObject({
     latitude: z.number().min(-90).max(90),
@@ -80,6 +120,12 @@ export const productSchema = z.strictObject({
   verifiedAt: z.iso.date(),
   sortOrder: z.number().int().nonnegative(),
   relatedIds: z.array(idSchema),
+  presentation: z.strictObject({
+    frame: mediaFrameSchema,
+    hoverBackground: z.string().regex(/^#[0-9A-Fa-f]{6}$/),
+    detailRatio: z.enum(["portrait", "square", "natural"]),
+    hoverForeground: z.enum(["#FFFFFF", "#0A0A0A"]),
+  }),
 });
 export const productTranslationSchema = z.strictObject({
   slug: idSchema,
@@ -109,7 +155,19 @@ export const editorialSchema = z.strictObject({
   isPublished: z.boolean(),
   heroAssetId: idSchema,
   source,
-  sections: z.array(z.strictObject({ id: idSchema, type: z.literal("text") })).min(1),
+  sections: z
+    .array(
+      z.strictObject({
+        id: idSchema,
+        type: z.literal("text"),
+        assetId: idSchema,
+        frame: mediaFrameSchema,
+        layout: tileLayoutSchema,
+        target: linkTargetSchema.optional(),
+      }),
+    )
+    .min(1),
+  relatedProductIds: z.array(idSchema),
 });
 export const editorialTranslationSchema = z.strictObject({
   slug: idSchema,
@@ -141,13 +199,11 @@ export const postTranslationSchema = z.strictObject({
 });
 export const homeSchema = z.strictObject({
   id: z.literal("home"),
-  heroAssetId: idSchema,
-  collectionIds: z.array(idSchema),
-  featuredProductIds: z.array(idSchema),
-  editorialPageId: idSchema,
-  editorialAssetId: idSchema,
-  postIds: z.array(idSchema),
+  tiles: z.array(editorialTileSchema).length(6),
 });
+export type MediaFrame = z.infer<typeof mediaFrameSchema>;
+export type TileLayout = z.infer<typeof tileLayoutSchema>;
+export type LinkTarget = z.infer<typeof linkTargetSchema>;
 export type Product = z.infer<typeof productSchema>;
 export type ProductTranslation = z.infer<typeof productTranslationSchema>;
 export type Collection = z.infer<typeof collectionSchema>;

@@ -33,3 +33,14 @@ for (const source of [
 test("unknown entity references fail at build time", async () => {
   await assert.rejects(() => compileArticle(['<ProductLink id="missing">x</ProductLink>'], "en"));
 });
+
+test("photo pairs use registered localized media and reject incomplete or unknown references", async () => {
+  const result = await compileArticle(['<PhotoPair left="living-room" right="bedroom" />'], "en");
+  assert.match(result.html, /class="mdx-photo-pair"/);
+  assert.equal((result.html.match(/<img /g) ?? []).length, 2);
+  assert.match(result.html, /\/_next\/image/);
+  await assert.rejects(() => compileArticle(['<PhotoPair left="living-room" />'], "en"));
+  await assert.rejects(() =>
+    compileArticle(['<PhotoPair left="living-room" right="missing" />'], "en"),
+  );
+});

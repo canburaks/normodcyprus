@@ -18,5 +18,15 @@
   "source": "https://normod.com/products/marn-lake-orta-sehpa",
   "verifiedAt": "2026-09-15",
   "sortOrder": 11,
-  "relatedIds": []
+  "relatedIds": [],
+  "presentation": {
+    "frame": {
+      "ratio": "portrait",
+      "fit": "contain",
+      "position": "50% 50%"
+    },
+    "hoverBackground": "#4C3930",
+    "hoverForeground": "#FFFFFF",
+    "detailRatio": "square"
+  }
 }

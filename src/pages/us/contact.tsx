@@ -3,15 +3,21 @@ import { useTranslation } from "next-i18next/pages";
 import { Container } from "@/components/layout/container";
 import { useSite } from "@/components/layout/site-context";
 import { PageHeading } from "@/components/content/page-heading";
-import { PageBreadcrumb } from "@/components/content/page-breadcrumb";
 import { TextLink } from "@/components/content/text-link";
+import storeData from "../../../content/store.json";
+import { MediaFrame } from "@/components/media/media-frame";
+import { storeSchema } from "@/lib/content/schemas";
+import { mediaSizes } from "@/lib/design/layout";
 import { AssetImage } from "@/components/media/asset-image";
 import { PageSeo } from "@/components/seo/page-seo";
 import { baseProps, getImage } from "@/lib/content/loaders";
 import { getLocale } from "@/lib/content/read";
 import { absoluteUrl, localizedPath } from "@/lib/routes/paths";
 
-export default function ContactPage({ image }: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function ContactPage({
+  image,
+  photos,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   const { t } = useTranslation(["contact", "common", "store"]);
   const { shell, locale, route } = useSite();
   const store = shell.store;
@@ -45,15 +51,21 @@ export default function ContactPage({ image }: InferGetStaticPropsType<typeof ge
           },
         ]}
       />
-      <Container>
-        <PageBreadcrumb title={t("name", { ns: "store" })} />
-        <PageHeading eyebrow={t("eyebrow")} title={t("title")} description={t("description")} />
-        <div className="contact-layout">
-          <div className="contact-image">
-            <AssetImage asset={image} sizes="(min-width: 768px) 48vw, 90vw" isEager />
+      <Container className="contact-page">
+        <PageHeading title={t("title")} />
+        <div className="contact-grid">
+          <div className="store-photos" data-is-single={photos.length === 1}>
+            {photos.map((photo, index) => (
+              <MediaFrame key={photo.image.id} frame={photo.frame}>
+                <AssetImage
+                  asset={photo.image}
+                  sizes={mediaSizes(12, 12, photos.length === 1 ? 8 : 4)}
+                  isEager={index === 0}
+                />
+              </MediaFrame>
+            ))}
           </div>
           <section className="contact-details">
-            <p className="eyebrow">{t("detailsTitle")}</p>
             <h2>{t("name", { ns: "store" })}</h2>
             <dl className="contact-detail-grid">
               <div>
@@ -108,7 +120,10 @@ export async function getStaticProps(context: GetStaticPropsContext) {
   return {
     props: {
       ...(await baseProps(locale, "contact", ["contact"])),
-      image: getImage("showroom", locale),
+      image: getImage(storeData.photoAssetId, locale),
+      photos: storeSchema
+        .parse(storeData)
+        .gallery.map((photo) => ({ image: getImage(photo.assetId, locale), frame: photo.frame })),
     },
   };
 }

@@ -14,6 +14,7 @@ import {
   productTranslationSchema,
   siteSchema,
   storeSchema,
+  presentationSchema,
   type Locale,
 } from "./schemas";
 import { readJson, readLocale, recordIds } from "./read";
@@ -59,13 +60,24 @@ export async function validateContent() {
     .map((id) => readJson(`content/pages/${id}.json`, editorialSchema));
   const posts = recordIds("posts").map((id) => readJson(`content/posts/${id}.json`, postSchema));
   const home = readJson("content/pages/home.json", homeSchema);
+  const presentation = readJson("content/config/presentation.json", presentationSchema);
   const authors = readJson(
     "content/authors.json",
     z.record(z.string(), z.strictObject({ type: z.enum(["Person", "Organization"]) })),
   );
   const navigation = readJson(
     "content/config/navigation.json",
-    z.strictObject({ primary: z.array(z.string()), footer: z.array(z.string()) }),
+    z.strictObject({
+      primary: z.array(z.string()),
+      footer: z.array(z.string()),
+      groups: z.array(
+        z.strictObject({
+          id: z.string(),
+          type: z.enum(["categories", "collections", "editorial"]),
+          ids: z.array(z.string()),
+        }),
+      ),
+    }),
   );
   const routes = readJson<Record<string, string>>("content/config/routes.json");
   [...navigation.primary, ...navigation.footer].forEach((id) =>
@@ -81,14 +93,42 @@ export async function validateContent() {
   const productById = new Map(products.map((p) => [p.id, p]));
   const collectionIds = new Set(collections.map((c) => c.id));
   const verifyAsset = (id: string) => invariant(assets[id], `Missing asset reference: ${id}`);
+  const verifyTarget = ({ kind, id }: { kind: string; id: string }) =>
+    invariant(
+      kind === "route"
+        ? id in routes
+        : kind === "products"
+          ? productById.get(id)?.isPublished
+          : kind === "collections"
+            ? collections.some((record) => record.id === id && record.isPublished)
+            : pages.some((record) => record.id === id && record.isPublished),
+      `Invalid presentation target: ${kind}/${id}`,
+    );
+  for (const group of navigation.groups) {
+    group.ids.forEach((id) =>
+      invariant(
+        group.type === "categories"
+          ? taxonomy.categories.includes(id)
+          : group.type === "collections"
+            ? collectionIds.has(id)
+            : id in routes || pages.some((page) => page.id === id && page.isPublished),
+        `Invalid menu target: ${group.id}/${id}`,
+      ),
+    );
+  }
+  for (const page of pages)
+    page.sections.forEach((section) => {
+      if (section.target) verifyTarget(section.target);
+    });
   [
     site.logoAssetId,
     site.fallbackAssetId,
     site.socialAssetId,
     site.faviconAssetId,
-    home.heroAssetId,
-    home.editorialAssetId,
+    ...home.tiles.map((tile) => tile.assetId),
+    presentation.navigationPreviewAssetId,
     store.photoAssetId,
+    ...store.gallery.map((photo) => photo.assetId),
   ].forEach(verifyAsset);
   for (const [id, asset] of Object.entries(assets)) {
     invariant(id === asset.id, `Asset ID mismatch: ${id}`);
@@ -129,27 +169,29 @@ export async function validateContent() {
       ),
     );
   }
-  home.collectionIds.forEach((id) =>
+  for (const tile of home.tiles) {
+    const { kind, id } = tile.target;
     invariant(
-      collections.some((c) => c.id === id && c.isPublished),
-      `Invalid featured collection: ${id}`,
-    ),
-  );
-  home.featuredProductIds.forEach((id) =>
-    invariant(productById.get(id)?.isPublished, `Invalid home product: ${id}`),
-  );
-  invariant(
-    pages.some((page) => page.id === home.editorialPageId && page.isPublished),
-    "Invalid home editorial reference",
-  );
-  home.postIds.forEach((id) =>
-    invariant(
-      posts.some((post) => post.id === id),
-      `Invalid home article reference: ${id}`,
-    ),
-  );
+      kind === "route"
+        ? id in routes
+        : kind === "products"
+          ? productById.get(id)?.isPublished
+          : kind === "collections"
+            ? collections.some((c) => c.id === id && c.isPublished)
+            : pages.some((p) => p.id === id && p.isPublished),
+      "Invalid home tile target: " + tile.id,
+    );
+  }
   for (const locale of site.locales) {
     const navigationLabels = readLocale<Record<string, string>>(locale, "navigation");
+    const homeCopy = readLocale<{ tiles: Record<string, string> }>(locale, "home");
+    for (const tile of home.tiles)
+      invariant(homeCopy.tiles[tile.id]?.trim(), "Missing home caption: " + locale + "/" + tile.id);
+    for (const group of navigation.groups)
+      invariant(
+        navigationLabels[group.id]?.trim(),
+        "Missing menu heading: " + locale + "/" + group.id,
+      );
     [...navigation.primary, ...navigation.footer].forEach((id) =>
       invariant(navigationLabels[id]?.trim(), `Missing navigation label: ${locale}/${id}`),
     );
@@ -160,6 +202,10 @@ export async function validateContent() {
       ),
       pages.map((p) => {
         verifyAsset(p.heroAssetId);
+        p.sections.forEach((section) => verifyAsset(section.assetId));
+        p.relatedProductIds.forEach((id) =>
+          invariant(productById.get(id)?.isPublished, "Invalid editorial product: " + id),
+        );
         const copy = readLocale(locale, `pages/${p.id}`, editorialTranslationSchema);
         invariant(
           p.sections.every((section) => copy.sections[section.id]),

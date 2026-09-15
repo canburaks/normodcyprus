@@ -34,6 +34,56 @@
       "type": "string",
       "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
     },
+    "gallery": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "assetId": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "frame": {
+            "type": "object",
+            "properties": {
+              "ratio": {
+                "type": "string",
+                "enum": [
+                  "portrait",
+                  "landscape",
+                  "hero",
+                  "square",
+                  "natural"
+                ]
+              },
+              "fit": {
+                "type": "string",
+                "enum": [
+                  "cover",
+                  "contain"
+                ]
+              },
+              "position": {
+                "type": "string",
+                "pattern": "^(?:100|\\d{1,2})% (?:100|\\d{1,2})%$"
+              }
+            },
+            "required": [
+              "ratio",
+              "fit",
+              "position"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "assetId",
+          "frame"
+        ],
+        "additionalProperties": false
+      }
+    },
     "openingHours": {
       "minItems": 1,
       "type": "array",
@@ -126,6 +176,7 @@
     "phoneHref",
     "directionsUrl",
     "photoAssetId",
+    "gallery",
     "openingHours",
     "geo",
     "sources"

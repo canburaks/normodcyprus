@@ -14,5 +14,13 @@
   "seo": {
     "title": "Normod Kıbrıs | Ev dediğin, senin gibi",
     "description": "Normod tasarımları Kıbrıs’ta. Koltuk, koleksiyon ve yaşam alanı fikirlerini keşfet; Lefkoşa deneyim merkezimizde tanışalım."
+  },
+  "tiles": {
+    "living": "Yaşamına uyum sağlayan tasarımlar",
+    "klem": "Klem koltuk serisi",
+    "carle": "Carle modüler serisi",
+    "norac": "Norac ahşap serisi",
+    "texture": "Renkler, dokular, olasılıklar",
+    "bedroom": "Evde kendine yer aç"
   }
 }

@@ -4,6 +4,7 @@ import site from "../../../content/config/site.json";
 import navigation from "../../../content/config/navigation.json";
 import store from "../../../content/store.json";
 import taxonomy from "../../../content/taxonomy.json";
+import presentation from "../../../content/config/presentation.json";
 import { entityPath, routes, type EntityKind, type RouteKey } from "../routes/paths";
 import { readJson, readLocale, recordIds } from "./read";
 import {
@@ -20,6 +21,7 @@ import {
   type Collection,
   type Editorial,
   type Post,
+  type LinkTarget,
 } from "./schemas";
 import type {
   AlternatePaths,
@@ -79,7 +81,12 @@ export function entityAlternates(kind: EntityKind, id: string): AlternatePaths {
     ]),
   ) as AlternatePaths;
 }
-export function findEntityId(kind: EntityKind, slug: string, locale: Locale) {
+export function findEntityId(
+  kind: EntityKind,
+  slug: string,
+  locale: Locale,
+  shouldIncludeDrafts = false,
+) {
   const records =
     kind === "products"
       ? productRecords()
@@ -87,12 +94,12 @@ export function findEntityId(kind: EntityKind, slug: string, locale: Locale) {
         ? collectionRecords()
         : kind === "editorial"
           ? editorialRecords()
-          : postRecords();
+          : postRecords(shouldIncludeDrafts);
   return records.find(
     ({ id }) => readLocale<{ slug: string }>(locale, `${folders[kind]}/${id}`).slug === slug,
   )?.id;
 }
-export function entityPaths(kind: EntityKind) {
+export function entityPaths(kind: EntityKind, shouldIncludeDrafts = false) {
   const records =
     kind === "products"
       ? productRecords()
@@ -100,7 +107,7 @@ export function entityPaths(kind: EntityKind) {
         ? collectionRecords()
         : kind === "editorial"
           ? editorialRecords()
-          : postRecords();
+          : postRecords(shouldIncludeDrafts);
   return records.flatMap(({ id }) =>
     site.locales.map((locale) => ({
       params: {
@@ -117,6 +124,35 @@ function navigationLink(id: string, locale: Locale): SiteLink {
     label: labels[id],
     href: id in routes ? routes[id as RouteKey] : entityAlternates("editorial", id)[locale],
   };
+}
+export function targetPath(target: LinkTarget, locale: Locale) {
+  if (target.kind === "route") return routes[target.id as RouteKey];
+  return entityAlternates(target.kind, target.id)[locale];
+}
+function menuGroups(locale: Locale) {
+  const labels = readLocale<Record<string, string>>(locale, "navigation");
+  return navigation.groups.map((group) => ({
+    id: group.id,
+    label: labels[group.id],
+    href:
+      group.type === "categories"
+        ? routes.products
+        : group.type === "collections"
+          ? routes.collections
+          : entityAlternates("editorial", "inspiration")[locale],
+    links:
+      group.type === "categories"
+        ? catalogOptions(locale).categories.map((category) => ({
+            ...category,
+            href: routes.products + "?category=" + category.id,
+          }))
+        : group.type === "collections"
+          ? collectionRecords().map(({ id }) => {
+              const copy = readLocale(locale, "collections/" + id, collectionTranslationSchema);
+              return { id, label: copy.name, href: entityPath("collections", copy.slug) };
+            })
+          : group.ids.map((id) => navigationLink(id, locale)),
+  }));
 }
 export async function baseProps(
   locale: Locale,
@@ -143,6 +179,8 @@ export async function baseProps(
       socialImage: getImage(site.socialAssetId, locale),
       primaryLinks: navigation.primary.map((id) => navigationLink(id, locale)),
       footerLinks: navigation.footer.map((id) => navigationLink(id, locale)),
+      menuGroups: menuGroups(locale),
+      menuPreview: getImage(presentation.navigationPreviewAssetId, locale),
       store: {
         email: store.email,
         phoneDisplay: store.phoneDisplay,
@@ -174,11 +212,11 @@ export function productCard(id: string, locale: Locale): ProductCardModel {
     summary: copy.summary,
     href: entityPath("products", copy.slug),
     image: getImage(record.galleryAssetIds[0], locale),
-    alternateImage: record.galleryAssetIds[1] ? getImage(record.galleryAssetIds[1], locale) : null,
     categoryId: record.categoryId,
     materialIds: record.materialIds,
     collectionIds: record.collectionIds,
     sortOrder: record.sortOrder,
+    presentation: record.presentation,
   };
 }
 export function productDetail(id: string, locale: Locale): ProductModel {
@@ -233,6 +271,14 @@ export function editorialDetail(id: string, locale: Locale): EditorialModel {
     ...readLocale(locale, `pages/${id}`, editorialTranslationSchema),
     hero: getImage(record.heroAssetId, locale),
     sectionIds: record.sections.map((s) => s.id),
+    blocks: record.sections.map((section) => ({
+      id: section.id,
+      image: getImage(section.assetId, locale),
+      frame: section.frame,
+      layout: section.layout,
+      href: section.target ? targetPath(section.target, locale) : null,
+    })),
+    related: record.relatedProductIds.map((id) => productCard(id, locale)),
   };
 }
 export function catalogOptions(locale: Locale) {
@@ -258,10 +304,11 @@ export function catalogOptions(locale: Locale) {
     })),
   };
 }
-export function postCard(id: string, locale: Locale): PostCardModel {
+export function postCard(id: string, locale: Locale, shouldIncludeDrafts = false): PostCardModel {
   const record = readJson(`content/posts/${id}.json`, postSchema),
     copy = readLocale(locale, `posts/${id}`, postTranslationSchema);
-  if (!record.publishedAt) throw new Error(`Post is not ready to publish: ${id}`);
+  if ((!record.isPublished || !record.publishedAt) && !shouldIncludeDrafts)
+    throw new Error(`Post is not ready to publish: ${id}`);
   return {
     id,
     title: copy.title,
@@ -269,5 +316,6 @@ export function postCard(id: string, locale: Locale): PostCardModel {
     href: entityPath("blog", copy.slug),
     cover: getImage(record.coverAssetId, locale),
     publishedAt: record.publishedAt,
+    isDraft: !record.isPublished,
   };
 }

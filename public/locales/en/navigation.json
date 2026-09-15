@@ -15,5 +15,11 @@
   "tr": "Türkçe",
   "en": "English",
   "openMenu": "Open menu",
-  "closeMenu": "Close menu"
+  "closeMenu": "Close menu",
+  "search": "Search",
+  "searchPlaceholder": "Search products",
+  "expandHeader": "Show full header",
+  "allProducts": "All products",
+  "allCollections": "All collections",
+  "furniture": "Furniture"
 }

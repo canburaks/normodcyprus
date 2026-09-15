@@ -1,7 +1,7 @@
 import type { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import { useTranslation } from "next-i18next/pages";
 import { Container, Section } from "@/components/layout/container";
-import { PageHeading } from "@/components/content/page-heading";
+
 import { TextLink } from "@/components/content/text-link";
 import { PageSeo } from "@/components/seo/page-seo";
 import { PostCard } from "@/features/blog/post-card";
@@ -17,10 +17,14 @@ export default function BlogPage({
     <>
       <PageSeo title={t("seo.title")} description={t("seo.description")} pageType="Blog" />
       <Container>
-        <PageHeading eyebrow={t("eyebrow")} title={t("title")} description={t("description")} />
+        <div className="catalog-navigation-space">
+          <header className="sub-navigation">
+            <h1>{t("eyebrow")}</h1>
+          </header>
+        </div>
         <Section className="!mt-0">
           {posts.length ? (
-            <div className="editorial-grid">
+            <div className="news-grid">
               {posts.map((post) => (
                 <PostCard key={post.id} post={post} />
               ))}
@@ -42,7 +46,9 @@ export async function getStaticProps(context: GetStaticPropsContext) {
   return {
     props: {
       ...(await baseProps(locale, "blog", ["blog"])),
-      posts: postRecords().map((post) => postCard(post.id, locale)),
+      posts: postRecords(process.env.NODE_ENV === "development").map((post) =>
+        postCard(post.id, locale, process.env.NODE_ENV === "development"),
+      ),
       inspirationHref: entityAlternates("editorial", "inspiration")[locale],
     },
   };

@@ -1,72 +1,38 @@
-/* HAY motion families adapted to browser-managed controls; DESIGN.md is authoritative. */
-@keyframes editorial-reveal {
-  from {
-    opacity: 0.7;
-    transform: translateY(var(--design-motion-distance-reveal-mobile));
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-@supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .reveal {
-      animation: editorial-reveal var(--design-motion-duration-editorial)
-        var(--design-motion-easing-block) both;
-      animation-timeline: view();
-      animation-range: entry 0% entry 85%;
-    }
-  }
-}
-@supports (animation-timeline: scroll()) {
-  @media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
-    @keyframes header-compact {
-      to {
-        height: 55px;
-      }
-    }
-    @keyframes wordmark-compact {
-      to {
-        width: 170px;
-      }
-    }
-    .header-top {
-      animation: header-compact linear both;
-      animation-timeline: scroll(root);
-      animation-range: 0px 200px;
-    }
-    .wordmark {
-      animation: wordmark-compact linear both;
-      animation-timeline: scroll(root);
-      animation-range: 0px 200px;
-    }
-  }
-}
-[popover] {
+/* Timed HAY transitions. Native IntersectionObserver only marks one-time entry. */
+.reveal {
+  opacity: 1;
+  transform: none;
   transition:
-    opacity var(--design-motion-duration-navigation),
-    transform var(--design-motion-duration-navigation),
+    opacity var(--design-motion-duration-editorial) ease,
+    transform var(--design-motion-duration-editorial) ease;
+}
+.reveal[data-reveal="pending"] {
+  opacity: 0;
+  transform: translateY(var(--design-motion-distance-reveal-desktop));
+}
+.navigation-panel {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition:
+    opacity var(--design-motion-duration-navigation) ease,
+    transform var(--design-motion-duration-navigation) ease,
     display var(--design-motion-duration-navigation) allow-discrete,
     overlay var(--design-motion-duration-navigation) allow-discrete;
 }
-[popover]:popover-open {
+.navigation-panel:popover-open {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 @starting-style {
-  [popover]:popover-open {
+  .navigation-panel:popover-open {
     opacity: 0;
-    transform: translateY(var(--design-motion-distance-reveal-mobile));
+    transform: translateY(-30px);
   }
 }
-@media (prefers-reduced-motion: no-preference) {
-  @view-transition {
-    navigation: auto;
-  }
-  ::view-transition-old(root),
-  ::view-transition-new(root) {
-    animation-duration: var(--design-motion-duration-fast);
+@media (max-width: 767px) {
+  .navigation-panel {
+    transform: none;
+    transition-duration: var(--design-motion-duration-header);
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -77,7 +43,8 @@
     transition: none !important;
     scroll-behavior: auto !important;
   }
-  .reveal {
+  .reveal,
+  .reveal[data-reveal="pending"] {
     opacity: 1;
     transform: none;
   }

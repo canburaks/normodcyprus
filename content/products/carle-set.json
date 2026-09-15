@@ -19,5 +19,15 @@
   "relatedIds": [
     "carle-chaise",
     "carle-three"
-  ]
+  ],
+  "presentation": {
+    "frame": {
+      "ratio": "portrait",
+      "fit": "contain",
+      "position": "50% 50%"
+    },
+    "hoverBackground": "#A6BDB3",
+    "hoverForeground": "#0A0A0A",
+    "detailRatio": "portrait"
+  }
 }

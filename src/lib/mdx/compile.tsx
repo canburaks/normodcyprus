@@ -2,10 +2,11 @@ import { evaluate } from "@mdx-js/mdx";
 import * as runtime from "react/jsx-runtime";
 import { renderToStaticMarkup } from "react-dom/server";
 import { createElement, type ReactNode } from "react";
-import { getImageProps } from "next/image";
+import { getImageProps, type ImageLoaderProps } from "next/image";
 import { entityAlternates, getImage } from "../content/loaders";
 import { localizedPath } from "../routes/paths";
 import type { Locale } from "../content/schemas";
+import { mediaSizes } from "../design/layout";
 
 type Node = {
   type: string;
@@ -17,6 +18,13 @@ type Node = {
   children?: Node[];
   data?: { hProperties?: Record<string, string> };
 };
+// The standalone content validator has no Next config injection. All sources here
+// resolve through the validated registry; retain Next's runtime image endpoint.
+function articleImageLoader({ src, width, quality }: ImageLoaderProps) {
+  return (
+    "/_next/image?" + new URLSearchParams({ url: src, w: String(width), q: String(quality ?? 75) })
+  );
+}
 const allowedNodes = new Set([
   "root",
   "paragraph",
@@ -38,6 +46,7 @@ const allowedNodes = new Set([
 const allowedComponents: Record<string, string[]> = {
   Callout: [],
   Figure: ["id"],
+  PhotoPair: ["left", "right"],
   ProductLink: ["id"],
   CollectionLink: ["id"],
 };
@@ -64,8 +73,10 @@ export function validateMdxTree(tree: Node) {
         )
           throw new Error("MDX attributes must be allowlisted literal IDs");
       }
-      if (node.name !== "Callout" && !node.attributes?.some((attr) => attr.name === "id"))
-        throw new Error("MDX references need an id");
+      const required =
+        node.name === "Callout" ? [] : node.name === "PhotoPair" ? ["left", "right"] : ["id"];
+      if (required.some((name) => !node.attributes?.some((attr) => attr.name === name)))
+        throw new Error("MDX references need their required asset/entity IDs");
     }
     node.children?.forEach(visit);
   }
@@ -99,11 +110,12 @@ export async function compileArticle(lines: string[], locale: Locale) {
     Figure: ({ id }: { id: string }) => {
       const asset = getImage(id, locale);
       const { props } = getImageProps({
+        loader: articleImageLoader,
         src: asset.src,
         width: asset.width,
         height: asset.height,
         alt: asset.alt,
-        sizes: "(min-width: 768px) 660px, 90vw",
+        sizes: mediaSizes(),
       });
       // Next's getImageProps supplies optimized src/srcSet; this build-only render has no image runtime.
       return (
@@ -121,8 +133,32 @@ export async function compileArticle(lines: string[], locale: Locale) {
       <a href={localizedPath(entityAlternates("collections", id)[locale], locale)}>{children}</a>
     ),
   };
+  const PhotoPair = ({ left, right }: { left: string; right: string }) => (
+    <div className="mdx-photo-pair">
+      {[left, right].map((id) => {
+        const asset = getImage(id, locale);
+        const { props } = getImageProps({
+          loader: articleImageLoader,
+          src: asset.src,
+          width: asset.width,
+          height: asset.height,
+          alt: asset.alt,
+          sizes: mediaSizes(12, 6, 6),
+        });
+        return (
+          <figure key={id}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img {...props} alt={asset.alt} />
+            <figcaption>{asset.alt}</figcaption>
+          </figure>
+        );
+      })}
+    </div>
+  );
   return {
-    html: renderToStaticMarkup(createElement(Content, { components })),
+    html: renderToStaticMarkup(
+      createElement(Content, { components: { ...components, PhotoPair } }),
+    ),
     headings,
     readingMinutes: Math.max(1, Math.ceil(wordCount / 200)),
   };

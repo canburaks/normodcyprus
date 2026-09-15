@@ -1,7 +1,7 @@
 import type { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import { useTranslation } from "next-i18next/pages";
 import { Container, Section } from "@/components/layout/container";
-import { PageHeading } from "@/components/content/page-heading";
+import { CatalogNavigation } from "@/components/content/catalog-navigation";
 import { PageSeo } from "@/components/seo/page-seo";
 import { CatalogBrowser } from "@/features/catalog/catalog-browser";
 import { baseProps, catalogOptions, productCard, productRecords } from "@/lib/content/loaders";
@@ -33,7 +33,8 @@ export default function ProductsPage({
         ]}
       />
       <Container>
-        <PageHeading title={t("title")} description={t("description")} />
+        <CatalogNavigation />
+        <h1 className="sr-only">{t("title")}</h1>
         <Section className="!mt-0">
           <CatalogBrowser products={products} options={options} />
         </Section>

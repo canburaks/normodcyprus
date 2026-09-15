@@ -2,11 +2,23 @@
 
 ## Status and authority
 
-- The user approved implementation with “go” on 2026-09-15. The website is implemented for local review. Read PLAN.md and reports/verification.md for completed work and remaining release checks.
+- The user approved the measured HAY rebuild with “Now, implement this design.” It is implemented and verified with the limits in [reports/verification.md](reports/verification.md). PLAN.md Phase14 distinguishes completed implementation from remaining font/photo assets and release QA; do not call system fonts a pixel-perfect raster match.
 - The user's project brief is the source of truth and overrides conflicting skill guidance.
 - Read [PLAN.md](PLAN.md) for scope, decisions, implementation steps, and approval status.
 - Read [DESIGN.md](DESIGN.md) before design or styling work; keep it synchronized with approved design changes.
 - Record every repository modification batch in [CHANGELOGS.md](CHANGELOGS.md). Mark plan checkboxes complete only when their work is verified.
+
+## Current design authority — deep HAY audit, 2026-09-15
+
+- [DESIGN.md](DESIGN.md) now contains a 14-page reference audit, exact layout/type/card measurements, a 10-width homepage matrix, observed interactions, source-only motion families and known evidence limits. Read it before changing visual code.
+- The previous approximate design and discretionary adaptations are superseded. In particular, do not retain the reversed masthead rows, 103px compact header, 88px mobile header, alternate-image product hover, uniform collection/product grids or generic four-column footer as accepted decisions.
+- Desktop HAY navigation sits above its centered logo; header states are 130px and 55px total. Mobile is 70px. Media insets derive from row/column padding: 20px below 640, 35px through 900, 55px through 1600, then a centered maximum row. Grid, navigation and hover have independent breakpoints.
+- Home uses full-width landscape → three portraits → two landscapes. Collections index uses two landscape cards below640px and three from640px (settled source correction); product families use JSON-authored mixed-span collages. Product detail has equal adjacent image/information panels with a #ECECEC surface.
+- Editorial hover settles at image opacity 0.4. Desktop product hover fades the image to zero and shows a centered label over a JSON-defined color in 600ms. Mobile labels remain beneath images. Live news hover also settles at 0.4/600ms and suppresses the generic EXAMINE circle; inactive bundled CSS must not override tested behavior.
+- DESIGN.md YAML is migrated and active. `pnpm design:generate` writes145 CSS variables plus `src/styles/generated/layout.json`; image sizes consume that shared geometry. Collection category layout was corrected after observing the source's settled `small-6 medium-4 large-4` classes and fixed submenu. Do not restore the earlier pre-layout full-width interpretation.
+- [reports/design/hay-measurements.json](reports/design/hay-measurements.json) contains supporting measurements. [reports/design/initial-design-superseded.md](reports/design/initial-design-superseded.md) is historical, not instruction authority.
+- Keep Normod branding/content, Turkish/English JSON, truthful store information, existing functional behavior and native accessibility. Additional Cyprus photographs and matching licensed typography are asset gaps; do not invent assets or silently call a fallback font pixel-perfect.
+- Before claiming visual completion, compare the same viewport/client width and settled states, cover responsive boundary pairs, document font/content differences, and complete Phase 14 checkboxes. Pixel-perfect is a verification target, not a synonym for no overflow.
 
 ## Application requirements
 
@@ -187,3 +199,18 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - The official showroom source now also verifies latitude 35.183864, longitude 33.357587. The local-format phone is displayed; an international tel target and Cyprus WhatsApp remain unconfirmed. Email and official directions are available.
 - Browser verification used the in-app surface. Reports explicitly do not claim Lighthouse, axe, field Core Web Vitals, multi-engine, OS reduced-motion emulation or 200% zoom results. Do not convert those pending plan boxes to done without performing the corresponding checks.
 - Keep new mutable UI data in JSON. Do not put source URLs or prose in components, fetch product content at runtime, add commerce schema, or switch to App Router/static export.
+
+## Measured rebuild maintenance
+
+- `content/config/presentation.json`: product collage slots, collection spans/frame, menu preview. Product records own media frame/hover colors/detail ratio; home owns six tile placements/targets/captions. Editorial sections own images, offsets and optional destinations; store owns its gallery. Validate all changes.
+- `src/components/media/media-frame.tsx` and `src/lib/design/layout.ts` centralize ratio/focal-point and responsive size handling. `src/styles/globals.css` owns shared page/component geometry; `motion.css` owns motion.
+- Navigation uses native Popover; product specifications use details; gallery/filter overlays use dialog. Product gallery stays below the faithful primary two-panel composition.
+- MDX PhotoPair accepts literal registered `left`/`right` image IDs. Drafts are reviewable in `next dev` only; normal builds require verified author/date and keep drafts404. Translation JSON reloads on prerender only during development.
+- `pnpm typecheck` uses a fresh non-incremental TypeScript pass; `moduleDetection: force` isolates generated Pages validator declarations when `.next/types` and `.next/dev/types` coexist. No source diagnostics are suppressed.
+- If local watchers hit EMFILE, use `WATCHPACK_POLLING=true pnpm exec next dev --webpack --hostname 127.0.0.1 --port 3001`. Do not change OS limits or user settings to work around it.
+
+## Homepage fidelity regression guard — 2026-09-15
+
+- Read DESIGN.md section5's screenshot correction before changing home cards. Grid columns switch at640px; home vertical spacing switches at1024px; caption side padding switches above1300px. Do not combine those breakpoints.
+- Home portrait photography must cover its frame. Use concise localized captions and keep the decorative slash with the final word; inspect text bounds at640px and679px in Turkish as well as English. Document-level overflow checks alone missed the original defect.
+- Keep the real Normod wordmark with the black masthead treatment. Update PLAN.md14.9 and CHANGELOGS.md for this correction.

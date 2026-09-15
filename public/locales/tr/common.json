@@ -28,5 +28,9 @@
   "collectionProducts": "Koleksiyondaki tasarımlar",
   "viewCollection": "Koleksiyonu keşfet",
   "emptySelectionTitle": "Bu seçki güncelleniyor.",
-  "emptySelectionText": "Bu arada diğer tasarımlarımızı keşfedebilirsin."
+  "emptySelectionText": "Bu arada diğer tasarımlarımızı keşfedebilirsin.",
+  "captionSuffix": " /",
+  "galleryTitle": "Yakından keşfet",
+  "detailsToggle": "Detaylar ve daha fazlası",
+  "contactAction": "Mağazayı bul"
 }

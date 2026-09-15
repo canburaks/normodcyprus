@@ -13,11 +13,13 @@ import {
   productTranslationSchema,
   siteSchema,
   storeSchema,
+  presentationSchema,
 } from "../src/lib/content/schemas";
 
 const schemas = {
   site: siteSchema,
   store: storeSchema,
+  presentation: presentationSchema,
   assets: z.record(z.string(), assetSchema),
   product: productSchema,
   "product-translation": productTranslationSchema,

@@ -74,6 +74,69 @@
         "type": "string",
         "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
       }
+    },
+    "presentation": {
+      "type": "object",
+      "properties": {
+        "frame": {
+          "type": "object",
+          "properties": {
+            "ratio": {
+              "type": "string",
+              "enum": [
+                "portrait",
+                "landscape",
+                "hero",
+                "square",
+                "natural"
+              ]
+            },
+            "fit": {
+              "type": "string",
+              "enum": [
+                "cover",
+                "contain"
+              ]
+            },
+            "position": {
+              "type": "string",
+              "pattern": "^(?:100|\\d{1,2})% (?:100|\\d{1,2})%$"
+            }
+          },
+          "required": [
+            "ratio",
+            "fit",
+            "position"
+          ],
+          "additionalProperties": false
+        },
+        "hoverBackground": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "detailRatio": {
+          "type": "string",
+          "enum": [
+            "portrait",
+            "square",
+            "natural"
+          ]
+        },
+        "hoverForeground": {
+          "type": "string",
+          "enum": [
+            "#FFFFFF",
+            "#0A0A0A"
+          ]
+        }
+      },
+      "required": [
+        "frame",
+        "hoverBackground",
+        "detailRatio",
+        "hoverForeground"
+      ],
+      "additionalProperties": false
     }
   },
   "required": [
@@ -87,7 +150,8 @@
     "source",
     "verifiedAt",
     "sortOrder",
-    "relatedIds"
+    "relatedIds",
+    "presentation"
   ],
   "additionalProperties": false
 }

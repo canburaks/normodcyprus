@@ -1,0 +1,37 @@
+{
+  "responsive": {
+    "breakpoints": {
+      "small-menu": "410px",
+      "grid": "640px",
+      "navigation": "768px",
+      "inset": "900px",
+      "desktop": "1024px",
+      "caption": "1300px",
+      "wide": "1600px"
+    },
+    "container-max": "1440px",
+    "page-inset-mobile": "20px",
+    "page-inset-tablet": "35px",
+    "section-gap-mobile": "40px",
+    "control-target-min": "44px"
+  },
+  "geometry": {
+    "row-padding-mobile": "10px",
+    "row-padding-desktop": "30px",
+    "column-padding-mobile": "10px",
+    "column-padding-desktop": "25px",
+    "gutter-mobile": "20px",
+    "gutter-desktop": "50px",
+    "item-gap-mobile": "20px",
+    "item-gap-desktop": "40px",
+    "header-gap-mobile": "35px",
+    "portrait-ratio": "910 / 1100",
+    "portrait-factor": 1.2087912087912087,
+    "landscape-ratio": "1390 / 800",
+    "hero-ratio": "2000 / 1151",
+    "caption-padding": "20px 40px",
+    "caption-padding-compact": "20px 0px 0px",
+    "header-threshold": "360px",
+    "footer-gap": "50px"
+  }
+}
